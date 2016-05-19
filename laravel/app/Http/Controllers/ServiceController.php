@@ -59,6 +59,14 @@ class ServiceController extends Controller {
     }
     //详情
     public function details(){
-    	return view('html.single');
+        
+    	return view('html.single3');
+    }
+    //map
+    public function map(){
+
+
+
+        return view('html.map');
     }
 }

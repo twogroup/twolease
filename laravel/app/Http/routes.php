@@ -26,9 +26,11 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::get('index', function(){
+/*Route::get('index', function(){
     return view("html.index");
-});
+});*/
+Route::get('index','ServiceController@shows');
+
 Route::get('about', function(){
     return view("html.about");
 });
@@ -55,4 +57,6 @@ Route::get('wei', 'ServiceController@wei');//未租的房源
 
 Route::get('shou','ServiceController@shou');//已售房源
 
-Route::get('details','ServiceController@details');
+Route::get('details','ServiceController@details');//房源详情
+
+Route::get('map','ServiceController@map');//MAP

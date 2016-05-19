@@ -1,4 +1,6 @@
-<?php namespace App\Http\Controllers;
+<?php 
+namespace App\Http\Controllers;
+use DB;
 
 class HomeController extends Controller {
 
@@ -32,5 +34,6 @@ class HomeController extends Controller {
 	{
 		return view('home');
 	}
+
 
 }
