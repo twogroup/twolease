@@ -271,21 +271,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 <div class="content_top">
    <div class="container">
-   	  <h4 class="m_3">Most Popular</h4>
-   	  <div class="grid_1">
+   	  <!--最受欢迎的房源-->
+   	  <h4 class="m_3">最受欢迎的房源</h4>
+   	  <d iv class="grid_1">
 		<div class="col-md-3 box_1">
 			<a href="single.html"><img src="images/pic8.jpg" class="img-responsive" alt=""/></a>
 		    <div class="box_2">
-			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">Hot Offer</span></div><div class="forclosure"><span class="m_12">Special Offer</span></div></div>
+			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
 			</div>
 		   <div class="box_3">
 			 <h3><a href="single.html">House1</a></h3>
 			 <div class="boxed_mini_details clearfix">
-			      <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"> </i>
+			      <span class="area first"><strong>车库</strong><i class="fa fa-plane icon1"> </i>
 			      2</span>
-			      <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			      <span class="status"><strong>洗澡</strong><i class="fa fa-retweet icon1"> </i>
 			      2</span>
-			      <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-bed"></i>
+			      <span class="bedrooms last"><strong>床</strong><i class="fa fa-bed"></i>
 			      2</span>
              </div>
 		   </div>
@@ -293,16 +294,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="col-md-3 box_1">
 			<a href="single.html"><img src="images/pic9.jpg" class="img-responsive" alt=""/></a>
 		     <div class="box_2">
-			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">Hot Offer</span></div><div class="forclosure"><span class="m_12">Special Offer</span></div></div>
+			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
 			</div>
 		   <div class="box_3">
 			 <h3><a href="single.html">House2</a></h3>
 			 <div class="boxed_mini_details clearfix">
-			      <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"> </i>
+			      <span class="area first"><strong>车库</strong><i class="fa fa-plane icon1"> </i>
 			      2</span>
-			      <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			      <span class="status"><strong>洗澡</strong><i class="fa fa-retweet icon1"> </i>
 			      2</span>
-			      <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"> </i>
+			      <span class="bedrooms last"><strong>床</strong><i class="fa fa-building-o icon1"> </i>
 			      2</span>
              </div>
 		   </div>
@@ -310,7 +311,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="col-md-3 box_1">
 			<a href="single.html"><img src="images/pic10.jpg" class="img-responsive" alt=""/></a>
 		     <div class="box_2">
-			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">Hot Offer</span></div><div class="forclosure"><span class="m_12">Special Offer</span></div></div>
+			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
 			</div>
 		   <div class="box_3">
 			 <h3><a href="single.html">House3</a></h3>
@@ -327,7 +328,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="col-md-3 box_1">
 			<a href="single.html"><img src="images/pic11.jpg" class="img-responsive" alt=""/></a>
 		     <div class="box_2">
-			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">Hot Offer</span></div><div class="forclosure"><span class="m_12">Special Offer</span></div></div>
+			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
 			</div>
 		   <div class="box_3">
 			 <h3><a href="single.html">House4</a></h3>
@@ -343,234 +344,82 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 		<div class="clearfix"> </div>
 	</div>
+	<!--房源信息-->
 	   <div class="content_bottom">
+		<!--类型出售、出租-->
 		<div class="col-md-2">
 			<div class="widget">
-                <div class="title"><h3><i class="fa fa-meh-o men"> </i> For Sale</h3></div>
-                  <ul class="real-widget"><li><a href="#">commercial(3)</a></li>
-                	<li><a href="#">Housing(16)</a><ul>
-                		<li><a href="#">Apartment</a></li>
-                		<li><a href="#">Summerhouse</a></li>
-                		<li><a href="#">Villa</a></li></ul>
+                <div class="title"><h3><i class="fa fa-meh-o men"> </i> 出售</h3></div>
+                  <ul class="real-widget"><li><a href="#">商业(3)</a></li>
+                	<li><a href="#">住房(16)</a><ul>
+                		<li><a href="#">公寓</a></li>
+                		<li><a href="#">凉亭</a></li>
+                		<li><a href="#">别墅</a></li></ul>
                   </ul></li>
                 </ul>
              </div>
              <div class="widget">
-                <div class="title"><h3><i class="fa fa-meh-o men"> </i> For Rent</h3></div>
-                  <ul class="real-widget"><li><a href="#">commercial(3)</a></li>
-                	<li><a href="#">Housing(16)</a><ul>
-                		<li><a href="#">Apartment</a></li>
-                		<li><a href="#">Summerhouse</a></li>
-                		<li><a href="#">Villa</a></li></ul>
+                <div class="title"><h3><i class="fa fa-meh-o men"> </i> 出租</h3></div>
+                  <ul class="real-widget"><li><a href="#">商业(3)</a></li>
+                	<li><a href="#">住房(16)</a><ul>
+                		<li><a href="#">公寓</a></li>
+                		<li><a href="#">凉亭</a></li>
+                		<li><a href="#">别墅</a></li></ul>
                   </ul></li>
                 </ul>
              </div>
 		</div>
+		<!--房源信息详情展示file:/D:/WWW/zulin/-->
 		<div class="col-md-7">	
 		   <div class="sap_tabs">
 				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
 						 <div class="tab_grid">
 							  <ul class="resp-tabs-list">
-							  	  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Apartment</span></li>
-								  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Resort</span></li>
-								  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>Summer house</span></li>
+								  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span><a href="{{url('shows')}}">全部</a></span></li>
+                                  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span><a href="{{url('chu')}}">已租</a></span></li>
+								  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span><a href="{{url('wei')}}">未租</a></span></li>
+								  <li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span><a href="{{url('shou')}}">已售</a></span></li>
 								  <div class="clearfix"></div>
 							  </ul>	
 							</div>	
+							<!--房源信息循环遍历-->
 							    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
 							    	<ul class="tab_img tab_1">
+							    	<?php foreach($arrr as $k=>$v){?>
 									  <li>
 										<div class="client_box1">
-					       				    <img src="images/pic1.jpg" class="img-responsive" alt=""/>
-					       				    <div class="box_type">$&nbsp;650</div>
-					       				    <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+					       				    <img src="uploads/<?php echo $v->photo?>" class="img-responsive" alt=""/>
+					       				    <div class="box_type">$&nbsp;<?php echo $v->pay?></div>
+					       				    <h3 class="m_1"><a href="{{url('details')}}"><?php echo $v->community?></a></h3>
+					       				    <div>联系人：<?php echo $v->contacts?></div>
+					       				    <div>联系电话：<?php echo $v->phone?></div>
 					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    <span class="area first"><strong>车库</strong><i class="fa fa-plane icon1"></i>
 			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    <span class="status"><strong>洗澡</strong><i class="fa fa-retweet icon1"> </i>
 			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    <span class="bedrooms last"><strong>床</strong><i class="fa fa-building-o icon1"></i>
 			                                    2</span>
                                             </div>
 					       				 </div>
 										</li>
-										<li>
-										  <div class="client_box1">
-					       				    <img src="images/pic2.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;450</div>
-					       				    <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				   </div>
-										</li>
-										<li class="last">
-										  <div class="client_box1">
-					       				    <img src="images/pic3.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;220</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				  </div>
-										</li>
-										<div class="clearfix"></div>
-										</ul>
-										<ul class="tab_img">
-										<li>
-										  <div class="client_box1">
-					       				    <img src="images/pic4.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;650</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				  </div>
-										</li>
-										<li>
-										<div class="client_box1">
-					       				    <img src="images/pic5.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;450</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				 </div>
-										</li>
-										<li class="last">
-										 <div class="client_box1">
-					       				    <img src="images/pic6.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;500</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				 </div>
-										</li>
+										
+										<?php }?>
 										<div class="clearfix"></div>
 									</ul>
 							     </div>	
-							     <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
-									
-									<ul class="tab_img">
-										<li>
-										  <div class="client_box1">
-					       				    <img src="images/pic4.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;650</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				  </div>
-										</li>
-										<li>
-										<div class="client_box1">
-					       				    <img src="images/pic5.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;450</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				 </div>
-										</li>
-										<li class="last">
-										 <div class="client_box1">
-					       				    <img src="images/pic6.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;500</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				 </div>
-										</li>
-										<div class="clearfix"></div>
-									</ul>
-							     </div>	
-							     <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
-							     	<ul class="tab_img">
-										<li>
-										<div class="client_box1">
-					       				    <img src="images/pic5.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;450</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				 </div>
-										</li>
-										<li class="last">
-										 <div class="client_box1">
-					       				    <img src="images/pic6.jpg" class="img-responsive" alt=""/>
-					       				     <div class="box_type">$&nbsp;500</div>
-					       				     <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                            </div>
-					       				 </div>
-										</li>
-										<div class="clearfix"></div>
-									</ul>
-							     </div>	
+
 				  </div>
            </div>
         </div>
+        <!--房源代理商-->
         <div class="col-md-3">
 			<div class="blog_list2">
 				 <h3>Our Agents</h3>
 					 <ul class="blog-list3 list_1">
 					 	<li class="blog-list3-img"><img src="images/pic12.jpg" class="img-responsive" alt=""/></li>
 					 	<li class="blog-list3-desc">
-					 	  <h4><a href="#">Adipisicing</a></h4>
+					 	  <h4><a href="#">张三</a></h4>
 					 	    <ul class="admin_desc">
 							    <li class="list_top"><i class="fa fa-phone-square ph"> </i>
 								<p class="m_2">20-1257-2587</p></li>
@@ -585,7 +434,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <ul class="blog-list3 list_1">
 					 	<li class="blog-list3-img"><img src="images/pic13.jpg" class="img-responsive" alt=""/></li>
 					 	<li class="blog-list3-desc">
-					 	  <h4><a href="#">Incididunt</a></h4>
+					 	  <h4><a href="#">李四</a></h4>
 					 	    <ul class="admin_desc">
 							    <li class="list_top"><i class="fa fa-phone-square ph"> </i>
 								<p class="m_2">20-1257-2587</p></li>
@@ -600,7 +449,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <ul class="blog-list3">
 					 	<li class="blog-list3-img"><img src="images/pic7.jpg" class="img-responsive" alt=""/></li>
 					 	<li class="blog-list3-desc">
-					 	  <h4><a href="#">Hampden-Sydney</a></h4>
+					 	  <h4><a href="#">王五</a></h4>
 					 	    <ul class="admin_desc">
 							    <li class="list_top"><i class="fa fa-phone-square ph"> </i>
 								<p class="m_2">20-1257-2587</p></li>
@@ -699,7 +548,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         	<div class="clearfix"> </div>
         </div>
         <div class="copy">
-			<p>© 2015 All Rights Reseverd Template by <a href="http://w3layouts.com/">W3layouts</a> </p>
+			<p>© 2015 All Rights Reseverd Template by <a href="#">W3layouts</a> </p>
 	    </div>
 	</div>
 </div>

@@ -42,3 +42,17 @@ Route::get('contact', function(){
     return view("html.contact");
 });
 
+//添加房源
+Route::get('lease', function(){
+    return view("html.lease");
+});
+
+Route::any('shows', 'ServiceController@shows');//所有房源
+
+Route::get('chu', 'ServiceController@chu');//要出租的房源
+
+Route::get('wei', 'ServiceController@wei');//未租的房源
+
+Route::get('shou','ServiceController@shou');//已售房源
+
+Route::get('details','ServiceController@details');
