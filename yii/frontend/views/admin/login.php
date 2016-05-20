@@ -95,8 +95,6 @@ $form = ActiveForm::begin([
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-														<?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [ 'class'=> 'form-control','template' =>'<div class="row"><div class="col-lg-5">{image}</div><div class="col-lg-5">{input}</div></div>',
-]) ?>
 														</span>
 													</label>
 

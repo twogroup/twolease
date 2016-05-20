@@ -6,6 +6,7 @@ use frontend\models\Index;
 use yii\web\UploadedFile;
 
 class IndexController extends Controller{
+    public $layout = 'main.php';
     public function actionIndex()
     {
         $model = new Index();
