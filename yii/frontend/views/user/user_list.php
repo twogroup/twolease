@@ -409,7 +409,7 @@
 									<div class="col-xs-12">
 
 										<div class="table-responsive">
-											<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+											<table class="table table-striped table-bordered table-hover">
 												<thead>
 													<tr>
 														<th class="center">
@@ -418,20 +418,20 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>Domain</th>
-														<th>Price</th>
-														<th class="hidden-480">Clicks</th>
+														<th>头像</th>
+														<th>用户名</th>
+														<th class="hidden-480">电话</th>
 
-														<th>
+														<!-- <th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															Update
-														</th>
-														<th class="hidden-480">Status</th>
+														</th> -->
+														<th class="hidden-480">邮箱</th>
 
-														<th></th>
+														<th>操作</th>
 													</tr>
 												</thead>
-
+												<?php foreach ($user as $key) { ?>
 												<tbody>
 													<tr>
 														<td class="center">
@@ -442,27 +442,26 @@
 														</td>
 
 														<td>
-															<a href="#">app.com</a>
+															<a href="#"><?php echo $key['photo'] ?></a>
 														</td>
-														<td>$45</td>
-														<td class="hidden-480">3,330</td>
-														<td>Feb 12</td>
+														<td><?php echo $key['username'] ?></td>
+														<td class="hidden-480"><?php echo $key['phone'] ?></td>
 
 														<td class="hidden-480">
-															<span class="label label-sm label-warning">Expiring</span>
+															<span class="label label-sm label-inverse arrowed-in"><?php echo $key['email'] ?></span>
 														</td>
 
 														<td>
 															<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-																<a class="blue" href="#">
+																<a class="blue" href="index.php?r=user/select&id=<?php echo $key['user_id']?>">
 																	<i class="icon-zoom-in bigger-130"></i>
 																</a>
 
-																<a class="green" href="#">
+																<a class="green" href="index.php?r=user/update&id=<?php echo $key['user_id']?>">
 																	<i class="icon-pencil bigger-130"></i>
 																</a>
 
-																<a class="red" href="#">
+																<a class="red" href="index.php?r=user/delete&id=<?php echo $key['user_id']?>">
 																	<i class="icon-trash bigger-130"></i>
 																</a>
 															</div>
@@ -502,8 +501,9 @@
 															</div>
 														</td>
 													</tr>
+													<?php } ?>
 
-													<tr>
+													<!-- <tr>
 														<td class="center">
 															<label>
 																<input type="checkbox" class="ace" />
@@ -2041,9 +2041,13 @@
 																</div>
 															</div>
 														</td>
-													</tr>
+													</tr> -->
 												</tbody>
 											</table>
+											<?php
+												use yii\widgets\LinkPager;
+											?>
+											<?= LinkPager::widget(['pagination' => $pagination]) ?>
 										</div>
 									</div>
 								</div>

@@ -40,32 +40,31 @@ class AdminController extends \yii\web\Controller
     }
     
     //添加房东
-    public function actionAddlandlord()
+   /* public function actionAddlandlord()
     {
         $model = new Landlord();
         return $this->render('add_landlord');
-    }
+    }*/
     
     //房东列表
     public function actionLandlordlist()
     {
-        //echo 123;
-        $model = new Landlord();
-        return $this->render('landlord_list');
+        //$model = new Landlord();
+        return $this->redirect('index.php?r=landlord/show');
     }
     
-    //添加房东
-    public function actionAdduser()
+    //添加租客
+  /*  public function actionAdduser()
     {
         $model = new User();
         return $this->render('add_user');
-    }
+    }*/
     
-    //房东列表
+    //租客列表
     public function actionUserlist()
     {
-        $model = new User();
-        return $this->render('user_list');
+        //$model = new User();
+        return $this->redirect('index.php?r=user/show');
     }
 
 }
