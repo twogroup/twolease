@@ -11,15 +11,15 @@
 |
 */
 //测试
-Route::any('testvalue', 'TestController@add');
+// Route::any('testvalue', 'TestController@add');
 
-Route::get('test', function(){
-    return view("demo");
-});
+// Route::get('test', function(){
+//     return view("demo");
+// });
 //
-Route::get('/', 'IndexController@index');
+// Route::get('/', 'IndexController@index');
 
-Route::get('home', 'HomeController@index');
+// Route::get('home', 'HomeController@index');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -29,7 +29,7 @@ Route::controllers([
 /*Route::get('index', function(){
     return view("html.index");
 });*/
-Route::get('index','ServiceController@shows');
+Route::get('','ServiceController@shows');
 
 Route::get('about', function(){
     return view("html.about");
@@ -60,3 +60,23 @@ Route::get('shou','ServiceController@shou');//已售房源
 Route::get('details','ServiceController@details');//房源详情
 
 Route::get('map','ServiceController@map');//MAP
+
+/**
+ * 登录注册验证页面
+ */
+Route::any('adds', 'LoginController@adds');
+Route::any('loginss', 'LoginController@loginss');
+/**
+ * 退出登录
+ */
+Route::any('exits', function(){
+    $model=new App\User();
+    return $model->exits();
+
+});
+
+Route::any('logins', function(){
+    $model=new App\User();
+    return $model->logins();
+
+});

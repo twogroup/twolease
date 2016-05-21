@@ -35,7 +35,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
  <!----font-Awesome----->
 <link rel="stylesheet" href="fonts/css/font-awesome.min.css">
-<!----font-Awesome----->
+<!----font-Awesome-->
 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
 		    <script type="text/javascript">
 			    $(document).ready(function () {
