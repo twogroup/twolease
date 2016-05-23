@@ -67,4 +67,10 @@ class AdminController extends \yii\web\Controller
         return $this->redirect('index.php?r=user/show');
     }
 
+    //贴子管理
+    public function actionStick()
+    {
+        //echo "请发帖子";
+    }
+
 }
