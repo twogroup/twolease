@@ -412,55 +412,55 @@
 											<table  class="table table-striped table-bordered table-hover">
 												<thead>
 													<tr>
-														<th class="center">
+														<th style="text-align:center;" class="center">
 															<label>
 																<input type="checkbox" class="ace" />
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>头像</th>
-														<th>用户名</th>
-														<th class="hidden-480">电话</th>
+														<th style="text-align:center;">头像</th>
+														<th style="text-align:center;">用户名</th>
+														<th style="text-align:center;" class="hidden-480">电话</th>
 
 														<!-- <th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															Update
 														</th> -->
-														<th class="hidden-480">邮箱</th>
+														<th style="text-align:center;" class="hidden-480">邮箱</th>
 
-														<th>操作</th>
+														<th style="text-align:center;">操作</th>
 													</tr>
 												</thead>
 												<?php foreach ($landlord as $key) { ?>
 												<tbody>
 													<tr>
-														<td class="center">
+														<td align="center" style="vertical-align:middle;" class="center">
 															<label>
 																<input type="checkbox" class="ace" />
 																<span class="lbl"></span>
 															</label>
 														</td>
-														<td>
-															<a href="#"><?php echo $key['lphoto'] ?></a>
+														<td align="center">
+															<a href="#"><img src="<?php echo $key['photos'] ?>" alt="" width="100px" height="100px"></a>
 														</td>
-														<td><?php echo $key['lname'] ?></td>
-														<td class="hidden-480"><?php echo $key['lphone'] ?></td>
+														<td align="center" style="vertical-align:middle;"><?php echo $key['username'] ?></td>
+														<td align="center" style="vertical-align:middle;" class="hidden-480"><?php echo $key['tell'] ?></td>
 
-														<td class="hidden-480">
-															<span class="label label-sm label-warning"><?php echo $key['lemail'] ?></span>
+														<td align="center" style="vertical-align:middle;" class="hidden-480">
+															<span class="label label-sm label-warning"><?php echo $key['email'] ?></span>
 														</td>
 
-														<td>
+														<td align="center" style="vertical-align:middle;">
 															<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-																<a class="blue" href="index.php?r=landlord/select&id=<?php echo $key['l_id']?>">
+																<a class="blue" href="index.php?r=user/select&id=<?php echo $key['id']?>">
 																	<i class="icon-zoom-in bigger-130"></i>
 																</a>
 
-																<a class="green" href="index.php?r=landlord/update&id=<?php echo $key['l_id']?>">
+																<a class="green" href="index.php?r=user/update&id=<?php echo $key['id']?>">
 																	<i class="icon-pencil bigger-130"></i>
 																</a>
 
-																<a class="red" href="index.php?r=landlord/delete&id=<?php echo $key['l_id']?>">
+																<a class="red" href="index.php?r=user/delete&id=<?php echo $key['id']?>">
 																	<i class="icon-trash bigger-130"></i>
 																</a>
 															</div>

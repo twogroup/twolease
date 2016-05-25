@@ -19,13 +19,14 @@ class LandlordController extends \yii\web\Controller
     				->from('landlord')
     				->all();*/
     	//print_r($landlord);die;
-    	$query = Landlord::find();
+    	$query = User::find();
         $pagination = new Pagination([
             'defaultPageSize' => 5,
             'totalCount' => $query->count(),
         ]);
         $countries = $query->offset($pagination->offset)
             ->limit($pagination->limit)
+            ->where('status = 1')
             ->all();
 
         return $this->render('landlord_list', [
@@ -40,7 +41,7 @@ class LandlordController extends \yii\web\Controller
     {
     	$request = \Yii::$app->request;
         $id = $request->get('id');
-        $result = Landlord::findOne($id)->delete();
+        $result = User::findOne($id)->where('status = 1')->delete();
         if($result)
         {
         	Yii::$app->getSession()->setFlash('success', '删除成功');

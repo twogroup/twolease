@@ -8,6 +8,7 @@ use frontend\models\User;
 
 class AdminController extends \yii\web\Controller
 {
+    public $layout = false;
     public function actionIndex()
     {
     	$model = new Admin();
@@ -50,7 +51,7 @@ class AdminController extends \yii\web\Controller
     public function actionLandlordlist()
     {
         //$model = new Landlord();
-        return $this->redirect('index.php?r=landlord/show');
+        return $this->redirect('index.php?r=user/landlord');
     }
     
     //添加租客
@@ -64,7 +65,7 @@ class AdminController extends \yii\web\Controller
     public function actionUserlist()
     {
         //$model = new User();
-        return $this->redirect('index.php?r=user/show');
+        return $this->redirect('index.php?r=user/user');
     }
 
     //贴子管理
