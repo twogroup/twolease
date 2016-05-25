@@ -69,9 +69,9 @@ class AdminController extends \yii\web\Controller
     }
 
     //贴子管理
-    public function actionCommunity()
+    public function actionStick()
     {
-        return $this->redirect('index.php?r=community/community');
+        //echo "请发帖子";
     }
 
 }

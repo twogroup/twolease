@@ -418,15 +418,15 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th style="text-align:center;">租客头像</th>
-														<th style="text-align:center;">租客姓名</th>
-														<th style="text-align:center;" class="hidden-480">租客电话</th>
+														<th style="text-align:center;">头像</th>
+														<th style="text-align:center;">用户名</th>
+														<th style="text-align:center;" class="hidden-480">电话</th>
 
 														<!-- <th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															Update
 														</th> -->
-														<th style="text-align:center;" class="hidden-480">租客邮箱</th>
+														<th style="text-align:center;" class="hidden-480">邮箱</th>
 
 														<th style="text-align:center;">操作</th>
 													</tr>

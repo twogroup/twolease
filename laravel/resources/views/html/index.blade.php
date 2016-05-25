@@ -13,6 +13,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="keywords" content="Realist Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -20,6 +22,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href='http://fonts.googleapis.com/css?family=Grand+Hotel:400' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet:100,300,400,500,600,700,800,900' type='text/css'>
+
+<!--a标签传值（传ID至控制器）-->
+<script>
+    function nae(id)
+    {
+    	//alert(id);die;
+        var data={'xqid':id}
+        var url="showsxq";
+        $.get(url,data,function(msg){
+           $a = msg;
+           //alert(msg);die;
+           location.href ='{{url('zhan')}}?id='+$a;
+        })
+    }
+</script>
+
+
+
 <!-- Menu -->
 <script src="js/responsiveslides.min.js"></script>
 <script>
@@ -381,34 +401,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								  <li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span><a href="{{url('shou')}}">已售</a></span></li>
 								  <div class="clearfix"></div>
 							  </ul>	
-							</div>	
-							<!--房源信息循环遍历-->
+							</div>
+							<!--房源信息循环遍历 -->
 							    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
 							    	<ul class="tab_img tab_1">
-							    	<?php foreach($arrr as $k=>$v){?>
+							    	@foreach ($posts as $post)
 									  <li>
 										<div class="client_box1">
-					       				    <img src="uploads/<?php echo $v->photo?>" class="img-responsive" alt=""/>
-					       				    <div class="box_type">$&nbsp;<?php echo $v->pay?></div>
-					       				    <h3 class="m_1"><a href="{{url('details')}}"><?php echo $v->community?></a></h3>
-					       				    <div>联系人：<?php echo $v->contacts?></div>
-					       				    <div>联系电话：<?php echo $v->phone?></div>
+					       				    <img src="uploads/{{ $post->photo }}" class="img-responsive" alt="" width="500px" height="500px" />
+					       				    <h5>$&nbsp;{{ $post->pay }}</h5>
+					       				    <h3 class="m_1"><a href="javascript:void(0)" onclick="nae({{ $post->rent_id }})">{{ $post->title }}</a></h3>
+					       				    <div>联系人：{{ $post->contacts }}</div>
+					       				    <div>联系电话：{{ $post->phone }}</div>
 					       				    <div class="boxed_mini_details clearfix">
 			                                    <span class="area first"><strong>车库</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
+			                                    1</span>
 			                                    <span class="status"><strong>洗澡</strong><i class="fa fa-retweet icon1"> </i>
 			                                    2</span>
 			                                    <span class="bedrooms last"><strong>床</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
+			                                    5</span>
                                             </div>
 					       				 </div>
 										</li>
-										
-										<?php }?>
+										@endforeach
 										<div class="clearfix"></div>
 									</ul>
+							    	
 							     </div>	
-
+							     {!! $posts->render() !!}
 				  </div>
            </div>
         </div>
@@ -466,23 +486,65 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="clearfix"> </div>
         </div>
         <div class="grid_4">
+
+                <!--帮助的下拉视频开始-->
                 <div class="col-md-7 grid_6">
-                    <h3>
-                        Want to sell <br>
-                        your real estate?
-                    </h3>
+					<center>
+					<h1>帮助视频</h1>
+					<select name='selectSS'id="selectSS" onChange="GaiBian(this)">
+					  <option value='zxc'>http缓存之latmodified.mp4</option> 
+					  <option value='zxc'>http缓存之缓存时机.mp4</option> 
+					</select>
+					<br />
+					<a href="#" onclick="SetIndex(1)">change</a>
+						<video src="video/http缓存之缓存时机.mp4" autoplay="autoplay" width="600px" height="400px" id="bofang"></video>
+					</center>
+					<script type="text/javascript" language="javascript">
+						//视频
+						var mp4=document.getElementById("mp4");
+						//播放结束触发
+						mp4.onended=function(){
+							mp4.pause();
+						}
+						//播放时触发
+						mp4.onplay=function(){
+							//alert("play");
+							//mp4.pause();//暂停
+						}
+						//内容改变事件
+						function GaiBian(osel){
+						    var aas=(osel.options[osel.selectedIndex].text);
+						    //alert(aas);
+						    $.ajax({
+							   //type: "POST",
+							   url: "videos",
+							   data: {'xqid':aas},
+							   success: function(msg){
+							     //alert(  msg );
+							    // var img=msg;
+							      //$('#bofang').prop('src',msg);
+							      var img=msg;
+							      $('#bofang').prop('src',msg);
+							   }
+							});
+						}
+						function SetIndex(v){
+						   
+						  var s=document.getElementById('selectSS');
+						  s.selectedIndex=v;
+						  if(s.onchange)s.onchange();    
+						}
+					</script>
                 </div>
-                <div class="col-md-5 grid_5">
+                <!--帮助的下拉视频结束-->
+
+                <!-- <div class="col-md-5 grid_5">
                     <div class="banner2">
-                        <a class="btn2" href="#">click here</a>
-                        <h3>
-                            FOR A FREE <br>
-                            APPRAISAL
-                        </h3>
+                        
                         <div class="clearfix"> </div>
                     </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"> </div>-->
         </div>
         <div class="grid_7">
         	<div class="col-md-4 box_4">
