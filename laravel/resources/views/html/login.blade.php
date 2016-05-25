@@ -34,14 +34,14 @@
                         <div class="uinArea" id="uinArea">
                             <label class="input-tips" for="u">帐号：</label>
                             <div class="inputOuter" id="uArea">
-                                <input type="text" id="u" name="username" class="inputstyle"/>
+                                <input type="text" id="u" name="u_name" class="inputstyle"/>
                             </div>
                         </div>
                         <div class="pwdArea" id="pwdArea">
                             <label class="input-tips" for="p">密码：</label>
                             <div class="inputOuter" id="pArea">
 
-                                <input type="password" id="p" name="p" class="inputstyle"/>
+                                <input type="password" id="p" name="pwds" class="inputstyle"/>
                             </div>
                         </div>
 

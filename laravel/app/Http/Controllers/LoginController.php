@@ -59,47 +59,48 @@ class LoginController extends Controller {
         //图片上传
         $files=Request::file('myfile');
 
-	    $clientName = $files ->  getClientOriginalName();
-	   //所以这里道出了文件上传的原理,将文件上传的某个临时目录中,然后使用Php的函数将文件移动到指定的文件夹.
-	    $entension = $files -> getClientOriginalExtension();   //上传文件的后缀.
+        $clientName = $files ->  getClientOriginalName();
+       //所以这里道出了文件上传的原理,将文件上传的某个临时目录中,然后使用Php的函数将文件移动到指定的文件夹.
+        $entension = $files -> getClientOriginalExtension();   //上传文件的后缀.
 
         $filedir=$_SERVER['DOCUMENT_ROOT']."/twolease/laravel/public/uploads/";//上传存放的目录
 
         $newImagesName=md5(time()).rand(1000,9999).".".$entension; //重新命名上传文件名字
         $files->move($filedir,$newImagesName); //使用move 方法移动文件.
+//print_r($filedir) ;die;
+        //添加注册用户
+            $sql= DB::table('user')->insert(array(
+                    array('username' => $name,
+                        'pwd' => $userPswd,
+                        'email' => $email,
+                        'status' => $sta,
+                        'photoss' => "uploads/".$newImagesName
+                    )
+                )
+            );
 
-    //添加用户注册信息
-       $sql= DB::table('login_s')->insert(array(
-            array('name' => $name,
-                'pwd' => $userPswd,
-                'email' => $email,
-                'stats' => $sta,
-                'photos' => $filedir.$newImagesName
-               )
-        )
-       );
         //判断是否添加成功，添加成功跳转到登录页面
         if($sql){
-            return view('html.login');
+            echo "<script>alert('注册成功，正在跳转登录页面！');location.href='logins'</script>";
         }
     }
     /**
      * 验证登录是否成功
      */
     public function loginss(){
-        $name=Request::input('username');
-        $pwd=Request::input('p');
+        $name=Request::input('u_name');
+        $pwd=Request::input('pwds');
         $free=Request::input('free');
-        //echo $free;die;
+       // echo $name;die;
         $salt = substr($pwd, 0, 2);
         $userPswd = crypt($pwd, $salt);
         //七天免登录
-        $users = DB::table('login_s')->select()
-             ->where(['pwd'=>$userPswd,'name'=>$name])
+        $users = DB::table('user')->select()
+             ->where(['pwd'=>$userPswd,'username'=>$name])
              ->get();
+       // print_r($users);die;
         $pictures=$users[0]->photos;
-        //echo $picture;die;
-        //echo gettype($pictures);
+        //echo $pictures;die;
         //print_r($pictures);die;
             //判断是否登录成功
             if($users){
@@ -107,11 +108,11 @@ class LoginController extends Controller {
                     setcookie("name",$name,time()+3600*24*7);
                     setcookie("pictures",$pictures,time()+3600*24*7);
                     //echo "<script>alert('登录成功！');</script>";
-                    echo "<script>alert('登录成功！');location.href='index'</script>";
+                    echo "<script>alert('登录成功！');location.href='show'</script>";
                 }else{
                     setcookie("name",$name);
                     setcookie("pictures",$pictures);
-                    echo "<script>alert('登录成功！');location.href='index'</script>";
+                    echo "<script>alert('登录成功！');location.href='show'</script>";
                     //return view('html.index');
                 }
 

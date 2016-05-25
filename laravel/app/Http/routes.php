@@ -29,7 +29,7 @@ Route::controllers([
 /*Route::get('index', function(){
     return view("html.index");
 });*/
-Route::get('','ServiceController@shows');
+Route::get('show','ServiceController@shows');
 
 Route::get('about', function(){
     return view("html.about");
@@ -80,3 +80,5 @@ Route::any('logins', function(){
     return $model->logins();
 
 });
+
+Route::get('personal','UserController@shows');//用户中心/个人中心
