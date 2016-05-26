@@ -74,4 +74,10 @@ class AdminController extends \yii\web\Controller
         return $this->redirect('index.php?r=admin/index');
     }
 
+    //租金统计
+    public function actionRent()
+    {
+        return $this->redirect('index.php?r=rent/total');
+    }
+
 }

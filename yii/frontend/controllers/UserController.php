@@ -4,6 +4,7 @@ namespace frontend\controllers;
 use yii;
 use frontend\models\User;
 use yii\data\Pagination;
+use yii\web\Session;
 /**
 *	class User  后台租客管理
 */
@@ -65,8 +66,8 @@ class UserController extends \yii\web\Controller
         //return $this->render('landlord_list',['landlord'=>$landlord]);
     }
 
-    //房东、租客列表删除
-    public function actionDelete()
+    //租客列表删除
+    public function actionDeleteuser()
     {
     	$request = \Yii::$app->request;
         $id = $request->get('id');
@@ -81,6 +82,24 @@ class UserController extends \yii\web\Controller
     		Yii::$app->getSession()->setFlash('error', '删除失败');
         	return $this->redirect('index.php?r=user/user');
     	}
+    }
+
+    //房东列表删除
+    public function actionDeletelandlord()
+    {
+        $request = \Yii::$app->request;
+        $id = $request->get('id');
+        $result = User::findOne($id)->delete();
+        if($result)
+        {
+            Yii::$app->getSession()->setFlash('success', '删除成功');
+            return $this->redirect('index.php?r=user/landlord');
+        }
+        else
+        {
+            Yii::$app->getSession()->setFlash('error', '删除失败');
+            return $this->redirect('index.php?r=user/landlord');
+        }
     }
 
 }

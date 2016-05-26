@@ -22,10 +22,10 @@ class RentController extends \yii\web\Controller
     /**
      * @return string
      */
-    public function actionIndex()
-    {
-        return $this->render('index');
-    }
+    // public function actionIndex()
+    // {
+    //     return $this->render('index');
+    // }
     /**
      * @return string
      */
