@@ -63,7 +63,7 @@ class LoginController extends Controller {
        //所以这里道出了文件上传的原理,将文件上传的某个临时目录中,然后使用Php的函数将文件移动到指定的文件夹.
         $entension = $files -> getClientOriginalExtension();   //上传文件的后缀.
 
-        $filedir=$_SERVER['DOCUMENT_ROOT']."/twolease/laravel/public/uploads/";//上传存放的目录
+        $filedir=$_SERVER['DOCUMENT_ROOT']."/uploads/user/";//上传存放的目录
 
         $newImagesName=md5(time()).rand(1000,9999).".".$entension; //重新命名上传文件名字
         $files->move($filedir,$newImagesName); //使用move 方法移动文件.
@@ -74,7 +74,7 @@ class LoginController extends Controller {
                         'pwd' => $userPswd,
                         'email' => $email,
                         'status' => $sta,
-                        'photos' => "uploads/".$newImagesName
+                        'photos' => "uploads/user/".$newImagesName
                     )
                 )
             );
