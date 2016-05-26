@@ -44,7 +44,7 @@ Route::get('contact', function(){
     return view("html.contact");
 });
 
-//添加房源
+//添加房源 
 Route::get('lease', function(){
     return view("html.lease");
 });
@@ -60,6 +60,14 @@ Route::get('shou','ServiceController@shou');//已售房源
 Route::get('details','ServiceController@details');//房源详情
 
 Route::get('map','ServiceController@map');//MAP
+
+//单个房源详细信息
+Route::get('showsxq','ServiceController@showsxq');
+Route::get('zhan','ServiceController@objectToArray');
+
+Route::get('addss','ServiceController@addhouse');//添加房源
+
+Route::any('videos','ServiceController@neironggb');//视频
 
 /**
  * 登录注册验证页面
@@ -82,3 +90,4 @@ Route::any('logins', function(){
 });
 
 Route::get('personal','UserController@shows');//用户中心/个人中心
+

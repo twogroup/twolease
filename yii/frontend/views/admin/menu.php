@@ -103,7 +103,7 @@
 							</li>
 
 							<li>
-								<a href="index.php?r=admin/community">
+								<a href="index.php?r=admin/stick">
 									<i class="icon-double-angle-right"></i>
 									贴子管理
 								</a>

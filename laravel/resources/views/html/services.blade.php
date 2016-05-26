@@ -1,18 +1,13 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Realist an Real_Estate Category Flat Bootstarp Resposive Website Template | About :: w3layouts</title>
+<title>异家人————房源添加</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Realist Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -45,7 +40,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 @include('components.head')
 			 </div>
 			<!-- script for menu -->
+			
 				<script>
+
 				$( "span.menu" ).click(function() {
 				  $( ".top-menu" ).slideToggle( "slow", function() {
 				    // Animation complete.
@@ -129,22 +126,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	       	<div class="clearfix"> </div>
          </div> 
        </div>
+       <!-- 帮助视频 -->
        <div class="grid_4">
                 <div class="col-md-7 grid_6">
-                    <h3>
-                        Want to sell <br>
-                        your real estate?
-                    </h3>
+                    
                 </div>
                 <div class="col-md-5 grid_5">
-                    <div class="banner2">
-                        <a class="btn2" href="#">click here</a>
-                        <h3>
-                            FOR A FREE <br>
-                            APPRAISAL
-                        </h3>
-                        <div class="clearfix"> </div>
-                    </div>
+                   
                 </div>
                 <div class="clearfix"> </div>
         </div>
