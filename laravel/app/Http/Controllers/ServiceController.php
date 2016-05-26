@@ -42,10 +42,7 @@ class ServiceController extends Controller {
 
     //所有房源信息展示
     public function shows(){
-    	//$data = DB::table('rent')->get();
         $posts = DB::table('rent')->paginate(3);
-    	//print_r($posts);die; 
-    	//return view('html/index')->with('arrr',$data);
         return view('html/index',['posts'=>$posts]);
     }
     //已租
@@ -64,7 +61,6 @@ class ServiceController extends Controller {
     public function shou(){
     	//$data = DB::table('rent')->where('lease','2')->get();
         $posts = DB::table('rent')->where('lease','2')->paginate(3);
-        //print_r($data);die;
     	return view('html/index')->with('arrr',$data);
     }
     //详情
@@ -107,9 +103,7 @@ class ServiceController extends Controller {
     //视频
     
     public function neironggb(){
-        //$connection=\Yii::$app->db;
        $data = Input::get();//接ID
-       // $aasss=$_POST['aas'];
         $name = "video/".$data['xqid'];
         echo $name;die;
        // return $this->render('dianming.html',array);

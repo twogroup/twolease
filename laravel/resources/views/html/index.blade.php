@@ -492,12 +492,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<center>
 					<h1>帮助视频</h1>
 					<select name='selectSS'id="selectSS" onChange="GaiBian(this)">
-					  <option value='zxc'>http缓存之latmodified.mp4</option> 
-					  <option value='zxc'>http缓存之缓存时机.mp4</option> 
+					  <option value='zxc'>gii工具简介.mp4</option> 
+					  <option value='zxc'>gii工具之控制器生成器.mp4</option> 
+					  <option value='zxc'>gii总结.mp4</option> 
 					</select>
 					<br />
 					<a href="#" onclick="SetIndex(1)">change</a>
-						<video src="video/http缓存之缓存时机.mp4" autoplay="autoplay" width="600px" height="400px" id="bofang"></video>
+						<video src="video/gii总结.mp4" autoplay="autoplay" width="600px" height="400px" id="bofang"></video>
 					</center>
 					<script type="text/javascript" language="javascript">
 						//视频
