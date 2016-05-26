@@ -17,7 +17,7 @@
 //     return view("demo");
 // });
 //
-// Route::get('/', 'IndexController@index');
+ Route::get('/', 'IndexController@index');
 
 // Route::get('home', 'HomeController@index');
 
