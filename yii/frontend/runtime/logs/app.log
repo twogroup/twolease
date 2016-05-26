@@ -13554,3 +13554,187 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1464174609.6898
     'REQUEST_TIME' => 1464174609
 ]
+2016-05-25 22:59:41 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';'' in D:\www\xiangmu\twolease\yii\frontend\controllers\AdminController.php:9
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-05-25 22:59:41 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mg6bqapmp4nhk26dorq9tt1n10'
+    '_csrf' => 'e0c2a237ac3958271200b53896eab4cef1d359cdf1540a5370befbef4addd1e5a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XWu5Lsr3ztQr9YkiOhDgQK-7sw_jVEhu\";}'
+    'CNZZDATA155540' => 'cnzz_eid=1387389593-1464178124-&ntime=1464183525'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\New Folder\\bin;D:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1992'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=admin/show'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '59801'
+    'SCRIPT_FILENAME' => 'D:/www/xiangmu/twolease/yii/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/www/xiangmu/twolease/yii/frontend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/www/xiangmu/twolease/yii/frontend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yjradmin.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'PHPSESSID=mg6bqapmp4nhk26dorq9tt1n10; _csrf=e0c2a237ac3958271200b53896eab4cef1d359cdf1540a5370befbef4addd1e5a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XWu5Lsr3ztQr9YkiOhDgQK-7sw_jVEhu%22%3B%7D; CNZZDATA155540=cnzz_eid%3D1387389593-1464178124-%26ntime%3D1464183525'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'
+    'HTTP_HOST' => 'www.yjradmin.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464188381.6417
+    'REQUEST_TIME' => 1464188381
+]
+2016-05-25 22:59:45 [127.0.0.1][-][-][error][yii\base\ErrorException:4] exception 'yii\base\ErrorException' with message 'syntax error, unexpected 'class' (T_CLASS), expecting ',' or ';'' in D:\www\xiangmu\twolease\yii\frontend\controllers\AdminController.php:9
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2016-05-25 22:59:45 [127.0.0.1][-][-][info][application] $_GET = [
+    'r' => 'admin/show'
+]
+
+$_COOKIE = [
+    'PHPSESSID' => 'mg6bqapmp4nhk26dorq9tt1n10'
+    '_csrf' => 'e0c2a237ac3958271200b53896eab4cef1d359cdf1540a5370befbef4addd1e5a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"XWu5Lsr3ztQr9YkiOhDgQK-7sw_jVEhu\";}'
+    'CNZZDATA155540' => 'cnzz_eid=1387389593-1464178124-&ntime=1464183525'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\New Folder\\bin;D:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1992'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=admin/show'
+    'QUERY_STRING' => 'r=admin/show'
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '59804'
+    'SCRIPT_FILENAME' => 'D:/www/xiangmu/twolease/yii/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/www/xiangmu/twolease/yii/frontend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/www/xiangmu/twolease/yii/frontend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yjradmin.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'PHPSESSID=mg6bqapmp4nhk26dorq9tt1n10; _csrf=e0c2a237ac3958271200b53896eab4cef1d359cdf1540a5370befbef4addd1e5a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22XWu5Lsr3ztQr9YkiOhDgQK-7sw_jVEhu%22%3B%7D; CNZZDATA155540=cnzz_eid%3D1387389593-1464178124-%26ntime%3D1464183525'
+    'HTTP_REFERER' => 'http://www.yjradmin.com/?r=admin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'
+    'HTTP_HOST' => 'www.yjradmin.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464188385.6359
+    'REQUEST_TIME' => 1464188385
+]
+2016-05-26 08:13:58 [127.0.0.1][-][1co58om6jef0has175ff0caq54][error][yii\web\HttpException:404] exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: user/select' in D:\www\xiangmu\twolease\yii\vendor\yiisoft\yii2\base\Controller.php:122
+Stack trace:
+#0 D:\www\xiangmu\twolease\yii\vendor\yiisoft\yii2\base\Module.php(455): yii\base\Controller->runAction('select', Array)
+#1 D:\www\xiangmu\twolease\yii\vendor\yiisoft\yii2\web\Application.php(84): yii\base\Module->runAction('user/select', Array)
+#2 D:\www\xiangmu\twolease\yii\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 D:\www\xiangmu\twolease\yii\frontend\web\index.php(18): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in D:\www\xiangmu\twolease\yii\vendor\yiisoft\yii2\web\Application.php:96
+Stack trace:
+#0 D:\www\xiangmu\twolease\yii\vendor\yiisoft\yii2\base\Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 D:\www\xiangmu\twolease\yii\frontend\web\index.php(18): yii\base\Application->run()
+#2 {main}
+2016-05-26 08:13:58 [127.0.0.1][-][1co58om6jef0has175ff0caq54][info][application] $_GET = [
+    'r' => 'user/select'
+    'id' => ''
+]
+
+$_COOKIE = [
+    'CNZZDATA155540' => 'cnzz_eid=1387389593-1464178124-&ntime=1464216493'
+    'PHPSESSID' => '1co58om6jef0has175ff0caq54'
+    '_csrf' => '162cff1ee037a2673b29ee4a8e39c05517b6dbb187719aa575c6c1d15c55fcfda:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"6JyemJBy9z1UF7ZuhWoJA7kmqa4plVQ2\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    'name' => '张三'
+]
+
+$_SERVER = [
+    'PATH' => 'C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;D:\\New Folder\\bin;D:\\phpStudy\\php54n;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\'
+    'SYSTEMROOT' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'PHP_FCGI_MAX_REQUESTS' => '1000'
+    'PHPRC' => 'D:/phpStudy/php54n'
+    '_FCGI_SHUTDOWN_EVENT_' => '1920'
+    'SCRIPT_NAME' => '/index.php'
+    'REQUEST_URI' => '/index.php?r=user/select&id='
+    'QUERY_STRING' => 'r=user/select&id='
+    'REQUEST_METHOD' => 'GET'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'REMOTE_PORT' => '59967'
+    'SCRIPT_FILENAME' => 'D:/www/xiangmu/twolease/yii/frontend/web/index.php'
+    'SERVER_ADMIN' => 'admin@phpStudy.net'
+    'CONTEXT_DOCUMENT_ROOT' => 'D:/www/xiangmu/twolease/yii/frontend/web'
+    'CONTEXT_PREFIX' => ''
+    'REQUEST_SCHEME' => 'http'
+    'DOCUMENT_ROOT' => 'D:/www/xiangmu/twolease/yii/frontend/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_NAME' => 'www.yjradmin.com'
+    'SERVER_SOFTWARE' => 'Apache/2.4.10 (Win32) OpenSSL/0.9.8zb mod_fcgid/2.3.9'
+    'SERVER_SIGNATURE' => ''
+    'SystemRoot' => 'C:\\Windows'
+    'HTTP_CONNECTION' => 'close'
+    'HTTP_COOKIE' => 'CNZZDATA155540=cnzz_eid%3D1387389593-1464178124-%26ntime%3D1464216493; PHPSESSID=1co58om6jef0has175ff0caq54; _csrf=162cff1ee037a2673b29ee4a8e39c05517b6dbb187719aa575c6c1d15c55fcfda%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%226JyemJBy9z1UF7ZuhWoJA7kmqa4plVQ2%22%3B%7D'
+    'HTTP_REFERER' => 'http://www.yjradmin.com/index.php?r=community%2Fcommunity&page=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; WOW64; rv:46.0) Gecko/20100101 Firefox/46.0'
+    'HTTP_HOST' => 'www.yjradmin.com'
+    'FCGI_ROLE' => 'RESPONDER'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1464221638.0408
+    'REQUEST_TIME' => 1464221638
+]
