@@ -412,23 +412,24 @@
 											<table  class="table table-striped table-bordered table-hover">
 												<thead>
 													<tr>
-														<th style="text-align:center;" class="center">
+														<th style="text-align:center;width:50px;" class="center">
 															<label>
 																<input type="checkbox" class="ace" />
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th style="text-align:center;">图片</th>
-														<th style="text-align:center;">发送人</th>
-														<th style="text-align:center;" class="hidden-480">发帖时间</th>
+														<th style="text-align:center;width:150px; ">图片</th>
+														<th style="text-align:center;width:100px;">发送人</th>
+														<th style="text-align:center;width:100px;" class="hidden-480">发帖时间</th>
 
 														<!-- <th>
 															<i class="icon-time bigger-110 hidden-480"></i>
 															Update
 														</th> -->
-														<th style="text-align:center;" class="hidden-480">状态</th>
+														<th style="text-align:center;" class="hidden-480">内容</th>
+														<th style="text-align:center;width:100px;" class="hidden-480">状态</th>
 
-														<th style="text-align:center;">操作</th>
+														<th style="text-align:center;width:180px;">操作</th>
 													</tr>
 												</thead>
 												<?php foreach ($community as $key) { ?>
@@ -443,24 +444,28 @@
 														<td align="center">
 															<a href="#"><img src="<?php echo $key['img'] ?>" alt="" width="100px" height="100px"></a>
 														</td>
-														<td align="center" style="vertical-align:middle;"><?php echo $key['send'] ?></td>
-														<td align="center" style="vertical-align:middle;" class="hidden-480"><?php echo $key['sendtime'] ?></td>
-
+														<td align="center" style="vertical-align:middle;">
+															<span class="label label-sm label-info arrowed arrowed-righ"><?php echo $key['send'] ?></span>
+														</td>
+														<td align="center" style="vertical-align:middle;" class="hidden-480">
+															<span class="label label-sm label-inverse arrowed-in"><?php echo $key['sendtime'] ?></span>
+														</td>
+														<td class="hidden-480"><?php echo $key['content'] ?></td>
 														<td align="center" style="vertical-align:middle;" class="hidden-480">
 															<span class="label label-sm label-warning"><?php echo $key['state'] ?></span>
-														</td>
-
+														</td>					
+														
 														<td align="center" style="vertical-align:middle;">
 															<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-																<a class="blue" href="index.php?r=user/select&id=">
+																<a class="blue" href="index.php?r=user/select&id=<?php echo $key['id'] ?>">
 																	<i class="icon-zoom-in bigger-130"></i>
 																</a>
 
-																<a class="green" href="index.php?r=user/update&id=">
+																<a class="green" href="index.php?r=user/update&id=<?php echo $key['id'] ?>">
 																	<i class="icon-pencil bigger-130"></i>
 																</a>
 
-																<a class="red" href="index.php?r=user/delete&id=">
+																<a class="red" href="index.php?r=user/delete&id=<?php echo $key['id'] ?>">
 																	<i class="icon-trash bigger-130"></i>
 																</a>
 															</div>

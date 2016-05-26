@@ -9,9 +9,10 @@ use Yii;
  *
  * @property integer $id
  * @property string $send
- * @property string $photo
+ * @property string $img
  * @property string $state
  * @property string $sendtime
+ * @property string $content
  */
 class Community extends \yii\db\ActiveRecord
 {
@@ -30,8 +31,9 @@ class Community extends \yii\db\ActiveRecord
     {
         return [
             [['sendtime'], 'safe'],
+            [['content'], 'string'],
             [['send'], 'string', 'max' => 20],
-            [['photo'], 'string', 'max' => 50],
+            [['img'], 'string', 'max' => 255],
             [['state'], 'string', 'max' => 4]
         ];
     }
@@ -44,9 +46,10 @@ class Community extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'send' => 'Send',
-            'photo' => 'Photo',
+            'img' => 'Img',
             'state' => 'State',
             'sendtime' => 'Sendtime',
+            'content' => 'Content',
         ];
     }
 }
