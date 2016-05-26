@@ -237,13 +237,15 @@
     <!-- 20160322 start -->
     <div class="wid1000" id="">
         <!-- 面包屑导航 end-->
+        <?php foreach($arr as $k=>$v){?>
+        
         <div class="h1-tit rel">
-            <h1>紫阳国际</h1>
+            <h1><?php echo $v->title?></h1>
             <p class="gray9">
-                <span class="mr10">房源编号：966883</span>
-                <span>发布时间：2016-05-18 16:30:57</span>
+                <span class="mr10">房源编号：8977552165</span>
+                <span>发布时间：<?php echo $v->datetime?></span>
             </p>
-            <a target="_blank" class="btn-fabu" href="">免费发布房源</a>
+            <a target="_blank" class="btn-fabu" href="{{url('lease')}}">免费发布房源</a>
         </div>
         <!-- 房源信息 start -->
         <div class="houseInfor mt15 clearfix">
@@ -260,18 +262,7 @@
                                 
 
                                 <div class="image" id="image_xixi-1">
-
-                                    <img alt="房源图片" src="http://img3n.soufunimg.com/viewimage/agents/2013_12/18/M09/01/C3/wKgFklKxYXaIbiCOAAIydZ58XSsAACwawCy3BUAAjKN711/383x509.jpg" width="722" height="542" />
-                                    <div class="word" style="display: none;">
-                                        <h3>房源图片</h3>
-                                    </div>
-
-                                </div>
-                                
-
-                                <div class="image" id="image_xixi-2">
-
-                                    <img alt="房源图片" src="images/pic2.jpg" width="722" height="542" />
+                                    <img alt="房源图片" src="uploads/<?php echo $v->photo?>" width="722" height="542" />
                                     <div class="word" style="display: none;">
                                         <h3>房源图片</h3>
                                     </div>
@@ -285,13 +276,8 @@
                                 <div class="thumbs" id="thumbs">
                                     <ul style="width: 1200px; position: relative;">
                                         
-                                        <li class="slideshowItem"><a href="javascript:void(0)" id="thumb_xixi-1">
-                                            <img alt="房源图片" src="uploads/pic2.jpg" width="94" height="62">
-                                        </a>
-                                        </li>
-                                        
                                         <li class="slideshowItem"><a href="javascript:void(0)" id="thumb_xixi-2">
-                                            <img alt="房源图片" src="uploads/pic3.jpg" width="94" height="62">
+                                            <img alt="房源图片" src="uploads/<?php echo $v->photo?>" width="94" height="62">
                                         </a>
                                         </li>
                                         
@@ -307,26 +293,27 @@
             <!--jdt end-->
             <div class="floatr house-info-wrap">
                 <ul class="house-info">
-                    <li><span class="info-tit">租<span class="pl2e"></span>金：</span><strong class="red price bold">500</strong>元/月[押一付一]
+                    <li><span class="info-tit">租<span class="pl2e"></span>金：</span><strong class="red price bold"><?php echo $v->pay?></strong>元/月[押一付一]
                     </li>
 
-                    <li><span class="info-tit">房屋概况：</span>住宅<span class="splitline">|</span>1室0厅<span class="splitline">|</span>
+                    <li><span class="info-tit">房屋概况：</span>住宅<span class="splitline">|</span>2室1厅<span class="splitline">|</span>
                         <span title="建筑面积">45.00㎡</span>
                     </li>
 
-                    <li><span class="info-tit">小<span class="pl2e"></span>区：</span> <a target="_blank" href=" ">
-                        紫阳家园</a>[<a href=""">海淀</a>]
+                    <li><span class="info-tit">小<span class="pl2e"></span>区：</span> <a target="_blank" hre f=" ">
+                        <?php echo $v->community?></a>[<a href="""><?php echo $v->area?></a>]
                     </li>
-                    
                     <li >
                     <span class="info-tit">交<span class="pl2e"></span>通：</span>公交：498路、206路夜线。。。
                     </li>
-                    
+                    <li >
+                    <span class="info-tit">业<span class="pl2e"></span>主：</span><?php echo $v->contacts?>
+                    </li>
                 </ul>
 
                 <div class="tel-wrap clearfix">
                     <div class="tel red floatl">
-                        4008909651<span>转</span>722730
+                        <h2><?php echo $v->phone?></h2><span></span>
                     </div>
                     <a  name="look" id="lookhouse" class="btn-yuyue" href="javascript:void(0)">预约看房</a>
                 </div>
@@ -354,6 +341,7 @@
                 <!--设置成静态广告结束-->
             </div>
         </div>
+        <?php }?>
         <!-- 房源信息 end -->
         <!-- con start -->
 
@@ -365,7 +353,7 @@
                     <li id="ptss"><a href="#ptss-pos">配套设施</a></li>
                     <li id="fytp"><a href="#fytp-pos">房源图片</a></li>
                     <li id="dtjj"><a href="#zf_Map_anchor">地图街景</a></li>
-                    <li id="xqhj"><a href="">小区环境555</a></li>
+                    <li id="xqhj"><a href="">小区环境(期待吧。。。)</a></li>
                 </ul>
                 <div id="telnav" class="tel-wrap1 tel-wrap-nav floatr clearfix">
                     
@@ -394,42 +382,22 @@
                 </div>
             </div>
 
-            <div class="con-box clearfix mt20" id="ptss-pos">
-                <div class="con-box-tit clearfix">
-                    <ul class="floatl">
-                        <li class="on">配套设施</li>
-                    </ul>
-                </div>
-                <div class="config-list mt20">
-                    <ul>
-                        <li class="chuang">床</li>
-                        <li class="jiajv">家具</li>
-                        <li class="meiqi">煤气</li>
-                        <li class="nuanqi">暖气</li>
-                        <li class="kuandai">宽带</li>
-                        <li class="dianshi">电视</li>
-                        <li class="kongtiao">空调</li>
-                        <li class="bingxiang">冰箱</li>
-                        <li class="xiyiji">洗衣机</li>
-                        <li class="reshuiqi">热水器</li>
-                    </ul>
-                </div>
-            </div>
-            <!--房源图开始-->
-            <div class="con-box clearfix mt20" id="fytp-pos">
-                <div class="con-box-tit clearfix">
-                    <ul class="floatl">
-                        <li class="on">房源图片</li>
-                    </ul>
-                </div>
-                <div class="alingC fy-img mt20">
-                    <img class="mt10 b-lazy b-error" data-src="http://img3n.soufunimg.com/viewimage/agents/2013_12/18/M09/01/C3/wKgFklKxYXaIbiCOAAIydZ58XSsAACwawCy3BUAAjKN711/383x509.jpg" class="b-lazy b-error"
-                        src="images/pic8.jpg" alt="金晖嘉园小区图" /><br />
-                    <img class="mt10 b-lazy b-error" data-src="http://img3n.soufunimg.com/agents/2013_12/18/M07/01/C3/wKgFclKxYXSIVPrLAAIxwHK4EVAAACwYwNhyYYAAjHY148.jpg" class="b-lazy b-error"
-                        src="images/pic9.jpg" alt="金晖嘉园小区图" /><br />                    
-                </div>
-            </div>
-            <!--房源图end-->
+            <div class="con-box clearfix mt20" id="ptss-pos"> <div class="con-
+box-tit clearfix">                     <ul class="floatl"> <li
+class="on">配套设施</li>                     </ul>                 </div> <div
+class="config-list mt20"> <ul> <li class="chuang">床</li> <li
+class="jiajv">家具</li> <li class="meiqi">煤气</li> <li class="nuanqi">暖气</li> <li
+class="kuandai">宽带</li>                         <li class="dianshi">电视</li>
+<li class="kongtiao">空调</li> <li class="bingxiang">冰箱</li>
+<li class="xiyiji">洗衣机</li> <li class="reshuiqi">热水器</li> </ul>
+</div>             </div> <!--房源图开始--> <div class="con- box clearfix mt20" id
+="fytp-pos"> <div class ="con-box-tit clearfix">                     <ul
+class="floatl"> <li class="on">房源图片</li>                     </ul>
+</div> <div class="alingC fy-img mt20">                     <?php foreach($arr as $key => $val) {?>
+<img class="mt10 b-lazyb-error" data-src="uploads/<?php echo $val->photo?>" class="b-lazy
+b-error" src="uploads/<?php echo $val->photo?>" alt="<?php echo $val->community?>" /><br />
+<?php }?> </div>
+</div> <!--房源图end-->
             
 <!--地图展示-->
 <div class="con-box clearfix mt20" id="zf_Map_anchor">

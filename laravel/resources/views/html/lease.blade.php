@@ -50,47 +50,112 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 	<div class="clearfix"> </div>
 </div>
-<div >
-<center>
+
+<div style="float:left; display:inline; margin:0px;padding:0px;">
+    <img src="uploads/moneyhouse.jpg" width="500px" height="500px">
+</div>
+
+<div style="float:left; display:inline; margin:0px;padding:0px;">
+
     <table>
-        <tr>
-            <td>标题</td>
-            <td><input type="text" name="title"></td>
-        </tr>
-        <tr>
-            <td>地区</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>小区名</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>租金</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>详细描述</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>图片</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>联系人</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>电话</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>提交</td>
-            <td>重置</td>
-        </tr>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                主&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：
+            </span>
+            <input class="appCommunityName" size="30" name="" id="" type="text" maxlength="50" />
+            <input id="conmmunityid" name="RentEntrust[conmmunityid]" type="hidden" />
+            <!--<em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区：
+            </span>
+            <input class="appCommunityName" size="30" name="" id="" type="text" maxlength="50" />
+            <input id="conmmunityid" name="RentEntrust[conmmunityid]" type="hidden" />
+            <!--<em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                小&nbsp;区&nbsp;名：
+            </span>
+            <input class="appCommunityName" size="30" name="" id="" type="text" maxlength="50" />
+            <input id="conmmunityid" name="RentEntrust[conmmunityid]" type="hidden" />
+            <!--<em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                图&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;片：
+            </span>
+            <input class="appCommunityName" size="30" name="" id="" type="file" maxlength="50" />
+            <input id="conmmunityid" name="RentEntrust[conmmunityid]" type="hidden" />
+            <!--<em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                房源类型：
+            </span>
+            <input type="radio" value="1" id="ra1" checked="checked">小区&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="2" id="ra2">公寓&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="3" id="ra3">别墅
+           <!-- <span id="RentEntrust_rentmode"><input id="RentEntrust_rentmode_0" value="1" checked="checked" type="radio"/>小区
+            <input id="RentEntrust_rentmode_1" value="2" type="radio" />公寓</span>
+            &nbsp;&nbsp;&nbsp;&nbsp;<input id="RentEntrust_rentmode_1" value="2" type="radio"/>别墅</span>
+            <em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                租/售 方式：
+            </span>
+            <input type="radio" value="11" id="dio1" checked="checked">出租&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="22" id="dio2">出售
+            <!--<em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                意向租金：
+            </span>
+            <input class="appCommunityName" size="10" name="" id="" type="text" maxlength="50" />元/月
+            <input id="conmmunityid" name="RentEntrust[conmmunityid]" type="hidden" />
+            <!--<em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                详&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;情：
+            </span>
+            <textarea name="" rows="1" cols="10"></textarea>
+            <!--<input class="appCommunityName" size="30" name="" id="" type="text" maxlength="50" />
+            <input id="conmmunityid" name="RentEntrust[conmmunityid]" type="hidden" />
+            <em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                联&nbsp;系&nbsp;人：
+            </span>
+            <input class="appCommunityName" size="15" name="" id="" type="text" maxlength="50" />
+            <input id="conmmunityid" name="RentEntrust[conmmunityid]" type="hidden" />
+            <!--<em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <ul>
+            <span class="contact">
+                <b>*</b>
+                手&nbsp;机&nbsp;号：
+            </span>
+            <input class="appCommunityName" size="30" name="" id="" type="text" maxlength="50" />
+            <input id="conmmunityid" name="RentEntrust[conmmunityid]" type="hidden" />
+            <!--<em><div class="errorMessage" id="RentEntrust_conmmunityname_em_" style="display:none"></div></em>-->
+        </ul><br/>
+        <center>
+        <div class="main tc">
+            <input type="submit" value="提&nbsp;&nbsp;交">
+        </div>
+        </center>
     </table>
-    </center>
 </div>
 </body>
 </html>		
