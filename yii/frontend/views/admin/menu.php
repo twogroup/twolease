@@ -72,14 +72,14 @@
 
 						<ul class="submenu">
 							<li>
-								<a href="index.php?r=admin/">
+								<a href="index.php?r=house/houselist">
 									<i class="icon-double-angle-right"></i>
 									房源列表
 								</a>
 							</li>
 
 							<li>
-								<a href="jindex.php?r=admin/">
+								<a href="#">
 									<i class="icon-double-angle-right"></i>
 									交通路线
 								</a>

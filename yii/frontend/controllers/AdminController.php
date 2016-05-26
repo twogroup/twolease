@@ -74,4 +74,9 @@ class AdminController extends \yii\web\Controller
         return $this->redirect('index.php?r=admin/index');
     }
 
+    //房源管理
+    public function actionHouse(){
+        return $this->redirect('index.php?r=house/houselist');
+    }
+
 }
