@@ -16,8 +16,8 @@
 // Route::get('test', function(){
 //     return view("demo");
 // });
-//
-// Route::get('/', 'IndexController@index');
+//显示主页面
+ Route::get('/', 'IndexController@index');
 
 // Route::get('home', 'HomeController@index');
 
@@ -65,7 +65,6 @@ Route::get('map','ServiceController@map');//MAP
 Route::get('showsxq','ServiceController@showsxq');
 Route::get('zhan','ServiceController@objectToArray');
 
-Route::get('addss','ServiceController@addhouse');//添加房源
 
 Route::any('videos','ServiceController@neironggb');//视频
 

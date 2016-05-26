@@ -1,4 +1,9 @@
 <?php namespace App\Http\Controllers;
+use DB;
+use Input;
+use Object;
+use paginate;//分页样式一
+use simplePaginate;//分页样式二
 
 class IndexController extends Controller {
 
@@ -30,8 +35,9 @@ class IndexController extends Controller {
 	 */
 	public function index()
 	{
+        $posts = DB::table('house')->paginate(3);
         //return view('home');
-		return view('html/index');
+        return view('html/index',['posts'=>$posts]);
 	}
 
 

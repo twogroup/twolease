@@ -52,7 +52,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </div>
 
 <div style="float:left; display:inline; margin:0px;padding:0px;">
-    <img src="uploads/moneyhouse.jpg" width="500px" height="500px">
+    <img src="uploads/house/moneyhouse.jpg" width="500px" height="500px">
 </div>
 
 <div style="float:left; display:inline; margin:0px;padding:0px;">

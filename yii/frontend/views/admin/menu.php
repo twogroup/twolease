@@ -20,7 +20,7 @@
 			</a>
 			<ul class="submenu">
 				<li>
-					<a href="index.php?r=admin/landlordlist" class="dropdown-toggle">
+					<a href="index.php?r=user/landlord" class="dropdown-toggle">
 						<i class="icon-list"></i>
 						房东列表
 					</a>
@@ -35,7 +35,7 @@
 			</a>
 			<ul class="submenu">
 				<li>
-					<a href="index.php?r=admin/userlist" class="dropdown-toggle">
+					<a href="index.php?r=user/user" class="dropdown-toggle">
 						<i class="icon-list"></i>
 						租客列表
 					</a>
@@ -53,13 +53,13 @@
 	</a>
 	<ul class="submenu">
 		<li>
-			<a href="index.php?r=admin/">
+			<a href="index.php?r=house/houselist">
 				<i class="icon-double-angle-right"></i>
 				房源列表
 			</a>
 		</li>
 		<li>
-			<a href="jindex.php?r=admin/">
+			<a href="#">
 				<i class="icon-double-angle-right"></i>
 				交通路线
 			</a>
@@ -75,13 +75,13 @@
 	</a>
 	<ul class="submenu">
 		<li>
-			<a href="index.php?r=admin/chat">
+			<a href="index.php?r=community/chat">
 				<i class="icon-double-angle-right"></i>
 				聊天室管理
 			</a>
 		</li>
 		<li>
-			<a href="index.php?r=admin/community">
+			<a href="index.php?r=community/community">
 				<i class="icon-double-angle-right"></i>
 				贴子管理
 			</a>
@@ -97,13 +97,13 @@
 	</a>
 	<ul class="submenu">
 		<li>
-			<a href="index.php?r=admin/rent">
+			<a href="index.php?r=rent/total">
 				<i class="icon-double-angle-right"></i>
 				租金统计
 			</a>
 		</li>
 		<li>
-			<a href="index.php?r=admin/order">
+			<a href="#">
 				<i class="icon-double-angle-right"></i>
 				订单统计
 			</a>
@@ -119,13 +119,13 @@
 	</a>
 	<ul class="submenu">
 		<li>
-			<a href="index.php?r=admin/see">
+			<a href="#">
 				<i class="icon-double-angle-right"></i>
 				查看监控
 			</a>
 		</li>
 		<li>
-			<a href="index.php?r=admin/export">
+			<a href="#">
 				<i class="icon-double-angle-right"></i>
 				导出监控
 			</a>
@@ -141,19 +141,19 @@
 	</a>
 	<ul class="submenu">
 		<li>
-			<a href="index.php?r=admin/security">
+			<a href="#">
 				<i class="icon-double-angle-right"></i>
 				安全管理
 			</a>
 		</li>
 		<li>
-			<a href="index.php?r=admin/complaint">
+			<a href="#">
 				<i class="icon-double-angle-right"></i>
 				投诉建议
 			</a>
 		</li>
 		<li>
-			<a href="index.php?r=admin/costs">
+			<a href="#">
 				<i class="icon-double-angle-right"></i>
 				物业费用
 			</a>
