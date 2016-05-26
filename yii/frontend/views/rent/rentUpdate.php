@@ -558,7 +558,7 @@
                             <div class="clearfix form-actions">
                                 <div class="col-md-offset-3 col-md-9">
 
-                                    <?= Html::submitButton('Submit', ['class' => 'btn btn-info icon-ok bigger-110']) ?>
+                                    <?= Html::submitButton('Submit', ['class'=>"button orange shield glossy"]) ?>
                                     &nbsp; &nbsp; &nbsp;
 
                                     <? echo Html::resetButton('Reset', ['class'=>'btn icon-undo bigger-110']) ?>

@@ -595,116 +595,66 @@ use yii\helpers\Html;
 					<div class="page-content">
 								<div class="row">
 									<div class="col-xs-12">
-										
-										<div class="table-responsive">
-											<table id="sample-table-2" class="table table-striped table-bordered table-hover">
-												<thead>
-													<tr>
-														<th class="center">
-															<label>
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</th>
-														<th>发布人</th>
-														<th>主图</th>
-														<th class="hidden-480">money</th>
+									<!--房源单条信息修改入库 start-->
+										<?php
+										use yii\widgets\ActiveForm;
 
-														<th>
-															<i class="icon-time bigger-110 hidden-480"></i>
-															业主
-														</th>
-														<th class="hidden-480">类型</th>
+										$form = ActiveForm::begin([
+				                            'action' => 'index.php?r=house/uploadadd',
+				                            'method' => 'post',
+				                            //'options' => ['class' => 'form-horizontal'],
+										]) ?>
+											<?php ?>
+											<?php foreach($arr as $ktv):?>
+				                           <!-- <div class="form-group">-->
+				                                <label class="col-sm-3 control-label no-padding-right">业主</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="rent_people" id="form-field-1" placeholder="<?php echo $ktv['contacts']?>"  class="col-xs-10 col-sm-5" />
+				                                </div>
+				                           <!-- </div>-->
 
-														<th></th>
-													</tr>
-												</thead>
+				                                <label class="col-sm-3 control-label no-padding-right">小区名 </label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="by_rent_people" id="form-field-2" placeholder="<?php echo $ktv['community']?>" class="col-xs-10 col-sm-5" />
+				                                </div>
 
-												<tbody>
-												<!-- 房源信息列表展示 start -->
-												<?php foreach($ast as $key):?>
-													<tr>
-														<td class="center">
-															<label>
-																<input type="checkbox" class="ace" />
-																<span class="lbl"></span>
-															</label>
-														</td>
+				                                <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> 地址 </label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="house_type" id="form-field-2" placeholder="<?php echo $ktv['area']?>" class="col-xs-10 col-sm-5" />
+				                                </div>
 
-														<td>
-															<a href="index.php?r=house/details&detailsid=<?php echo $key['rent_id']?>"><?php echo $key['lname']?></a>
-														</td>
-														<td><img src="/twolease/laravel/public/uploads/house/<?php echo $key['photo']?>" width="50px" height="30px"></td>
-														<td class="hidden-480"><?php echo $key['pay']?></td>
-														<td><?php echo $key['contacts']?></td>
-														<td class="hidden-480">
-															<span class="label label-sm label-warning">
-																<?php if($key['lease']==0){?>
-																	<span> 已租</span>
-																<?php }elseif($key['lease']==1){?>
-																	<span>未租</span>
-																<?php }elseif($key['lease']==2){?>
-																	<span>已 售</span>
-																<?php }else{?>
-																<span>未售</span>
-																<?php }?>
-															</span>
-														</td>
-														<td>
-															<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-																<!--<a class="blue" href="#">
-																	<i class="icon-zoom-in bigger-130">-1</i>
-																</a>-->
+				                                <label class="col-sm-3 control-label no-padding-right">期望租金</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="mon_rental" id="form-field-1" placeholder="<?php echo $ktv['pay']?>" class="col-xs-10 col-sm-5" />
+				                                    <span class="help-inline col-xs-12 col-sm-7">
+														<span class="middle">元/月</span>
+													</span>
+				                                </div>
 
-																<a class="green" href="index.php?r=house/houseupload&id=<?php echo $key['rent_id']?>">
-																	<i class="icon-pencil bigger-130"></i>
-																</a>
+				                                <label class="col-sm-3 control-label no-padding-right" for="form-field-tags">房屋简介</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="property_class" id="form-field-1" placeholder="<?php echo $ktv['content']?>" class="col-xs-10 col-sm-5" />
+				                                </div>
 
-																<a class="red" href="index.php?r=house/housedelete&id=<?php echo $key['rent_id']?>">
-																	<i class="icon-trash bigger-130"></i>
-																</a>
-															</div>
+				                                <label class="col-sm-3 control-label no-padding-right" for="form-field-6">联系电话</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="rent_money" id="form-field-1" placeholder="<?php echo $ktv['phone']?>" class="col-xs-10 col-sm-5" />
+				                                </div>
 
-															<div class="visible-xs visible-sm hidden-md hidden-lg">
-																<div class="inline position-relative">
-																	<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">
-																		<i class="icon-caret-down icon-only bigger-120"></i>
-																	</button>
+					                            <div class="col-sm-9">
+					                                <input type="hidden" name="id" value="<?php echo $ktv['rent_id']?>"/>
+					                            </div>
 
-																	<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
-																		<li>
-																			<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
-																				<span class="blue">
-																					<i class="icon-zoom-in bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
-																				<span class="green">
-																					<i class="icon-edit bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-
-																		<li>
-																			<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
-																				<span class="red">
-																					<i class="icon-trash bigger-120"></i>
-																				</span>
-																			</a>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</td>
-													</tr>
-												<?php endforeach;?>
-													<!-- 房源信息列表 end -->
-												</tbody>
-											</table>
-										</div>
+				                            <div class="clearfix form-actions">
+				                                <div class="col-md-offset-3 col-md-9"><br/>
+				                                    <?= Html::submitButton('保存修改', ['class' => 'button pink serif round glass']) ?>
+				                                    &nbsp; &nbsp; &nbsp;
+				                                    <? echo Html::resetButton('重置', ['class'=>"button orange shield glossy"]) ?>
+				                                </div>
+				                            </div>
+			                        <?php endforeach;?>
+			                        <?php ActiveForm::end() ?>
+				                    <!--房源单条信息修改入库 end -->
 									</div>
 								</div>
 
@@ -720,33 +670,7 @@ use yii\helpers\Html;
 												</div>
 											</div>
 
-											<div class="modal-body no-padding">
-												<table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
-													<thead>
-														<tr>
-															<th>title</th>
-															<th>实图</th>
-															<th>money</th>
-
-															<th>
-																<i class="icon-time bigger-110"></i>
-																业主
-															</th>
-														</tr>
-													</thead>
-
-													<tbody>
-														<tr>
-															<td>
-																<a href="#">森林屋2</a>
-															</td>
-															<td><img src=".\zulin\twolease\laravel\public\uploads\2.jpg"></td>
-															<td>66666</td>
-															<td>森哥</td>
-														</tr>
-													</tbody>
-												</table>
-											</div>
+						
 
 											<div class="modal-footer no-margin-top">
 												<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
