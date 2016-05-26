@@ -2,10 +2,14 @@
 namespace frontend\controllers;
 use yii;
 use yii\web\Request;
-
+/*
+*   class house 后房源管理
+*   韦森
+*/
 
 class HouseController extends \yii\web\Controller
 {
+    public $layout = false;
 	//房源列表
     public function actionHouselist()
     {

@@ -16,8 +16,8 @@
 // Route::get('test', function(){
 //     return view("demo");
 // });
-//
-// Route::get('/', 'IndexController@index');
+//显示主页面
+ Route::get('/', 'IndexController@index');
 
 // Route::get('home', 'HomeController@index');
 

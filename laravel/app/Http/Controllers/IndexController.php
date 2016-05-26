@@ -35,7 +35,7 @@ class IndexController extends Controller {
 	 */
 	public function index()
 	{
-        $posts = DB::table('rent')->paginate(3);
+        $posts = DB::table('house')->paginate(3);
         //return view('home');
         return view('html/index',['posts'=>$posts]);
 	}
