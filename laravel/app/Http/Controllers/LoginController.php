@@ -74,7 +74,7 @@ class LoginController extends Controller {
                         'pwd' => $userPswd,
                         'email' => $email,
                         'status' => $sta,
-                        'photoss' => "uploads/".$newImagesName
+                        'photos' => "uploads/".$newImagesName
                     )
                 )
             );
