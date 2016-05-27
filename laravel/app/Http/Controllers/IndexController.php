@@ -1,22 +1,16 @@
 <?php namespace App\Http\Controllers;
+
 use DB;
 use Input;
 use Object;
 use paginate;//分页样式一
 use simplePaginate;//分页样式二
 
+/**
+ * Class IndexController
+ * @package App\Http\Controllers
+ */
 class IndexController extends Controller {
-
-	/*
-	|--------------------------------------------------------------------------
-	| Welcome Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders the "marketing page" for the application and
-	| is configured to only allow guests. Like most of the other sample
-	| controllers, you are free to modify or remove it as you desire.
-	|
-	*/
 
 	/**
 	 * Create a new controller instance.
@@ -28,16 +22,12 @@ class IndexController extends Controller {
 		$this->middleware('guest');
 	}
 
-	/**
-	 * Show the application welcome screen to the user.
-	 *
-	 * @return Response
-	 */
+    /**
+     * @return \Illuminate\Http\RedirectResponse
+     */
 	public function index()
 	{
-        $posts = DB::table('house')->paginate(3);
-        //return view('home');
-        return view('html/index',['posts'=>$posts]);
+        return redirect()->action('ServiceController@shows');
 	}
 
 

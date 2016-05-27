@@ -104,9 +104,10 @@ use yii\helpers\Html;
 							<span class="btn btn-danger"></span>
 						</div>
 					</div><!-- #sidebar-shortcuts -->
-					<ul class="nav nav-list">
-						<?php  require(__DIR__ . '/../../views/admin/menu.php');?>
+						<ul class="nav nav-list">
+							<?php  require(__DIR__ . '/../../views/admin/menu.php');?>
 					</ul><!-- /.nav-list -->
+
 					<div class="sidebar-collapse" id="sidebar-collapse">
 						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
 					</div>
@@ -147,24 +148,66 @@ use yii\helpers\Html;
 					<div class="page-content">
 								<div class="row">
 									<div class="col-xs-12">
-										
-										<div class="table-responsive">
-											<!-- 房源详情start -->
-											<center>
-											<?php foreach ($arr as $vc){?>
-											<table>
-											<!-- <table class="table table-striped table-bordered table-hover"> -->
-												<h2><?php echo $vc['title'];?></h2>
-												<h5>发布人：<?php echo $vc['lname']?> &nbsp;&nbsp;&nbsp;&nbsp;发布时间:<?php echo $vc['datetime']?></h5>
-												<img src="/twolease/laravel/public/uploads/house/<?php echo $vc['photo']?>" width="300px" height="200px">
-												<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本房屋位于<font color="red"><?php echo $vc['area']?></font>的高端区的<font color="red"><?php echo $vc['community']?></font>，小区管理到位安全安静，绿环面积高，环境幽雅，（啊哈哈的机会的反馈时间按发货都是课教案和附件是事实上事实上事实上事实上撒地方看看快快快快快快快快快快快快快快快快快快快快快就会尽快哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈就水水水水啊哈哈的机会的反馈时间按发货都是课教案和附件是事实上事实上事实上事实上撒地方看看快快快快快快快快快快快快快快快快快快快快快就会尽快哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈就水水水水）为<font color="red"><?php echo $vc['content']?></font>房型，适合小孩、老人、上班族等居住，租金为<font color="red"><?php echo $vc['pay']?></font>，业主急售价还有商量，绝对超值！</h5>
-												<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系人：<font color="red"><?php echo $vc['contacts']?></font></h5>
-												<h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;联系电话：<font color="red"><?php echo $vc['phone']?></font></h5>
-											</table>
-											<?php  } ?>	
-											</center>
-											<!-- 房源详情end -->
-										</div>
+									<!--房源单条信息修改入库 start-->
+										<?php
+										use yii\widgets\ActiveForm;
+
+										$form = ActiveForm::begin([
+				                            'action' => 'index.php?r=house/uploadadd',
+				                            'method' => 'post',
+				                            //'options' => ['class' => 'form-horizontal'],
+										]) ?>
+											<?php ?>
+											<?php foreach($arr as $ktv):?>
+				                           <!-- <div class="form-group">-->
+				                                <label class="col-sm-3 control-label no-padding-right">业主</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="rent_people" id="form-field-1" placeholder="<?php echo $ktv['contacts']?>"  class="col-xs-10 col-sm-5" />
+				                                </div>
+				                           <!-- </div>-->
+
+				                                <label class="col-sm-3 control-label no-padding-right">小区名 </label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="by_rent_people" id="form-field-2" placeholder="<?php echo $ktv['community']?>" class="col-xs-10 col-sm-5" />
+				                                </div>
+
+				                                <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> 地址 </label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="house_type" id="form-field-2" placeholder="<?php echo $ktv['area']?>" class="col-xs-10 col-sm-5" />
+				                                </div>
+
+				                                <label class="col-sm-3 control-label no-padding-right">期望租金</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="mon_rental" id="form-field-1" placeholder="<?php echo $ktv['pay']?>" class="col-xs-10 col-sm-5" />
+				                                    <span class="help-inline col-xs-12 col-sm-7">
+														<span class="middle">元/月</span>
+													</span>
+				                                </div>
+
+				                                <label class="col-sm-3 control-label no-padding-right" for="form-field-tags">房屋简介</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="property_class" id="form-field-1" placeholder="<?php echo $ktv['content']?>" class="col-xs-10 col-sm-5" />
+				                                </div>
+
+				                                <label class="col-sm-3 control-label no-padding-right" for="form-field-6">联系电话</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="rent_money" id="form-field-1" placeholder="<?php echo $ktv['phone']?>" class="col-xs-10 col-sm-5" />
+				                                </div>
+
+					                            <div class="col-sm-9">
+					                                <input type="hidden" name="id" value="<?php echo $ktv['rent_id']?>"/>
+					                            </div>
+
+				                            <div class="clearfix form-actions">
+				                                <div class="col-md-offset-3 col-md-9"><br/>
+				                                    <?= Html::submitButton('保存修改', ['class' => 'button pink serif round glass']) ?>
+				                                    &nbsp; &nbsp; &nbsp;
+				                                    <? echo Html::resetButton('重置', ['class'=>"button orange shield glossy"]) ?>
+				                                </div>
+				                            </div>
+			                        <?php endforeach;?>
+			                        <?php ActiveForm::end() ?>
+				                    <!--房源单条信息修改入库 end -->
 									</div>
 								</div>
 
@@ -180,33 +223,7 @@ use yii\helpers\Html;
 												</div>
 											</div>
 
-											<div class="modal-body no-padding">
-												<!-- <table class="table table-striped table-bordered table-hover no-margin-bottom no-border-top">
-													<thead>
-														<tr>
-															<th>title</th>
-															<th>实图</th>
-															<th>money</th>
-
-															<th>
-																<i class="icon-time bigger-110"></i>
-																业主
-															</th>
-														</tr>
-													</thead>
-
-													<tbody>
-														<tr>
-															<td>
-																<a href="#">森林屋2</a>
-															</td>
-															<td><img src=".\zulin\twolease\laravel\public\uploads\2.jpg"></td>
-															<td>66666</td>
-															<td>森哥</td>
-														</tr>
-													</tbody>
-												</table> -->
-											</div>
+						
 
 											<div class="modal-footer no-margin-top">
 												<button class="btn btn-sm btn-danger pull-left" data-dismiss="modal">
@@ -306,13 +323,13 @@ use yii\helpers\Html;
 
 		<!--[if !IE]> -->
 
-<!--		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-<!--<![endif]-->-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
 
 		<!--[if !IE]> -->
 

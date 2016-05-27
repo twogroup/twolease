@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -11,17 +12,6 @@ use Illuminate\Routing\Redirector;
  * @package App\Http\Controllers
  */
 class LoginController extends Controller {
-
-    /*
-    |--------------------------------------------------------------------------
-    | Welcome Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller renders the "marketing page" for the application and
-    | is configured to only allow guests. Like most of the other sample
-    | controllers, you are free to modify or remove it as you desire.
-    |
-    */
 
     /**
      * Create a new controller instance.
@@ -66,13 +56,13 @@ class LoginController extends Controller {
 
         $clientName = $files ->  getClientOriginalName();
        //所以这里道出了文件上传的原理,将文件上传的某个临时目录中,然后使用Php的函数将文件移动到指定的文件夹.
-        $entension = $files -> getClientOriginalExtension();   //上传文件的后缀.
+        $entension = $files -> getClientOriginalExtension();         //上传文件的后缀.
 
         $filedir=$_SERVER['DOCUMENT_ROOT']."/uploads/user/";//上传存放的目录
 
-        $newImagesName=md5(time()).rand(1000,9999).".".$entension; //重新命名上传文件名字
+        $newImagesName=md5(time()).rand(1000,9999).".".$entension;  //重新命名上传文件名字
         $files->move($filedir,$newImagesName); //使用move 方法移动文件.
-//print_r($filedir) ;die;
+
         //添加注册用户
             $sql= DB::table('user')->insert(array(
                     array('username' => $name,
@@ -86,7 +76,7 @@ class LoginController extends Controller {
 
         //判断是否添加成功，添加成功跳转到登录页面
         if($sql){
-            echo "<script>alert('注册成功，正在跳转登录页面！');location.href='logins'</script>";
+            return "<script>alert('注册成功，正在跳转...');location.href='logins'</script>";
         }
     }
     /**
@@ -96,9 +86,9 @@ class LoginController extends Controller {
         $name=Request::input('u_name');
         $pwd=Request::input('pwds');
         $free=Request::input('free');
-        //echo $name;die;
         $salt = substr($pwd, 0, 2);
         $userPswd = crypt($pwd, $salt);
+
         //七天免登录
        //echo $userPswd;die;
         $users = DB::table('user')->select()
@@ -124,7 +114,7 @@ class LoginController extends Controller {
 
             }else{
 
-                echo "<script>alert('登录失败,请重新登录！');location.href='logins'</script>";
+                return "<script>alert('登录失败,请重新登录！');location.href='logins'</script>";
             }
     }
 

@@ -6,6 +6,11 @@ use frontend\models\Admin;
 use frontend\models\Landlord;
 use frontend\models\User;
 use yii\web\Session;
+/*
+*   class admin 后台管理员登录控制器
+*   
+*   
+*/
 class AdminController extends \yii\web\Controller
 {
     public $layout = false;
@@ -29,7 +34,7 @@ class AdminController extends \yii\web\Controller
         {
             $session = Yii::$app->session;
             $session['name'] = $name;
-            Yii::$app->getSession()->setFlash('success', '登录成功');
+            //Yii::$app->getSession()->setFlash('success', '登录成功');
             return $this->redirect('index.php?r=admin/show');
         }
         else
@@ -42,29 +47,9 @@ class AdminController extends \yii\web\Controller
     {
         $session = Yii::$app->session;
         $name=$session['name'];
-        return $this->render('index',['name'=>$name]);
+        return $this->render('index');
     }
-    
-    //房东列表
-    public function actionLandlordlist()
-    {
-        //$model = new Landlord();
-        return $this->redirect('index.php?r=user/landlord');
-    }
-    
-    //租客列表
-    public function actionUserlist()
-    {
-        //$model = new User();
-        return $this->redirect('index.php?r=user/user');
-    }
-
-    //贴子管理
-    public function actionCommunity()
-    {
-        return $this->redirect('index.php?r=community/community');
-    }
-    /**
+    /*
      * 退出登录
      */
     public function actionExits(){
@@ -73,10 +58,4 @@ class AdminController extends \yii\web\Controller
         unset($session['name']);
         return $this->redirect('index.php?r=admin/index');
     }
-
-    //房源管理
-    public function actionHouse(){
-        return $this->redirect('index.php?r=house/houselist');
-    }
-
 }
