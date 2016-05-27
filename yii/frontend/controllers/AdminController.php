@@ -34,7 +34,7 @@ class AdminController extends \yii\web\Controller
         {
             $session = Yii::$app->session;
             $session['name'] = $name;
-            Yii::$app->getSession()->setFlash('success', '登录成功');
+            //Yii::$app->getSession()->setFlash('success', '登录成功');
             return $this->redirect('index.php?r=admin/show');
         }
         else
@@ -47,7 +47,7 @@ class AdminController extends \yii\web\Controller
     {
         $session = Yii::$app->session;
         $name=$session['name'];
-        return $this->render('index',['name'=>$name]);
+        return $this->render('index');
     }
     /*
      * 退出登录

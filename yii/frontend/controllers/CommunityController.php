@@ -13,7 +13,7 @@ class CommunityController extends \yii\web\Controller
 {
 	public $layout = false;
     //显示帖子列表
-    public function actionCommunity()
+    public function actionStick()
     {
     	//$model = new Community();
     	$query = Community::find();
@@ -25,7 +25,7 @@ class CommunityController extends \yii\web\Controller
             ->limit($pagination->limit)
             ->all();
 
-        return $this->render('community', [
+        return $this->render('stick', [
             'community' => $countries,
             'pagination' => $pagination,
         ]);
@@ -45,12 +45,12 @@ class CommunityController extends \yii\web\Controller
         if($pass)
         {
             Yii::$app->getSession()->setFlash('success', '通过成功');
-            return $this->redirect('index.php?r=community/community');
+            return $this->redirect('index.php?r=community/stick');
         }
         else
         {
             Yii::$app->getSession()->setFlash('error', '通过失败');
-            return $this->redirect('index.php?r=community/community');
+            return $this->redirect('index.php?r=community/stick');
         }
     }
 
@@ -100,4 +100,9 @@ class CommunityController extends \yii\web\Controller
         }
     }
 
+    //聊天室管理
+    public function actionChat()
+    {
+        return $this->render('chat');
+    }
 }

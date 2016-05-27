@@ -13,7 +13,11 @@
 				<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
 				<span class="user-info">
 					<small>欢迎光临,</small>
-					<?php  ?>
+					<?php
+						$session = Yii::$app->session;
+    					$session->open();
+    					echo $session['name'];
+					?>
 				</span>
 
 				<i class="icon-caret-down"></i>
