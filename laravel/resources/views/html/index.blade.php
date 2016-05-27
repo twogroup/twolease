@@ -20,8 +20,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery-1.11.1.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=Grand+Hotel:400' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet:100,300,400,500,600,700,800,900' type='text/css'>
+{{--<link href='http://fonts.googleapis.com/css?family=Grand+Hotel:400' rel='stylesheet' type='text/css'>--}}
+{{--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet:100,300,400,500,600,700,800,900' type='text/css'>--}}
 
 <!--a标签传值（传ID至控制器）-->
 <script>
@@ -293,7 +293,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
    <div class="container">
    	  <!--最受欢迎的房源-->
    	  <h4 class="m_3">最受欢迎的房源</h4>
-   	  <d iv class="grid_1">
+   	  <div class="grid_1">
 		<div class="col-md-3 box_1">
 			<a href="single.html"><img src="images/pic8.jpg" class="img-responsive" alt=""/></a>
 		    <div class="box_2">
@@ -363,7 +363,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		   </div>
 		</div>
 		<div class="clearfix"> </div>
-	</div>
+
+</div>
 	<!--房源信息-->
 	   <div class="content_bottom">
 		<!--类型出售、出租-->
@@ -390,48 +391,206 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
              </div>
 		</div>
 		<!--房源信息详情展示file:/D:/WWW/zulin/-->
-		<div class="col-md-7">	
-		   <div class="sap_tabs">
-				<div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-						 <div class="tab_grid">
-							  <ul class="resp-tabs-list">
-								  <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span><a href="{{url('shows')}}">全部</a></span></li>
-                                  <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span><a href="{{url('chu')}}">已租</a></span></li>
-								  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span><a href="{{url('wei')}}">未租</a></span></li>
-								  <li class="resp-tab-item" aria-controls="tab_item-3" role="tab"><span><a href="{{url('shou')}}">已售</a></span></li>
-								  <div class="clearfix"></div>
-							  </ul>	
-							</div>
-							<!--房源信息循环遍历 -->
-							    <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-							    	<ul class="tab_img tab_1">
-							    	@foreach ($posts as $post)
-									  <li>
-										<div class="client_box1">
-					       				    <img src="uploads/{{ $post->photo }}" class="img-responsive" alt="" width="500px" height="500px" />
-					       				    <h5>$&nbsp;{{ $post->pay }}</h5>
-					       				    <h3 class="m_1"><a href="javascript:void(0)" onclick="nae({{ $post->rent_id }})">{{ $post->title }}</a></h3>
-					       				    <div>联系人：{{ $post->contacts }}</div>
-					       				    <div>联系电话：{{ $post->phone }}</div>
-					       				    <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>车库</strong><i class="fa fa-plane icon1"></i>
-			                                    1</span>
-			                                    <span class="status"><strong>洗澡</strong><i class="fa fa-retweet icon1"> </i>
+           </br>
+
+           <div class="col-md-7">
+               <div class="sap_tabs">
+                   <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                       <div class="tab_grid">
+                           <ul class="resp-tabs-list">
+                               <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>全部</span></li>
+                               <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>热门房源</span></li>
+                               <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>增值房源</span></li>
+                               <div class="clearfix"></div>
+                           </ul>
+                       </div>
+                       <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                           <ul class="tab_img tab_1">
+                               <li>
+                                   <div class="client_box1">
+                                       <img src="images/pic1.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;650</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
 			                                    2</span>
-			                                    <span class="bedrooms last"><strong>床</strong><i class="fa fa-building-o icon1"></i>
-			                                    5</span>
-                                            </div>
-					       				 </div>
-										</li>
-										@endforeach
-										<div class="clearfix"></div>
-									</ul>
-							    	
-							     </div>	
-							     {!! $posts->render() !!}
-				  </div>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li>
+                                   <div class="client_box1">
+                                       <img src="images/pic2.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;450</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="last">
+                                   <div class="client_box1">
+                                       <img src="images/pic3.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;220</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <div class="clearfix"></div>
+                           </ul>
+                           <ul class="tab_img">
+                               <li>
+                                   <div class="client_box1">
+                                       <img src="images/pic4.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;650</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li>
+                                   <div class="client_box1">
+                                       <img src="images/pic5.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;450</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="last">
+                                   <div class="client_box1">
+                                       <img src="images/pic6.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;500</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <div class="clearfix"></div>
+                           </ul>
+                       </div>
+                       <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+
+                           <ul class="tab_img">
+                               <li>
+                                   <div class="client_box1">
+                                       <img src="images/pic4.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;650</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li>
+                                   <div class="client_box1">
+                                       <img src="images/pic5.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;450</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="last">
+                                   <div class="client_box1">
+                                       <img src="images/pic6.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;500</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <div class="clearfix"></div>
+                           </ul>
+                       </div>
+                       <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-2">
+                           <ul class="tab_img">
+                               <li>
+                                   <div class="client_box1">
+                                       <img src="images/pic5.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;450</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <li class="last">
+                                   <div class="client_box1">
+                                       <img src="images/pic6.jpg" class="img-responsive" alt=""/>
+                                       <div class="box_type">$&nbsp;500</div>
+                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
+                                       <div class="boxed_mini_details clearfix">
+			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
+			                                    2</span>
+			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
+			                                    2</span>
+			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
+			                                    2</span>
+                                       </div>
+                                   </div>
+                               </li>
+                               <div class="clearfix"></div>
+                           </ul>
+                       </div>
+                   </div>
+               </div>
            </div>
-        </div>
         <!--房源代理商-->
         <div class="col-md-3">
 			<div class="blog_list2">
@@ -485,135 +644,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
         <div class="clearfix"> </div>
         </div>
-        <div class="grid_4">
 
-                <!--帮助的下拉视频开始-->
-                <div class="col-md-7 grid_6">
-					<center>
-					<h1>帮助视频</h1>
-					<select name='selectSS'id="selectSS" onChange="GaiBian(this)">
-					  <option value='zxc'>gii工具简介.mp4</option> 
-					  <option value='zxc'>gii工具之控制器生成器.mp4</option> 
-					  <option value='zxc'>gii总结.mp4</option> 
-					</select>
-					<br />
-					<a href="#" onclick="SetIndex(1)">change</a>
-						<video src="video/gii总结.mp4" autoplay="autoplay" width="600px" height="400px" id="bofang"></video>
-					</center>
-					<script type="text/javascript" language="javascript">
-						//视频
-						var mp4=document.getElementById("mp4");
-						//播放结束触发
-						mp4.onended=function(){
-							mp4.pause();
-						}
-						//播放时触发
-						mp4.onplay=function(){
-							//alert("play");
-							//mp4.pause();//暂停
-						}
-						//内容改变事件
-						function GaiBian(osel){
-						    var aas=(osel.options[osel.selectedIndex].text);
-						    //alert(aas);
-						    $.ajax({
-							   //type: "POST",
-							   url: "videos",
-							   data: {'xqid':aas},
-							   success: function(msg){
-							     //alert(  msg );
-							    // var img=msg;
-							      //$('#bofang').prop('src',msg);
-							      var img=msg;
-							      $('#bofang').prop('src',msg);
-							   }
-							});
-						}
-						function SetIndex(v){
-						   
-						  var s=document.getElementById('selectSS');
-						  s.selectedIndex=v;
-						  if(s.onchange)s.onchange();    
-						}
-					</script>
-                </div>
-                <!--帮助的下拉视频结束-->
-
-                <!-- <div class="col-md-5 grid_5">
-                    <div class="banner2">
-                        
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
-                <div class="clearfix"> </div>-->
-        </div>
-        <div class="grid_7">
-        	<div class="col-md-4 box_4">
-        		<h4>Receive our Newsletter</h4>
-        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliq.</p>
-        	    <div class="search">
-						  <form>
-							   <input type="text" value="">
-							   <input type="submit" value="Subscribe">
-						  </form>
-					    </div>
-        	</div>
-        	<div class="col-md-4">
-        		<address class="footer-addr">
-                        totam rem aperiam, <br>
-                        voluptatum deleniti , USA <br>
-                        E-MAIL:
-                        <a href="#">MAIL@DEMOLINK.ORG</a>
-
-                        <div class="phone">
-                            <span>(500)</span> 1254 6487
-                        </div>
-                    </address>
-        	</div>
-        	<div class="col-md-2">
-        		<ul class="list_2">
-                        <li>
-                            <a href="#">1st &amp; 2nd Mortgages</a>
-                        </li>
-                        <li>
-                            <a href="#">Construction Loans</a>
-                        </li>
-                        <li>
-                            <a href="#">Fractional Ownerships</a>
-                        </li>
-                        <li>
-                            <a href="#">Home Refinancing</a>
-                        </li>
-                        <li>
-                            <a href="#">Home Equity Lines</a>
-                        </li>
-                </ul>
-        	</div>
-        	<div class="col-md-2">
-        		<ul class="list_2">
-                        <li>
-                            <a href="#">1st &amp; 2nd Mortgages</a>
-                        </li>
-                        <li>
-                            <a href="#">Construction Loans</a>
-                        </li>
-                        <li>
-                            <a href="#">Fractional Ownerships</a>
-                        </li>
-                        <li>
-                            <a href="#">Home Refinancing</a>
-                        </li>
-                        <li>
-                            <a href="#">Home Equity Lines</a>
-                        </li>
-                </ul>
-        	</div>
-        	<div class="clearfix"> </div>
-        </div>
         <div class="copy">
-			<p>© 2015 All Rights Reseverd Template by <a href="#">W3layouts</a> </p>
+            @include('components.footer')
 	    </div>
 	</div>
-</div>
 </body>
 </html>		

@@ -1,23 +1,19 @@
 <?php
  namespace App\Http\Controllers;
+
 use DB;
 use Input;
-use Object;
-use paginate;//分页样式一
+use App\Http\Requests\Request;
+use Illuminate\Contracts\Pagination;
+use PhpParser\Node\Expr\Cast\Object;
+//use paginate;//分页样式一
 use simplePaginate;//分页样式二
 
+/**
+ * Class ServiceController
+ * @package App\Http\Controllers
+ */
 class ServiceController extends Controller {
-
-	/*
-	|--------------------------------------------------------------------------
-	| Welcome Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders the "marketing page" for the application and
-	| is configured to only allow guests. Like most of the other sample
-	| controllers, you are free to modify or remove it as you desire.
-	|
-	*/
 
 	/**
 	 * Create a new controller instance.
@@ -35,75 +31,110 @@ class ServiceController extends Controller {
 	 * @return Response
 	 */
 
-    public function services(request $request)
+    public function services()
     {
-        return view('html.services');
+        $posts = DB::table('house')->paginate(12);
+        return view('html.services',['posts'=>$posts]);
     }
 
-    //所有房源信息展示
+
+    /**
+     * 所有房源信息展示
+     * @return \Illuminate\View\View
+     */
     public function shows(){
-        $posts = DB::table('house')->paginate(3);
+        $posts = DB::table('availability')->paginate(3);
+        //print_r($posts);die;
         return view('html/index',['posts'=>$posts]);
     }
-    //已租
+
+    /**
+     * 已租
+     * @return $this
+     */
     public function chu(){
-    	//$data = DB::table('house')->where('lease','0')->get();
+
         $posts = DB::table('house')->where('lease','0')->paginate(3);
-    	return view('html/index')->with('arrr',$data);
+    	return view('html/index')->with('arrr',$posts);
     }
-    //未租
+
+    /**
+     * 未租
+     * @return $this
+     */
     public function wei(){
-    	//$data = DB::table('rent')->where('lease','1')->get();
+
         $posts = DB::table('house')->where('lease','1')->paginate(3);
-    	return view('html/index')->with('arrr',$data);
+    	return view('html/index')->with('arrr',$posts);
     }
-    //已售
+
+    /**
+     * 已售
+     * @return $this
+     */
     public function shou(){
-    	//$data = DB::table('rent')->where('lease','2')->get();
+
         $posts = DB::table('house')->where('lease','2')->paginate(3);
-    	return view('html/index')->with('arrr',$data);
+    	return view('html/index')->with('arrr',$posts);
     }
-    //详情
+
+    /**
+     * @return \Illuminate\View\View
+     * 详情
+     */
     public function details(){
 
     	return view('html.single3');
     }
-    //单个房源详情
+
+    /**
+     * 单个房源详情
+     * @return mixed
+     */
     public function showsxq(){
-        $a = Input::get('xqid');
-        $data = DB::table('house')->where('rent_id',$a)->get();
-        $obj = $data['0'];
-        $nums = get_object_vars($obj);
-        $id = $nums['rent_id'];
-        return $id;
-        //print_r($nums);die;
-        //view('html/single3')->with($id);
+        $house_id = Input::get('xqid');
+        $data = DB::table('house')->where('rent_id',$house_id)->get();
+        $nums = get_object_vars($data['0']);
+
+        return $nums['rent_id'];
+
     }
-    //map
+
+    /**
+     * map
+     * @return \Illuminate\View\View
+     */
     public function map(){
 
         return view('html.map');
     }
+
+    /**
+     * @return $this
+     */
     function objectToArray(){
-        $id = Input::get();//接ID
+
+        $id = Input::get(); //接ID
         $data = DB::table('house')->where('rent_id',$id)->get();//查询数据
-        //$obj = $data['0'];
-        //$array1 = get_object_vars($obj);//将对象转换为数组格式
-        //print_r($data);die;
+
         return view('html/single3')->with('arr',$data);
         
     }
 
-    //添加房源
+    /**
+     * 添加房源
+     * @return \Illuminate\View\View
+     */
     public function addhouse(){
         
         return view('html/addroom');
     }
 
-    //视频
-    
+    /**
+     * 视频
+     */
     public function neironggb(){
-       $data = Input::get();//接ID
+       $data = Input::get();    //接ID
         $name = "video/".$data['xqid'];
         echo $name;die;
        // return $this->render('dianming.html',array);

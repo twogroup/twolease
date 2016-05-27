@@ -1,17 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use DB;
+/**
+ * Class AboutController
+ * @package App\Http\Controllers
+ */
 class AboutController extends Controller {
-
-	/*
-	|--------------------------------------------------------------------------
-	| Welcome Controller
-	|--------------------------------------------------------------------------
-	|
-	| This controller renders the "marketing page" for the application and
-	| is configured to only allow guests. Like most of the other sample
-	| controllers, you are free to modify or remove it as you desire.
-	|
-	*/
 
 	/**
 	 * Create a new controller instance.
@@ -31,6 +25,8 @@ class AboutController extends Controller {
 
     public function about()
     {
-        return view('html.about');
+        $mem_info = DB::table('member')->paginate();
+        $desc=DB::table('us')->paginate();
+        return view('html.about',['staff'=>$mem_info,'us'=>$desc]);
     }
 }
