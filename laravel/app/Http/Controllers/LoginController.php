@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Hash;
 use Request,Validator,DB;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
+
+/**
+ * 登录注册管理
+ * @package App\Http\Controllers
+ */
 class LoginController extends Controller {
 
     /*
@@ -63,7 +68,7 @@ class LoginController extends Controller {
        //所以这里道出了文件上传的原理,将文件上传的某个临时目录中,然后使用Php的函数将文件移动到指定的文件夹.
         $entension = $files -> getClientOriginalExtension();   //上传文件的后缀.
 
-        $filedir=$_SERVER['DOCUMENT_ROOT']."/twolease/laravel/public/uploads/";//上传存放的目录
+        $filedir=$_SERVER['DOCUMENT_ROOT']."/uploads/user/";//上传存放的目录
 
         $newImagesName=md5(time()).rand(1000,9999).".".$entension; //重新命名上传文件名字
         $files->move($filedir,$newImagesName); //使用move 方法移动文件.
@@ -74,7 +79,7 @@ class LoginController extends Controller {
                         'pwd' => $userPswd,
                         'email' => $email,
                         'status' => $sta,
-                        'photos' => "uploads/".$newImagesName
+                        'photos' => "uploads/user/".$newImagesName
                     )
                 )
             );
@@ -91,27 +96,28 @@ class LoginController extends Controller {
         $name=Request::input('u_name');
         $pwd=Request::input('pwds');
         $free=Request::input('free');
-       // echo $name;die;
+        //echo $name;die;
         $salt = substr($pwd, 0, 2);
         $userPswd = crypt($pwd, $salt);
         //七天免登录
+       //echo $userPswd;die;
         $users = DB::table('user')->select()
              ->where(['pwd'=>$userPswd,'username'=>$name])
              ->get();
-       // print_r($users);die;
-        $pictures=$users[0]->photos;
-        //echo $pictures;die;
-        //print_r($pictures);die;
             //判断是否登录成功
             if($users){
+                //print_r($users);die;
+                $pictures=$users[0]->photos;
                 if($free==1){
                     setcookie("name",$name,time()+3600*24*7);
                     setcookie("pictures",$pictures,time()+3600*24*7);
+                    setcookie("pwd",$userPswd,time()+3600*24*7);
                     //echo "<script>alert('登录成功！');</script>";
                     echo "<script>alert('登录成功！');location.href='show'</script>";
                 }else{
                     setcookie("name",$name);
                     setcookie("pictures",$pictures);
+                    setcookie("pwd",$userPswd);
                     echo "<script>alert('登录成功！');location.href='show'</script>";
                     //return view('html.index');
                 }
