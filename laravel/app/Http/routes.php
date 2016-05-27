@@ -87,6 +87,26 @@ Route::any('logins', function(){
     return $model->logins();
 
 });
+/**
+ * 个人中心
+ */
+Route::get('personal','UserController@show');
+Route::any('information','UserController@information');
+/**
+ * 修改密码
+ */
+Route::any('password','UserController@password');
+Route::any('modify','UserController@modify');
+Route::any('revert','UserController@revert');
 
-Route::get('personal','UserController@shows');//用户中心/个人中心
+/**
+ * 我的收藏
+ */
+Route::get('collect','UserController@collect');
+
+/**
+ * 用户积分
+ */
+
+Route::get('integral','UserController@integral');
 

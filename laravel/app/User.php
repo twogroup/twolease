@@ -43,6 +43,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function exits(){
         setcookie("name", "", time() - 1);
         setcookie("pictures", "", time() - 1);
+        setcookie("pwd", "", time() - 1);
         echo "<script>alert('退出成功！');location.href='show'</script>";
     }
 }
