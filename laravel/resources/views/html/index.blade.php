@@ -610,10 +610,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         	</div>
         	<div class="clearfix"> </div>
         </div>
+        <!--底部信息 end -->
         <div class="copy">
-			<p>© 2015 All Rights Reseverd Template by <a href="#">W3layouts</a> </p>
+			<div class="s_mn_security">
+			    <tr class="s_mn_security_list">
+				    <td><a href="http://net.china.cn/chinese/index.htm" rel="nofollow" title="信息
+
+				举报中心" target="_blank"><img 
+
+				src="http://assets.muniao.com/assets/2013/image/pic1.jpg" alt="信息举报中心" 
+
+				title="信息举报中心" width="109" height="50"></a></td>
+				    <td><a href="http://www.bj.cyberpolice.cn/index.htm" rel="nofollow" title="网络
+
+				110" target="_blank"><img src="http://assets.muniao.com/assets/2013/image/pic2.jpg" 
+
+				alt="网络110" title="网络110" width="109" height="50"></a></td>
+				    <td><a href="http://www.bjjubao.org/" rel="nofollow" title="互联网举报中心" 
+
+				target="_blank"><img src="http://assets.muniao.com/assets/2013/image/pic3.jpg" 
+
+				alt="互联网举报中心" title="互联网举报中心" width="109" height="50"></a></td>
+				    <td><a href="http://webscan.360.cn/index/checkwebsite/url/muniao.com" 
+
+				rel="nofollow" title="安全检测" target="_blank"><img 
+
+				src="http://assets.muniao.com/assets/2013/image/pic6.jpg" alt="安全检测" title="安
+
+				全检测" width="109" height="50"></a></td>
+			    </tr>
+			</div>
+
+			<p>© 2016 All Rights Reseverd Template by <a href="#">异家人</a> </p>
 	    </div>
+<!--底部信息 start-->
 	</div>
 </div>
 </body>
+
 </html>		
