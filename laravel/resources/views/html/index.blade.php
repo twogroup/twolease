@@ -645,9 +645,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="clearfix"> </div>
         </div>
 
+        <!--底部信息 end -->
         <div class="copy">
             @include('components.footer')
 	    </div>
+<!--底部信息 start-->
 	</div>
 </body>
+
 </html>		

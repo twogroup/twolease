@@ -159,7 +159,7 @@ use yii\helpers\Html;
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>title</th>
+														<th>发布人</th>
 														<th>主图</th>
 														<th class="hidden-480">money</th>
 
@@ -209,11 +209,11 @@ use yii\helpers\Html;
 																	<i class="icon-zoom-in bigger-130">-1</i>
 																</a>-->
 
-																<a class="green" href="#">
-																	<i class="icon-pencil bigger-130">upload</i>
+																<a class="green" href="index.php?r=house/houseupload&id=<?php echo $key['rent_id']?>">
+																	<i class="icon-pencil bigger-130"></i>
 																</a>
 
-																<a class="red" href="index.php?r=rent/del&id=<?php echo $key['rent_id']?>">
+																<a class="red" href="index.php?r=house/housedelete&id=<?php echo $key['rent_id']?>">
 																	<i class="icon-trash bigger-130"></i>
 																</a>
 															</div>
