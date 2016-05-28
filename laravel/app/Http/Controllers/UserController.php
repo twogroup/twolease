@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Hash;
 use Request,Validator,DB;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
-
+use Illuminate\Http\RedirectResponse;
 /**
  * 用户中心管理
  * @package App\Http\Controllers
@@ -29,15 +29,21 @@ class UserController extends Controller {
 	 */
 	public function show()
 	{
-        $name=$_COOKIE['name'];
-        //$pwd=$_COOKIE['pwd'];
-        //echo $pwd;die;
-        $users = DB::table('user')->select()
-            ->where(['username'=>$name])
-            ->get();
-        //var_dump($users);die;
-        return view('user.info',["users"=>$users,"img"=>$_COOKIE['pictures'],"other_name"=>$name]);
-	}
+        if(empty($_COOKIE['name'])){
+            //查看个人中心需要先进行登录
+           return "<script>alert('请先登录');location.href='logins'</script>";
+            //return redirect()->route('logins');
+        }else{
+            $name=$_COOKIE['name'];
+            //$pwd=$_COOKIE['pwd'];
+            $users = DB::table('user')->select()
+                ->where(['username'=>$name])
+                ->get();
+            //var_dump($users);die;
+            return view('user.info',["users"=>$users,"img"=>$_COOKIE['pictures'],"other_name"=>$name]);
+
+        }
+    }
 
     /**
      *完善用户信息
