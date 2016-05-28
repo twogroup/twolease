@@ -98,16 +98,19 @@ class LoginController extends Controller {
             if($users){
                 //print_r($users);die;
                 $pictures=$users[0]->photos;
+                $sta=$users[0]->status;
                 if($free==1){
                     setcookie("name",$name,time()+3600*24*7);
                     setcookie("pictures",$pictures,time()+3600*24*7);
                     setcookie("pwd",$userPswd,time()+3600*24*7);
+                    setcookie("status",$sta,time()+3600*24*7);
                     //echo "<script>alert('登录成功！');</script>";
                     echo "<script>alert('登录成功！');location.href='show'</script>";
                 }else{
                     setcookie("name",$name);
                     setcookie("pictures",$pictures);
                     setcookie("pwd",$userPswd);
+                    setcookie("status",$sta);
                     echo "<script>alert('登录成功！');location.href='show'</script>";
                     //return view('html.index');
                 }
