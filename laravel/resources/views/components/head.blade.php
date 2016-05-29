@@ -7,7 +7,6 @@
                 <li><a href="{{url('lease')}}"><i class="fa fa-home"> </i>我要出租</a></li>
             <?php }else{?>
                 <?php if($_COOKIE['status']!=2){?>
-
                 <?php }else{?>
                 <li><a href="{{url('lease')}}"><i class="fa fa-home"> </i>我要出租</a></li>
                 <?php }?>
