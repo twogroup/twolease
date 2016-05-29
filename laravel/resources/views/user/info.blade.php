@@ -68,15 +68,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
        <div class="Head_portrait"><img src="{{$_COOKIE['pictures']}}"  width="80px" height="80px"/><!--头像区域--></div>
        <div class="user_name">用户<?php echo $other_name; ?><a href="#">[个人资料]</a></div>
       </div>
-      <ul class="Section">
-       <li><a href="{{url('personal')}}"><em></em><span>个人信息</span></a></li>
-       <li><a href="{{url('password')}}"><em></em><span>修改密码</span></a></li>
-       <li><a href="#"><em></em><span>我的订单</span></a></li>
-       <li><a href="#"><em></em><span>我的评论</span></a></li>
-       <li><a href="{{url('integral')}}"><em></em><span>我的积分</span></a></li>
-       <li><a href="{{url('collect')}}"><em></em><span>我的收藏</span></a></li>
+        <ul class="Section">
+            <li><a href="{{url('personal')}}"><em></em><span>个人信息</span></a></li>
+            <li><a href="{{url('password')}}"><em></em><span>修改密码</span></a></li>
+            <li><a href="#"><em></em><span>我的订单</span></a></li>
+            <li><a href="{{url('comment')}}"><em></em><span>我的留言板</span></a></li>
+            <li><a href="{{url('collect')}}"><em></em><span>我的收藏</span></a></li>
 
-      </ul>
+        </ul>
     </div>
     <div class=" right_style r_user_style">
       <div class="user_Borders">

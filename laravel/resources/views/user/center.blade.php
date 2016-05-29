@@ -20,18 +20,18 @@
   <!--用户中心布局样式-->
    <!--栏目名称-->
    <div class="user_left">
-     <div class="user_info">
-       <div class="Head_portrait"><img src="images/people.png"  width="80px" height="80px"/><!--头像区域--></div>
-       <div class="user_name">用户蜜甘草<a href="#">[个人资料]</a></div>
-      </div>
-      <ul class="Section">
-       <li><a href="#"><em></em><span>个人信息</span></a></li>
-       <li><a href="#"><em></em><span>修改密码</span></a></li>
-       <li><a href="#"><em></em><span>我的订单</span></a></li>
-       <li><a href="#"><em></em><span>我的评论</span></a></li>
-       <li><a href="#"><em></em><span>我的积分</span></a></li>
-       <li><a href="#"><em></em><span>我的收藏</span></a></li>
-      </ul>
+       <div class="user_info">
+           <div class="Head_portrait"><img src="{{$_COOKIE['pictures']}}"  width="80px" height="80px"/><!--头像区域--></div>
+           <div class="user_name">用户<?php echo $other_name; ?><a href="#">[个人资料]</a></div>
+       </div>
+       <ul class="Section">
+           <li><a href="{{url('personal')}}"><em></em><span>个人信息</span></a></li>
+           <li><a href="{{url('password')}}"><em></em><span>修改密码</span></a></li>
+           <li><a href="#"><em></em><span>我的订单</span></a></li>
+           <li><a href="{{url('comment')}}"><em></em><span>我的留言板</span></a></li>
+           <li><a href="{{url('collect')}}"><em></em><span>我的收藏</span></a></li>
+
+       </ul>
    </div>
 </body>
 </html>
