@@ -170,7 +170,6 @@ class UserController extends Controller {
      */
     public function collect()
     {
-<<<<<<< Updated upstream
         if(empty($_COOKIE['name'])){
             //查看个人中心需要先进行登录
             return "<script>alert('请先登录');location.href='logins'</script>";
@@ -184,7 +183,6 @@ class UserController extends Controller {
             $posts['pages'] = DB::table('collect')->where(['username'=>$name])->paginate(2);
             return view('user.collect',["users"=>$users,"img"=>$_COOKIE['pictures'],"other_name"=>$name],$posts);
         }
-=======
         $username=$_COOKIE['name'];
         //$pwds=$_COOKIE['pwd'];
         // echo $pwds;die;
@@ -193,7 +191,6 @@ class UserController extends Controller {
             ->get();
         //var_dump($users);die;
         return view('user.collect',["users"=>$users,"img"=>$_COOKIE['pictures'],"other_name"=>$username]);
->>>>>>> Stashed changes
     }
     /**
      * 我的评论

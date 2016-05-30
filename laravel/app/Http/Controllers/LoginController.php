@@ -88,15 +88,15 @@ class LoginController extends Controller {
         $free=Request::input('free');
         $salt = substr($pwd, 0, 2);
         $userPswd = crypt($pwd, $salt);
-
+        //echo $name;die;
         //七天免登录
        //echo $userPswd;die;
         $users = DB::table('user')->select()
-             ->where(['pwd'=>$userPswd,'username'=>$name])
+             ->where(['username'=>$name])
              ->get();
+        //print_r($users);die;
             //判断是否登录成功
             if($users){
-                //print_r($users);die;
                 $pictures=$users[0]->photos;
                 $sta=$users[0]->status;
                 if($free==1){
@@ -104,7 +104,7 @@ class LoginController extends Controller {
                     setcookie("pictures",$pictures,time()+3600*24*7);
                     setcookie("pwd",$userPswd,time()+3600*24*7);
                     setcookie("status",$sta,time()+3600*24*7);
-                    echo $_COOKIE['status'];die;
+                   // echo $_COOKIE['status'];die;
                     //echo "<script>alert('登录成功！');</script>";
                     echo "<script>alert('登录成功！');location.href='show'</script>";
                 }else{
