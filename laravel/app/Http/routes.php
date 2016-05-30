@@ -1,6 +1,10 @@
 <?php
 
 
+
+//测试
+Route::any('test', 'ServiceController@test');
+
 //显示主页面
  Route::get('/', 'IndexController@index');
 
@@ -11,11 +15,15 @@ Route::controllers([
 
 Route::get('show','ServiceController@shows');
 
+Route::any('serch','ServiceController@serch'); // 搜索  多条件
+
 Route::any('about','AboutController@about');   // 关于我们
 
-Route::any('service', 'ServiceController@services');  // 房源列表
+Route::get('service', 'ServiceController@services');  // 房源列表
 
 Route::any('shows', 'ServiceController@shows');//所有房源
+
+Route::any('houseHot', 'ServiceController@houseHot');
 
 Route::get('chu', 'ServiceController@chu');//要出租的房源
 
@@ -88,10 +96,16 @@ Route::any('revert','UserController@revert');
 Route::get('collect','UserController@collect');
 
 /**
- * 用户积分
+ * 用户评论
  */
 
-Route::get('integral','UserController@integral');
+Route::get('comment','UserController@comment');
+
+// 地区 多条件 搜索
+Route::get('area','ServiceController@area'); // 按区域搜索
+
+Route::get('eee','ServiceController@eee'); // 按区域搜索
+
 
 Route::any('img', function(){
 
@@ -99,3 +113,4 @@ Route::any('img', function(){
 
 });
 Route::any('pic','ServiceController@pic');   // 图片上传
+Route::any('serch','ServiceController@city');//搜索

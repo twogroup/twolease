@@ -115,7 +115,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <h3>我们的成员</h3>
             @foreach($staff as $sta)
             <div class="col-md-3 about_box2">
-                <img src="images/a1.jpg" class="img-responsive" alt=""/>
+                <img src="{{$sta->staff_img}}" width="280px" height="300px" class="" alt=""/>
                 <h3>{{$sta->us_staff}} </h3>
                 <p>{{$sta->us_desc}}</p>
             </div>

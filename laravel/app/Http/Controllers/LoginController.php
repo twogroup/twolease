@@ -104,6 +104,7 @@ class LoginController extends Controller {
                     setcookie("pictures",$pictures,time()+3600*24*7);
                     setcookie("pwd",$userPswd,time()+3600*24*7);
                     setcookie("status",$sta,time()+3600*24*7);
+                    echo $_COOKIE['status'];die;
                     //echo "<script>alert('登录成功！');</script>";
                     echo "<script>alert('登录成功！');location.href='show'</script>";
                 }else{

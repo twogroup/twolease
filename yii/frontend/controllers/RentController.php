@@ -13,7 +13,7 @@ use frontend\models\Rentsurvey;
  * @package frontend\controllers
  * 任鹏
  */
-class RentController extends \yii\web\Controller
+class RentController extends CommonController
 {
     /**
      * @var bool

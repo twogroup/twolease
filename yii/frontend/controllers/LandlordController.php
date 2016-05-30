@@ -7,7 +7,7 @@ use yii;
 /**
 *	class User  后台房东管理
 */
-class LandlordController extends \yii\web\Controller
+class LandlordController extends CommonController
 {
 	//房东列表显示
     public function actionShow()

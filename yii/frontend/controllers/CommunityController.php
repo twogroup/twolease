@@ -9,7 +9,7 @@ use yii\web\Session;
 *	class User  后台租客管理
 *	张晨杰
 */
-class CommunityController extends \yii\web\Controller
+class CommunityController extends CommonController
 {
 	public $layout = false;
     //显示帖子列表

@@ -631,6 +631,7 @@ box-shadow: 0 0 2px 2px #F8F8F8;}
 #user .about_user_info .li{ height:40px; margin-bottom:20px; position:relative}
 #user .about_user_info .li .select{ margin-left:50px}
 #user .about_user_info li .add_text{ height:34px; border:1px solid #ddd; padding:0px 10px;; width:270px;}
+#user .about_user_info li .add_area{ height:64px;border:1px solid #ddd; padding:0px 10px;; width:270px;}
 #user .about_user_info .user_title_name{ color:#666; float:left; width:80px; line-height:34px;}
 #user .about_user_info li .sex{ display:block; float:left; margin-top:7px; margin-right:5px; color:#666; position:relative; width:50px}
 #user .about_user_info li i{ color:#F00; padding:0px 5px; position:absolute;}
@@ -723,9 +724,26 @@ box-shadow: 0 0 2px 2px #F8F8F8;}
 .Collect_Products .bd ul li a img{ width:160px; height:140px;}
 .Collect_Products .bd ul li a:hover{color: #FF6600}
 .Collect_Products .bd ul li .p_Price{ color:#FF0000; font-weight:bold; font-size:14px; padding:0px 10px;}
+/*留言板样式属性*/
+/*#user .about_comment_info{ font-family:"新宋体"; margin-top:20px; margin-bottom:50px;}*/
+#user .about_comment_info .comment_layout{ width:700px; line-height:100px; height:500px; margin:0 auto}
+#user .about_comment_info ul{ height:300px; margin-bottom:20px; padding:0px 0 0 160px; position:relative}
+#user .about_comment_info ul li .text{ height:34px; border:1px solid #ddd; padding:0px 10px; width:270px;}
+#user .about_comment_info ul li .content{ height:200px; border:1px solid #ddd; padding:100px 10px; width:270px;}
+#user .about_comment_info .operating_btn{ margin-left:80px; padding:0px 0 0 125px;}
+#user .about_comment_info .operating_btn .submit—btn{
+    border:0px;
+    background:url(../images/Button_img.png) no-repeat;
+    height:37px;
+    text-align:center;
+    width:291px;
+    font-size:18px;
+    color:#FFF;
+    cursor:pointer
+}
 /******用户信息样式属性*****/
 #user .about_user_info{ font-family:"新宋体"; margin-top:20px; margin-bottom:50px;}
-#user .about_user_info .user_layout{ width:500px; margin:0 auto}
+#user .about_user_info .user_layout{ width:700px; margin:0 auto}
 #user .about_user_info li{ height:40px; margin-bottom:20px; position:relative}
 #user .about_user_info li .add_text{ height:34px; border:1px solid #ddd; padding:0px 10px;; width:270px;}
 #user .about_user_info .user_title_name{ color:#666; float:left; width:80px; line-height:34px;}
