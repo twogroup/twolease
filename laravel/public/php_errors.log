@@ -1,0 +1,12 @@
+[30-May-2016 03:43:40 UTC] PHP Fatal error:  Call to undefined method Illuminate\Support\Facades\Request::file() in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 220
+[30-May-2016 03:44:26 UTC] PHP Fatal error:  Call to undefined method Illuminate\Support\Facades\Request::file() in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 220
+[30-May-2016 03:50:32 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\WWW\zulin4\twolease\laravel\app\Http\routes.php on line 5
+[30-May-2016 03:50:32 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\WWW\zulin4\twolease\laravel\app\Http\routes.php on line 5
+[30-May-2016 03:52:10 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\WWW\zulin4\twolease\laravel\vendor\laravel\framework\src\Illuminate\Contracts\Support\Arrayable.php on line 3
+[30-May-2016 03:52:14 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\WWW\zulin4\twolease\laravel\vendor\laravel\framework\src\Illuminate\Bus\Dispatcher.php on line 17
+[30-May-2016 03:52:33 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in D:\WWW\zulin4\twolease\laravel\vendor\laravel\framework\src\Illuminate\Session\Store.php on line 9
+[30-May-2016 03:55:32 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 10
+[30-May-2016 04:24:01 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 10
+[30-May-2016 04:27:12 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 10
+[30-May-2016 04:27:26 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 10
+[30-May-2016 04:30:07 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 11

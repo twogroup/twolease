@@ -14,6 +14,14 @@ use PhpParser\Node\Expr\Cast\Object;
 //use Request;
 //use paginate;//分页样式一
 //use simplePaginate;//分页样式二
+/*
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Validator;
+/*use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Input,DB;*/
 
 /**
  * Class ServiceController
@@ -273,9 +281,46 @@ class ServiceController extends Controller {
      * 添加房源
      * @return \Illuminate\View\View
      */
-    public function addhouse(){
+    public function addhouse2(){
+        return view('html/addhouse');
+    }
+    public function addhouse3(){
+        $serval = Request::input(); //验证房源名称唯一！！！
+        //print_r($serval);die;
+        $name = $serval['house_address'];
+            $addtwo = DB::table('availability')->insert([
+                'house_address' => $serval['house_address'],
+                'number' => $serval['number'],
+                'house_size' => $serval['house_size'],
+                'house_postion' => $serval['house_postion'],
+                'house_desc' => $serval['house_desc'],
+                'property_class' => $serval['property_class'],
+                'linkman' => $serval['linkman'],
+                'phone' => $serval['phone'],
+                 ]);
+            if ($addtwo) {
+                return view('html/addhouse3')->with('name',$name);
+            }
+    }
+
+    public function addhouse4(){
+        $serval = Request::input();
+        $name = $serval['name'];
+        $addfree = DB::table('availability')
+            ->where('house_address', $name)
+            ->update([
+            'house_type' => $serval['house_type'],
+            'in_time' => $serval['in_time'],
+            'out_time' => $serval['out_time'],
+            'receive_time' => $serval['receive_time'],
+            'deposit' => $serval['deposit'],
+            'pay' => $serval['pay'],
+                ]);
+        if ($addfree) {
+            return view('html/addhouse5');
+        }
+        return view('html/addhouse');
         
-        return view('html/addroom');
     }
 
     /**
@@ -325,5 +370,8 @@ class ServiceController extends Controller {
         $ser="大傻";
         print_r($ser) ;die;
        // return $this->render('dianming.html',array);
-    }
+ 
 }
+
+}
+ 

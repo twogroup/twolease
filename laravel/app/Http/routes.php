@@ -60,6 +60,10 @@ Route::get('contact', function(){
 Route::get('lease', function(){
     return view("html.lease");
 });
+
+Route::any('addhouse','ServiceController@addhouse2');//一级添加
+Route::any('houseadd','ServiceController@addhouse3');//二级添加
+Route::any('houseadd3','ServiceController@addhouse4');//三级添加
 /**
  * 退出登录
  */
