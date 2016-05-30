@@ -432,9 +432,9 @@
 
 						<ul class="submenu">
 							<li>
-								<a href="index.php?r=rent/housing">
+								<a href="index.php?r=house/houselist">
 									<i class="icon-double-angle-right"></i>
-									房源列表 (tables.html)
+									房源列表
 								</a>
 							</li>
 
