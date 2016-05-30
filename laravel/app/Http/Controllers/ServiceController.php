@@ -1,13 +1,19 @@
 <?php
  namespace App\Http\Controllers;
 
-use DB;
-use Input;
-use App\Http\Requests\Request;
+use Input,DB,Request;
 use Illuminate\Contracts\Pagination;
 use PhpParser\Node\Expr\Cast\Object;
 //use paginate;//分页样式一
 use simplePaginate;//分页样式二
+/*
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Validator;
+/*use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use Input,DB;*/
 
 /**
  * Class ServiceController
@@ -165,9 +171,46 @@ class ServiceController extends Controller {
      * 添加房源
      * @return \Illuminate\View\View
      */
-    public function addhouse(){
+    public function addhouse2(){
+        return view('html/addhouse');
+    }
+    public function addhouse3(){
+        $serval = Request::input(); //验证房源名称唯一！！！
+        //print_r($serval);die;
+        $name = $serval['house_address'];
+            $addtwo = DB::table('availability')->insert([
+                'house_address' => $serval['house_address'],
+                'number' => $serval['number'],
+                'house_size' => $serval['house_size'],
+                'house_postion' => $serval['house_postion'],
+                'house_desc' => $serval['house_desc'],
+                'property_class' => $serval['property_class'],
+                'linkman' => $serval['linkman'],
+                'phone' => $serval['phone'],
+                 ]);
+            if ($addtwo) {
+                return view('html/addhouse3')->with('name',$name);
+            }
+    }
+
+    public function addhouse4(){
+        $serval = Request::input();
+        $name = $serval['name'];
+        $addfree = DB::table('availability')
+            ->where('house_address', $name)
+            ->update([
+            'house_type' => $serval['house_type'],
+            'in_time' => $serval['in_time'],
+            'out_time' => $serval['out_time'],
+            'receive_time' => $serval['receive_time'],
+            'deposit' => $serval['deposit'],
+            'pay' => $serval['pay'],
+                ]);
+        if ($addfree) {
+            return view('html/addhouse5');
+        }
+        return view('html/addhouse');
         
-        return view('html/addroom');
     }
 
     /**
@@ -179,5 +222,37 @@ class ServiceController extends Controller {
         echo $name;die;
        // return $this->render('dianming.html',array);
     }
+
+    // 图片 上传
+public function  pic(Request $request){
+    $file = $request->file('upfile');
+    //print_r($file);die;
+    //验证文件是否存在
+    if ($request->hasFile('upfile')) {
+        //
+        $clientName = $file->getClientOriginalName();  // 获取 图片名称
+
+       // $path = $request->file('upfile')->getRealPath();//获取一个已上传的文件在服务器的真实路径
+
+        $entension = $file->getClientOriginalExtension();   //上传文件的后缀.
+
+        // 定义新路径
+       // $destinationPath = "E:\phpStudy\\twolease\laravel\public\up";
+        $destinationPath=$_SERVER['DOCUMENT_ROOT']."/uploads/up/";
+
+        //使用isValid方法判断文件在上传过程中是否出错：
+        if ($request->file('upfile')->isValid()) {
+            //
+            if ($request->file('upfile')->move($destinationPath, $clientName)) {
+                return "upload is success";
+            } else {
+                return "upload is fail";
+            }
+        }
+    } else {
+        return 'Error  the file no exits.';
+    }
+}
+
 }
  
