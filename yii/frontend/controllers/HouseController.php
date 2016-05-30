@@ -14,7 +14,7 @@ class HouseController extends CommonController
     public function actionHouselist()
     {
         $connection = \Yii::$app->db;
-    	$command = $connection->createCommand('SELECT * FROM house');
+    	$command = $connection->createCommand('SELECT * FROM availability');
 		$posts = $command->queryAll();
 		//print_r($posts);die;
         return $this->render('index',array('ast'=>$posts));
@@ -24,7 +24,7 @@ class HouseController extends CommonController
     	$connection = \Yii::$app->db;
     	$request = Yii::$app->request;
     	$id = $request->get('id');
-    	$delete = $connection->createCommand()->delete('house', 'rent_id = '.$id)->execute();
+    	$delete = $connection->createCommand()->delete('availability', 'ava_id = '.$id)->execute();
     	if ($delete) {
     		return $this->redirect('index.php?r=house/houselist');
     	}else{
@@ -45,7 +45,8 @@ class HouseController extends CommonController
         $connection = \Yii::$app->db;
         $request = Yii::$app->request;
         $id = $request->get('id');
-        $command[] = $connection->createCommand('SELECT * FROM house WHERE rent_id='.$id)->queryOne();
+        $command[] = $connection->createCommand('SELECT * FROM availability WHERE ava_id='.$id)->queryOne();
+        //print_r($command);die;
         return $this->render('houseupload',array('arr'=>$command));
     }
     public function actionUploadadd(){
@@ -54,26 +55,28 @@ class HouseController extends CommonController
         $data = $request->post();
         //print_r($data);die;
         $id = $data['id'];
-        $contacts = $data['rent_people'];
-        //print_r($contacts);die;
-        $community = $data['by_rent_people'];
-        $area = $data['house_type'];
-        $pay = $data['mon_rental'];
-        $content = $data['property_class'];
-        $phone = $data['rent_money'];
-        $uploadOk = $connection->createCommand()->update('house', [
-            'contacts' => $contacts,
-            'community' => $community,
-            'area' => $area,
+        $house_address = $data['house_address'];
+        $linkman = $data['linkman'];
+        $house_title = $data['house_title'];
+        $house_postion = $data['house_postion'];
+        $pay = $data['pay'];
+        $house_desc = $data['house_desc'];
+        $phone = $data['phone'];
+        $house_type = $data['house_type'];
+        $uploadOk = $connection->createCommand()->update('availability', [
+            'house_address' => $house_address,
+            'linkman' => $linkman,
+            'house_title' => $house_title,
+            'house_postion' => $house_postion,
             'pay' => $pay,
-            'content' => $content,
+            'house_desc' => $house_desc,
             'phone' => $phone,
-        ], "rent_id = '$id'")->execute();
+            'house_type' => $house_type,
+        ], "ava_id = '$id'")->execute();
         if ($uploadOk) {
             return $this->redirect('index.php?r=house/houselist');
         }else{
             echo "<script>alert('抱歉！提交失败');location.href='index.php?r=house/houselist</script>";
         }
     }
-
 }

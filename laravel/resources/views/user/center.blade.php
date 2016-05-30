@@ -10,7 +10,6 @@
 <script src="js/footer.js" type="text/javascript"></script>
 <title>用户中心</title>
 </head>
-
 <body>
 
 
