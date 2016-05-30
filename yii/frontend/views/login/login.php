@@ -4,7 +4,7 @@ use yii\widgets\ActiveForm;
 use yii\captcha\Captcha;
 
 $form = ActiveForm::begin([
-    'action' => 'index.php?r=admin/login',
+    'action' => 'index.php?r=login/entry',
     'method' => 'post',
 ]) ?>
 
@@ -81,14 +81,14 @@ $form = ActiveForm::begin([
 												<fieldset>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Username" name="username" />
+															<input type="text" class="form-control" placeholder="Username" name="u_name" />
 															<i class="icon-user"></i>
 														</span>
 													</label>
 
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Password" name="password" />
+															<input type="password" class="form-control" placeholder="Password" name="p_pwd" />
 															<i class="icon-lock"></i>
 														</span>
 													</label>

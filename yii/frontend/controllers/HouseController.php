@@ -7,7 +7,7 @@ use yii\web\Request;
 *   韦森
 */
 
-class HouseController extends \yii\web\Controller
+class HouseController extends CommonController
 {
     public $layout = false;
 	//房源列表
