@@ -170,7 +170,19 @@ class UserController extends Controller {
      */
     public function collect()
     {
-        return view('user.collect');
+        if(empty($_COOKIE['name'])){
+            //查看个人中心需要先进行登录
+            return "<script>alert('请先登录');location.href='logins'</script>";
+            //return redirect()->route('logins');
+        }else{
+            $name=$_COOKIE['name'];
+            //$pwd=$_COOKIE['pwd'];
+            $users = DB::table('user')->select()
+                ->where(['username'=>$name])
+                ->get();
+            $posts['pages'] = DB::table('collect')->where(['username'=>$name])->paginate(2);
+            return view('user.collect',["users"=>$users,"img"=>$_COOKIE['pictures'],"other_name"=>$name],$posts);
+        }
     }
     /**
      * 我的积分
@@ -179,5 +191,4 @@ class UserController extends Controller {
     {
         return view('user.integral');
     }
-
 }
