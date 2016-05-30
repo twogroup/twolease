@@ -245,22 +245,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
          }
      }
     //验证邮箱
-     function check_email(){
-         var email=$("#email").val();
-         if(email==""){
+     function check_email() {
+         var email = $("#email").val();
+         if (email == "") {
              $("#t_email").html("邮箱不能为空");
              return false;
-         }else{
-             if(!(/^\S+@qq.com$/).test(email)){
+         } else {
+             if (!(/^\S+@qq.com$/).test(email)) {
                  $("#t_email").html("邮箱格式不对");
                  return false;
-             }else{
+             } else {
                  $("#t_email").html("<font color='green'><b>√</b></font>");
                  return true;
              }
          }
      }
-     //验证表单提交
      //验证表单提交
      function check_all(){
          if(check_name()&check_t_name()&check_tell()&check_email()){

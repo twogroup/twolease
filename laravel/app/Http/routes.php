@@ -84,8 +84,8 @@ Route::any('revert','UserController@revert');
 Route::get('collect','UserController@collect');
 
 /**
- * 用户积分
+ * 用户评论
  */
 
-Route::get('integral','UserController@integral');
+Route::get('comment','UserController@comment');
 
