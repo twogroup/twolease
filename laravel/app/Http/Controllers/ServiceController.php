@@ -10,8 +10,8 @@ use DB;
 use Input;
 use Illuminate\Contracts\Pagination;
 use PhpParser\Node\Expr\Cast\Object;
-use Input,DB,Validator;
-use Request;
+//use Input,DB,Validator;
+//use Request;
 //use paginate;//分页样式一
 //use simplePaginate;//分页样式二
 
@@ -112,17 +112,17 @@ class ServiceController extends Controller {
         $str.='</div>';
         echo $str;
 
-// return $areas;die;
-      // $sub_area = DB::table('subway')->where("region_id",1)->paginate();
-      //  return view('html.services',['posts'=>$areas,'sub_area'=>$sub_area]);
-        //print_r($areas);die;
+        // return $areas;die;
+              // $sub_area = DB::table('subway')->where("region_id",1)->paginate();
+              //  return view('html.services',['posts'=>$areas,'sub_area'=>$sub_area]);
+                //print_r($areas);die;
 
-//        $areas = DB::table('house')
-//            ->where("area",'like','%'.$area.'%'.'1=1'.$where)
-//            ->paginate(12);
-//        print_r($areas);die;
-//        return $areas;
-//
+        //        $areas = DB::table('house')
+        //            ->where("area",'like','%'.$area.'%'.'1=1'.$where)
+        //            ->paginate(12);
+        //        print_r($areas);die;
+        //        return $areas;
+        //
     }
 
     public function serch(){
@@ -325,6 +325,5 @@ class ServiceController extends Controller {
         $ser="大傻";
         print_r($ser) ;die;
        // return $this->render('dianming.html',array);
- 
+    }
 }
- 
