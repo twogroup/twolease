@@ -1,13 +1,16 @@
 <?php
  namespace App\Http\Controllers;
 
-use DB;
-use Input;
-use App\Http\Requests\Request;
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Contracts\Pagination;
 use PhpParser\Node\Expr\Cast\Object;
+use Input,DB,Validator;
 //use paginate;//分页样式一
-use simplePaginate;//分页样式二
+//use simplePaginate;//分页样式二
 
 /**
  * Class ServiceController
@@ -25,16 +28,109 @@ class ServiceController extends Controller {
 		$this->middleware('guest');
 	}
 
+    // 测试
+    public function test(){
+        return view('html.test');
+    }
+
 	/**
 	 * Show the application welcome screen to the user.
 	 *
 	 * @return Response
 	 */
-
     public function services()
     {
         $posts = DB::table('house')->paginate(12);
+
+        $sub_area = DB::table('subway')->where("region_id",1)->paginate();
+
+        return view('html.services',['posts'=>$posts,'sub_area'=>$sub_area]);
+    }
+
+
+    public function area(){
+
+       //print_r($_GET);die;
+        $housetype= Request::get('housetype');   //  户型
+        $price = explode('-',Request::get('radio2'));   //   租金
+        $area  = explode('-',Request::get('area'));    //  面积 条件   $area[0] = "小的数字"
+        $region = Request::get('region');    // 区域 条件
+      // print_r($price[1]);die;
+        $where= '';
+        if(!empty($price)){
+            if($price!="不限"){
+                if(isset($price['1'])) {
+                    $where .= " and (pay>='" . $price[0] . "' and pay<='" . $price[1] . "')";
+                }else {
+                    if ($price[0] == "1500") {
+                        $where .= " and (pay<'"  . $price[0] . "')";
+                    }else{
+                        $where .=" and (pay>='"  . $price[0] ."')";
+                    }
+                }
+            }
+        }
+        if(!empty($region)){
+            $where.=" and area like '%$region%'";
+        }
+        if(!empty($housetype)){
+            $where.=" && housetype='".$housetype."'";  //房屋类型，如二室一厅，三室二厅
+        }
+        if(!empty($area)){
+            if(isset($area['1'])) {
+                $where.= ' and (mianji>='.$area[0].' and mianji<='.$area[1].')';
+            }else{
+                if($area[0]=="50"){
+                    $where.= " and (mianji<'".$area[0]."')";
+                }else{
+                    $where.= " and (mianji>='".$area[0]."')";
+                }
+
+            }
+        }
+        //$sql="select * from house where 1=1 ".$where;
+        $areas = DB::select("select * from house where 1=1".$where);
+       // print_r($areas);die;
+        $str="";
+        $str.='<div class="service_grid" >';
+
+        foreach ($areas as $val){
+            $str.='  	<div class="col-md-3 service_box">';
+            $str.='		<a class="fancybox"  href="uploads/'.$val->photo.'"  data-fancybox-group="gallery" title="Product Name">';
+		    $str.='<img src="uploads/'.$val->photo.' " width="400px" class="img-responsive" alt=""/><span> </span></a>';
+            $str.='    <h4><a href="javascript:void(0)" onclick="nae( '.$val->rent_id.')">'.$val->title.' </a></h4>';
+            $str.='	<p> '.$val->area.$val->community.$val->content.'</p>';
+            $str.='	</div>';
+        }
+
+
+
+	      $str.=' 	<div class="clearfix"> </div>';
+        $str.='</div>';
+        echo $str;
+
+// return $areas;die;
+      // $sub_area = DB::table('subway')->where("region_id",1)->paginate();
+      //  return view('html.services',['posts'=>$areas,'sub_area'=>$sub_area]);
+        //print_r($areas);die;
+
+//        $areas = DB::table('house')
+//            ->where("area",'like','%'.$area.'%'.'1=1'.$where)
+//            ->paginate(12);
+//        print_r($areas);die;
+//        return $areas;
+//
+    }
+
+    public function serch(){
+        $serval = Request::input('serval'); //接小区名 或 地段名
+        $posts = DB::table('house')
+            ->where("community", 'like','%'.$serval.'%')
+            ->orWhere("area",'like','%'.$serval.'%')
+            ->paginate(12);
+
         return view('html.services',['posts'=>$posts]);
+
     }
 
 
@@ -43,9 +139,16 @@ class ServiceController extends Controller {
      * @return \Illuminate\View\View
      */
     public function shows(){
-        $posts = DB::table('availability')->paginate(3);
-        //print_r($posts);die;
-        return view('html/index',['posts'=>$posts]);
+
+        // 所有房源
+        $house_all = DB::table('availability')->paginate(6);
+
+        //热门房源
+        $house_hot = DB::table('availability')->where('is_hot',1)->paginate(6);
+
+        //增值房源
+        $house_apprec = DB::table('availability')->where('is_ appreciation',1)->paginate(6);
+        return view('html/index',['posts'=>$house_all, 'hot'=>$house_hot,'apprec'=>$house_apprec]);
     }
 
     /**
@@ -93,10 +196,9 @@ class ServiceController extends Controller {
      */
     public function showsxq(){
         $house_id = Input::get('xqid');
-        $data = DB::table('house')->where('rent_id',$house_id)->get();
+        $data = DB::table('availability')->where('ava_id',$house_id)->get();
         $nums = get_object_vars($data['0']);
-
-        return $nums['rent_id'];
+        return $nums['ava_id'];
 
     }
 
@@ -115,7 +217,7 @@ class ServiceController extends Controller {
     function objectToArray(){
 
         $id = Input::get(); //接ID
-        $data = DB::table('house')->where('rent_id',$id)->get();//查询数据
+        $data = DB::table('availability')->where('ava_id',$id)->get();//查询数据
 
         return view('html/single3')->with('arr',$data);
         
@@ -139,5 +241,38 @@ class ServiceController extends Controller {
         echo $name;die;
        // return $this->render('dianming.html',array);
     }
+
+
+    // 图片 上传
+    public function  pic(Request $request){
+        $file = $request->file('upfile');
+        //print_r($file);die;
+        //验证文件是否存在
+        if ($request->hasFile('upfile')) {
+            //
+            $clientName = $file->getClientOriginalName();  // 获取 图片名称
+
+           // $path = $request->file('upfile')->getRealPath();//获取一个已上传的文件在服务器的真实路径
+
+            $entension = $file->getClientOriginalExtension();   //上传文件的后缀.
+
+            // 定义新路径
+           // $destinationPath = "E:\phpStudy\\twolease\laravel\public\up";
+            $destinationPath=$_SERVER['DOCUMENT_ROOT']."/uploads/up/";
+
+            //使用isValid方法判断文件在上传过程中是否出错：
+            if ($request->file('upfile')->isValid()) {
+                //
+                if ($request->file('upfile')->move($destinationPath, $clientName)) {
+                    return "upload is success";
+                } else {
+                    return "upload is fail";
+                }
+            }
+        } else {
+            return 'Error  the file no exits.';
+        }
+    }
+
 }
  
