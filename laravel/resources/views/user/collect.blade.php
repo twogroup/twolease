@@ -33,121 +33,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-<<<<<<< Updated upstream
 <div class="col-xs-4">
     <div class="logo">
         <a href="index.html"><img src="images/logo.png" alt=""/></a>
-=======
-<!--用户中心(收藏)-->
-<div class="user_style clearfix" id="user">
-    <div class="clearfix user" >
-        <div class="user_left">
-            <div class="user_info">
-                <div class="Head_portrait"><img src="{{$_COOKIE['pictures']}}"  width="80px" height="80px"/><!--头像区域--></div>
-                <div class="user_name">用户<?php echo $other_name; ?><a href="#">[个人资料]</a></div>
-            </div>
-            <ul class="Section">
-                <li><a href="{{url('personal')}}"><em></em><span>个人信息</span></a></li>
-                <li><a href="{{url('password')}}"><em></em><span>修改密码</span></a></li>
-                <li><a href="#"><em></em><span>我的订单</span></a></li>
-                <li><a href="{{url('comment')}}"><em></em><span>我的留言板</span></a></li>
-                <li><a href="{{url('collect')}}"><em></em><span>我的收藏</span></a></li>
-
-            </ul>
-        </div>
-
-        <!--右侧内容样式-->
-   <div class=" right_style r_user_style user_right">
-    <div class="user_Borders clearfix">
-    <div class="title_name">
-        <span class="name">用户收藏</span>
-       </div>
-   <!--收藏样式-->
-    <div class="Collect">
-      <ul class="Collect_list">
-       <li>
-       <div class="Collect_pro_name">
-         <a href="#" class="delete_Collect"></a>
-        <p class="img center"><a href="#"><img src="images/product_img_17.png" /></a></p>
-        <p><a href="#">天然绿色多汁香甜无污染水蜜桃</a></p>
-        <p class="Collect_Standard">礼盒装</p>
-        <p class="Collect_price">￥234</p>
-        </div>
-       </li>
-        <li>
-       <div class="Collect_pro_name">
-         <a href="#" class="delete_Collect"></a>
-        <p class="img center"><a href="#"><img src="images/product_img_17.png" /></a></p>
-        <p><a href="#">天然绿色多汁香甜无污染水蜜桃</a></p>
-        <p class="Collect_Standard">礼盒装</p>
-        <p class="Collect_price">￥234</p>
-        </div>
-        </li>
-          <li>
-              <div class="Collect_pro_name">
-         <a href="#" class="delete_Collect"></a>
-        <p class="img center"><a href="#"><img src="images/product_img_17.png" /></a></p>
-        <p><a href="#">天然绿色多汁香甜无污染水蜜桃</a></p>
-        <p class="Collect_Standard">礼盒装</p>
-        <p class="Collect_price">￥234</p>
-        </div>
-       </li>
-        <li>
-       <div class="Collect_pro_name">
-         <a href="#" class="delete_Collect"></a>
-        <p class="img center"><a href="#"><img src="images/product_img_17.png" /></a></p>
-        <p><a href="#">天然绿色多汁香甜无污染水蜜桃</a></p>
-        <p class="Collect_Standard">礼盒装</p>
-        <p class="Collect_price">￥234</p>
-        </div>
-       </li>
-        <li>
-       <div class="Collect_pro_name">
-         <a href="#" class="delete_Collect"></a>
-        <p class="img center"><a href="#"><img src="images/product_img_17.png" /></a></p>
-        <p><a href="#">天然绿色多汁香甜无污染水蜜桃</a></p>
-        <p class="Collect_Standard">礼盒装</p>
-        <p class="Collect_price">￥234</p>
-        </div>
-       </li>
-        <li>
-       <div class="Collect_pro_name">
-         <a href="#" class="delete_Collect"></a>
-        <p class="img center"><a href="#"><img src="images/product_img_17.png" /></a></p>
-        <p><a href="#">天然绿色多汁香甜无污染水蜜桃</a></p>
-        <p class="Collect_Standard">礼盒装</p>
-        <p class="Collect_price">￥234</p>
-        </div>
-       </li>
-        <li>
-       <div class="Collect_pro_name">
-         <a href="#" class="delete_Collect"></a>
-        <p class="img center"><a href="#"><img src="images/product_img_17.png" /></a></p>
-        <p><a href="#">天然绿色多汁香甜无污染水蜜桃</a></p>
-        <p class="Collect_Standard">礼盒装</p>
-        <p class="Collect_price">￥234</p>
-        </div>
-       </li>
-        <li>
-       <div class="Collect_pro_name">
-         <a href="#" class="delete_Collect"></a>
-        <p class="img center"><a href="#"><img src="images/product_img_17.png" /></a></p>
-        <p><a href="#">天然绿色多汁香甜无污染水蜜桃</a></p>
-        <p class="Collect_Standard">礼盒装</p>
-        <p class="Collect_price">￥234</p>
-        </div>
-       </li>
-      </ul>
-      <!--分页-->
-      <div class="pages_Collect clearfix">
-       <a href="#" class="on">《</a>
-       <a href="#">1</a>
-       <a href="#">2</a>
-       <a href="#">3</a>
-       <a href="#">4</a>
-       <a href="#">》</a>
-      </div>
->>>>>>> Stashed changes
     </div>
 </div>
 <div class="col-xs-8 header_right">
@@ -199,8 +87,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <li id="div_del{{ $val->collect_id }}">
                                         <div class="Collect_pro_name">
                                             <a href="javascript:void(0)" id="{{ $val->collect_id }}" onclick="service_del(this)" class="delete_Collect"></a>
-                                            <p class="img center"><a href="#"><img src="uploads/{{ $val->photo }}" /></a></p>
-                                            <p><a href="#">{{ $val->lname }}</a></p>
+                                            <p class="img center"><a href="javascript:void(0)" onclick="nae({{ $val->h_id }})"><img src="uploads/{{ $val->photo }}" /></a></p>
+                                            <p><a href="javascript:void(0)" onclick="nae({{ $val->h_id }})">{{ $val->lname }}</a></p>
                                             <p class="Collect_Standard">{{ $val->datetime }}</p>
                                             <p class="Collect_price">{{ $val->phone }}</p>
                                         </div>
@@ -288,6 +176,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </body>
 </html>
 <script>
+    //收藏点击进去详情
+    function nae(id)
+    {
+        //alert(id);die;
+        var data={'xqid':id}
+        var url="showsxq";
+        $.get(url,data,function(msg){
+            $a = msg;
+            //alert(msg);die;
+            location.href ='{{url('zhan')}}?id='+$a;
+        })
+    }
     //删除收藏
     function service_del(obj){
         var id=obj.id;
