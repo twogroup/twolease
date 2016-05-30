@@ -13,7 +13,7 @@ Route::get('show','ServiceController@shows');
 
 Route::any('about','AboutController@about');   // 关于我们
 
-Route::any('service', 'ServiceController@services');  // 房源列表
+Route::get('service', 'ServiceController@services');  // 房源列表
 
 Route::any('shows', 'ServiceController@shows');//所有房源
 
@@ -68,4 +68,8 @@ Route::any('logins', function(){
 });
 
 Route::get('personal','UserController@shows');//用户中心/个人中心
+
+
+
+Route::any('serch','ServiceController@city');//搜索
 

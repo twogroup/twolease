@@ -3,9 +3,10 @@
 
 use DB;
 use Input;
-use App\Http\Requests\Request;
+
 use Illuminate\Contracts\Pagination;
 use PhpParser\Node\Expr\Cast\Object;
+use Request;
 //use paginate;//分页样式一
 use simplePaginate;//分页样式二
 
@@ -137,6 +138,15 @@ class ServiceController extends Controller {
        $data = Input::get();    //接ID
         $name = "video/".$data['xqid'];
         echo $name;die;
+       // return $this->render('dianming.html',array);
+    }
+
+
+
+    public function city(){
+      // $ser = Request::input('serch');    //姐值
+        $ser="大傻";
+        print_r($ser) ;die;
        // return $this->render('dianming.html',array);
     }
 }

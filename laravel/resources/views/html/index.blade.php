@@ -18,8 +18,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script src="js/jquery-1.11.0.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+<link rel="stylesheet" type="text/css" href="css/search-form.css">
+<!-- <link href="css/lunbo/style.css" rel="stylesheet" type="text/css" /> -->
 {{--<link href='http://fonts.googleapis.com/css?family=Grand+Hotel:400' rel='stylesheet' type='text/css'>--}}
 {{--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet:100,300,400,500,600,700,800,900' type='text/css'>--}}
 
@@ -37,7 +41,69 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         })
     }
 </script>
+<!-- 轮播图 -->
+<style type="text/css">
+  *{ margin:0; padding:0; }
+  img{ display: block; border:none;}
+  ul,li{ list-style: none;}
+  .lubo{ width: 100%; min-width:1000px;clear: both; position: relative; height:368px;}
+  .lubo_box{ position: relative; width: 100%; height:368px; }
+  .lubo_box li{ float: left;position: absolute; top: 0; left: 0; width: 100%; height:368px; opacity: 0;filter:alpha(opacity=0);}
+  .lubo_box li a{ display: block;width: 100%;  height: 440px;}
 
+  .lubo_box li img{ width: 100%; height: 440px;}
+
+  /*圆点*/
+  /*.cir_box{ overflow: hidden; position: absolute; z-index: 100; top: 330px;}
+  .cir_box li{ float: left; width: 30px; height: 5px; margin:0 5px; cursor: pointer; background: #fff; opacity: 0.8;filter:alpha(opacity=80);}
+  .cir_on{ background: #000 !important;}
+*/
+  /*按钮*/
+  .lubo_btn{ position: absolute; width: 100%; top: 200px;}
+  .left_btn, .right_btn{ width: 30px; height: 80px; background: #000;opacity: 0.8;filter:alpha(opacity=80); cursor: pointer; color: #fff; line-height: 80px; font-size: 30px; text-align: center;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+  .left_btn{ float: left;}
+  .right_btn{ float: right;}
+</style>
+<script type="text/javascript" src="js/lubotu.js"></script>
+<script type="text/javascript">
+$(function(){
+    $(".lubo").lubo({
+    });
+})
+</script>
+<!-- 搜索 -->
+<script type="text/javascript">
+    function searchToggle(obj, evt){
+        var lookup = $(obj).closest('.search-wrapper');
+        //alert(lookup)
+        if(!lookup.hasClass('active')){
+            lookup.addClass('active');
+            evt.preventDefault();
+        }
+        else if(lookup.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+            lookup.removeClass('active');
+            lookup.find('.search-input').val('');
+             lookup.find('.result-lookup').fadeOut(100, function(){$(this).empty();});
+        }
+    }
+    function submitFn(obj, evt){
+        value = $(obj).find('.search-input').val().trim();
+        //_html = "亲，你要搜索的是: ";
+        if(!value.length){
+            _html = "<font size='' color='red'><strong>对不起亲，城市不能为空！</strong></font>";
+        }
+        else{
+            $.ajax({
+				type: "GET",
+				url: "{{url('select')}}",
+				dataType: ""
+			});
+        }
+        $(obj).find('.result-lookup').html('<span>' + _html + '</span>');
+        $(obj).find('.result-lookup').fadeIn(100);
+        evt.preventDefault();
+    }
+</script>
 
 
 <!-- Menu -->
@@ -92,208 +158,42 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="clearfix"> </div>
 </div>
 <div class="slider">
-	  <div class="callbacks_container">
-	      <ul class="rslides" id="slider">
-	        <li><img src="images/banner.jpg" class="img-responsive" alt=""/>
-	          <div class="banner_desc">
-	          	<div class="container">
-				  <h1>Est notare quam littera gothica, quam nunc.</h1>
-				  <h2>At wisi enim ad minim veniam, quis nostrud.</h2>
-				</div>
-				<div class="details">
-			     <div class="container">
-	    	     <div class="col-xs-10 dropdown-buttons">   
-            	  <div class="col-xs-4 dropdown-button">           			
-            		<div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All Locations</option>
-							<option value="null">Business</option>         
-							<option value="AX">First Class</option>
-							<option value="AX">Premium Economy</option>
-						 </select>
-					  </div>
-					</div>
-				    <div class="col-xs-4 dropdown-button">
-					  <div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All Property types</option>
-							<option value="null">House</option>         
-							<option value="AX">Apartment</option>
-							<option value="AX">Premium Economy</option>
-						 </select>
-					  </div>
-					 </div>
-					 <div class="col-xs-4 dropdown-button">
-					  <div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All contracts</option>
-							<option value="null">Sale</option>         
-							<option value="AX">Rent</option>
-							<option value="AX">Sold</option>
-						 </select>
-					  </div>
-					 </div>
-				   </div> 
-				   <div class="col-xs-2 submit_button"> 
-				   	  <form>
-				   	     <input type="submit" value="Search">
-				   	  </form>
-				   </div>
-				   <div class="clearfix"> </div>
-				</div>
-			   </div>
-			  </div>
-			</li>
-	        <li><img src="images/banner1.jpg" class="img-responsive" alt=""/>
-	         <div class="banner_desc">
-	            <div class="container">
-				  <h1>Est notare quam littera gothica, quam nunc.</h1>
-				  <h2>At wisi enim ad minim veniam, quis nostrud.</h2>
-			    </div>
-				<div class="details">
-			     <div class="container">
-	    	     <div class="col-xs-10 dropdown-buttons">   
-            	  <div class="col-xs-4 dropdown-button">           			
-            		<div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All Locations</option>
-							<option value="null">Business</option>         
-							<option value="AX">First Class</option>
-							<option value="AX">Premium Economy</option>
-						 </select>
-					  </div>
-					</div>
-				    <div class="col-xs-4 dropdown-button">
-					  <div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All Property types</option>
-							<option value="null">House</option>         
-							<option value="AX">Apartment</option>
-							<option value="AX">Premium Economy</option>
-						 </select>
-					  </div>
-					 </div>
-					 <div class="col-xs-4 dropdown-button">
-					  <div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All contracts</option>
-							<option value="null">Sale</option>         
-							<option value="AX">Rent</option>
-							<option value="AX">Sold</option>
-						 </select>
-					  </div>
-					 </div>
-				   </div> 
-				   <div class="col-xs-2 submit_button"> 
-				   	  <form>
-				   	     <input type="submit" value="Search">
-				   	  </form>
-				   </div>
-				   <div class="clearfix"> </div>
-				</div>
-			   </div>
-			   </div>
-	        </li>
-	        <li><img src="images/banner2.jpg" class="img-responsive" alt=""/>
-	          <div class="banner_desc">
-	          	<div class="container">
-				  <h1>Est notare quam littera gothica, quam nunc.</h1>
-				  <h2>At wisi enim ad minim veniam, quis nostrud.</h2>
-			    </div>
-				<div class="details">
-			     <div class="container">
-	    	     <div class="col-xs-10 dropdown-buttons">   
-            	  <div class="col-xs-4 dropdown-button">           			
-            		<div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All Locations</option>
-							<option value="null">Business</option>         
-							<option value="AX">First Class</option>
-							<option value="AX">Premium Economy</option>
-						 </select>
-					  </div>
-					</div>
-				    <div class="col-xs-4 dropdown-button">
-					  <div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All Property types</option>
-							<option value="null">House</option>         
-							<option value="AX">Apartment</option>
-							<option value="AX">Premium Economy</option>
-						 </select>
-					  </div>
-					 </div>
-					 <div class="col-xs-4 dropdown-button">
-					  <div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All contracts</option>
-							<option value="null">Sale</option>         
-							<option value="AX">Rent</option>
-							<option value="AX">Sold</option>
-						 </select>
-					  </div>
-					 </div>
-				   </div> 
-				   <div class="col-xs-2 submit_button"> 
-				   	  <form>
-				   	     <input type="submit" value="Search">
-				   	  </form>
-				   </div>
-				   <div class="clearfix"> </div>
-				</div>
-				</div>
-			    </div>
-			 </li>
-	      </ul>
-	 </div>
+<div class="lubo">
+  <ul class="lubo_box">
+    <li style=" opacity: 1;filter:alpha(opacity=50);"><a href="" style="background:url(images/banner1.jpg) center top no-repeat"></a></li>
+    <li><a href="" style="background:url(images/banner2.jpg) center top no-repeat"></a></li>
+    <li><a href="" style="background:url(images/banner3.jpg) center top no-repeat"></a></li>
+    <li><a href="" style="background:url(images/banner4.jpg) center top no-repeat"></a></li>
+    <li><a href="" style="background:url(images/banner1.jpg) center top no-repeat"></a></li>
+    <li><a href="" style="background:url(images/banner2.jpg) center top no-repeat"></a></li>
+    <li><a href="" style="background:url(images/banner3.jpg) center top no-repeat"></a></li>
+    <li><a href="" style="background:url(images/banner4.jpg) center top no-repeat"></a></li>
+  </ul>
+</div>
 </div>
 <div class="smart_details">
-			     <div class="container">
-	    	     <div class="col-md-10 dropdown-buttons">   
-            	  <div class="col-md-4 dropdown-button">           			
-            		<div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All Locations</option>
-							<option value="null">Business</option>         
-							<option value="AX">First Class</option>
-							<option value="AX">Premium Economy</option>
-						 </select>
-					  </div>
-					</div>
-				    <div class="col-md-4 dropdown-button">
-					  <div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All Property types</option>
-							<option value="null">House</option>         
-							<option value="AX">Apartment</option>
-							<option value="AX">Premium Economy</option>
-						 </select>
-					  </div>
-					 </div>
-					 <div class="col-md-4 dropdown-button">
-					  <div class="section_room">
-						 <select id="country" onchange="change_country(this.value)" class="frm-field required">
-							<option value="null">All contracts</option>
-							<option value="null">Sale</option>         
-							<option value="AX">Rent</option>
-							<option value="AX">Sold</option>
-						 </select>
-					  </div>
-					 </div>
-				   </div> 
-				   <div class="col-md-2 submit_button"> 
-				   	  <form>
-				   	     <input type="submit" value="Search">
-				   	  </form>
-				   </div>
-				   <div class="clearfix"> </div>
-				</div>
+	<div class="container">
+		<div class="lookup">
+			<!-- <form ;onsubmit="submitFn(this, event)"> -->
+			<form action="{{url('serch')}}"  method="post">
+			<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+	            <div class="search-wrapper">
+	                <div class="input-holder">
+	                    <input type="text" class="search-input" name="serch" id="area" placeholder="请输入城市关键字" />
+	                    <button class="search-icon" onclick="searchToggle(this, event);"><span><input type="submit" value=""></span></button>
+	                </div>
+	                <span class="close" onclick="searchToggle(this, event);"></span>
+	                <div class="result-lookup"></div>
+	            </div>
+	        </form>
+		</div>
+	</div>
 </div>
 <div class="content_top">
    <div class="container">
    	  <!--最受欢迎的房源-->
    	  <h4 class="m_3">最受欢迎的房源</h4>
-   	  <div class="grid_1">
+   	<div class="grid_1">
 		<div class="col-md-3 box_1">
 			<a href="single.html"><img src="images/pic8.jpg" class="img-responsive" alt=""/></a>
 		    <div class="box_2">
@@ -363,8 +263,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		   </div>
 		</div>
 		<div class="clearfix"> </div>
-
-</div>
+	</div>
 	<!--房源信息-->
 	   <div class="content_bottom">
 		<!--类型出售、出租-->
@@ -594,32 +493,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!--房源代理商-->
         <div class="col-md-3">
 			<div class="blog_list2">
-				 <h3>Our Agents</h3>
+				 <h3>异家人客服服务</h3>
 					 <ul class="blog-list3 list_1">
-					 	<li class="blog-list3-img"><img src="images/pic12.jpg" class="img-responsive" alt=""/></li>
+					 	<li class="blog-list3-img"><img src="images/me1.jpg" class="img-responsive" alt=""/></li>
 					 	<li class="blog-list3-desc">
-					 	  <h4><a href="#">张三</a></h4>
+					 	  <h4><i class="fa fa-meh-o men"></i><a href="#">张晨杰</a></h4>
 					 	    <ul class="admin_desc">
 							    <li class="list_top"><i class="fa fa-phone-square ph"> </i>
-								<p class="m_2">20-1257-2587</p></li>
+								<p class="m_2">18613383140</p></li>
 								<div class="clearfix"> </div>
 								<li class="list_top"><i class="fa fa-envelope ph"> </i>
-								<p class="m_2"><a href="malito:mail@demolink.org">mail(at)realist.com</a></p></li>
+								<p class="m_2"><a href="http://mail.163.com/">18613383140@163.com</a></p></li>
 								<div class="clearfix"> </div>
 					        </ul>
 		                 </li>
 					 	<div class="clearfix"> </div>
 					 </ul>
 					 <ul class="blog-list3 list_1">
-					 	<li class="blog-list3-img"><img src="images/pic13.jpg" class="img-responsive" alt=""/></li>
+					 	<li class="blog-list3-img"><img src="images/ws.jpg" class="img-responsive" alt=""/></li>
 					 	<li class="blog-list3-desc">
-					 	  <h4><a href="#">李四</a></h4>
+					 	  <h4><i class="fa fa-meh-o men"></i><a href="#">韦森</a></h4>
 					 	    <ul class="admin_desc">
 							    <li class="list_top"><i class="fa fa-phone-square ph"> </i>
-								<p class="m_2">20-1257-2587</p></li>
+								<p class="m_2">18801432060</p></li>
 								<div class="clearfix"> </div>
 								<li class="list_top"><i class="fa fa-envelope ph"> </i>
-								<p class="m_2"><a href="malito:mail@demolink.org">mail(at)realist.com</a></p></li>
+								<p class="m_2"><a href="http://mail.163.com/">w54supersen@163.com</a></p></li>
+								<div class="clearfix"> </div>
+					        </ul>
+		                 </li>
+					 	<div class="clearfix"> </div>
+					 </ul>
+					 <ul class="blog-list3">
+					 	<li class="blog-list3-img"><img src="images/rp.jpg" class="img-responsive" alt=""/></li>
+					 	<li class="blog-list3-desc">
+					 	  <h4><i class="fa fa-meh-o men"></i><a href="#">任鹏</a></h4>
+					 	    <ul class="admin_desc">
+							    <li class="list_top"><i class="fa fa-phone-square ph"> </i>
+								<p class="m_2">13716725971</p></li>
+								<div class="clearfix"> </div>
+								<li class="list_top"><i class="fa fa-envelope ph"> </i>
+								<p class="m_2"><a href="http://mail.163.com/">13716725971@163.com</a></p></li>
 								<div class="clearfix"> </div>
 					        </ul>
 		                 </li>
@@ -628,13 +542,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					 <ul class="blog-list3">
 					 	<li class="blog-list3-img"><img src="images/pic7.jpg" class="img-responsive" alt=""/></li>
 					 	<li class="blog-list3-desc">
-					 	  <h4><a href="#">王五</a></h4>
+					 	  <h4><i class="fa fa-meh-o men"></i><a href="#">王超</a></h4>
 					 	    <ul class="admin_desc">
 							    <li class="list_top"><i class="fa fa-phone-square ph"> </i>
-								<p class="m_2">20-1257-2587</p></li>
+								<p class="m_2">18101367721</p></li>
 								<div class="clearfix"> </div>
 								<li class="list_top"><i class="fa fa-envelope ph"> </i>
-								<p class="m_2"><a href="malito:mail@demolink.org">mail(at)realist.com</a></p></li>
+								<p class="m_2"><a href="http://mail.163.com/">18101367721@163.com</a></p></li>
+								<div class="clearfix"> </div>
+					        </ul>
+		                 </li>
+					 	<div class="clearfix"> </div>
+					 </ul>
+					 <ul class="blog-list3">
+					 	<li class="blog-list3-img"><img src="images/a7.jpg" class="img-responsive" alt=""/></li>
+					 	<li class="blog-list3-desc">
+					 	  <h4><i class="fa fa-meh-o men"></i><a href="#">王瑞雪</a></h4>
+					 	    <ul class="admin_desc">
+							    <li class="list_top"><i class="fa fa-phone-square ph"> </i>
+								<p class="m_2">15801103411</p></li>
+								<div class="clearfix"> </div>
+								<li class="list_top"><i class="fa fa-envelope ph"> </i>
+								<p class="m_2"><a href="http://mail.163.com/">15801103411@163.com</a></p></li>
 								<div class="clearfix"> </div>
 					        </ul>
 		                 </li>
