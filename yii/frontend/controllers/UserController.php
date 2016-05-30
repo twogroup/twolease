@@ -8,7 +8,7 @@ use yii\web\Session;
 /**
 *	class User  后台租客管理
 */
-class UserController extends \yii\web\Controller
+class UserController extends CommonController
 {
     public $layout = false;
 	//租客列表显示

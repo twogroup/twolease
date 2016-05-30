@@ -240,10 +240,10 @@
         <?php foreach($arr as $k=>$v){?>
         
         <div class="h1-tit rel">
-            <h1><?php echo $v->title?></h1>
+            <h1><?php echo $v->house_title?></h1>
             <p class="gray9">
                 <span class="mr10">房源编号：8977552165</span>
-                <span>发布时间：<?php echo $v->datetime?></span>
+                <span>发布时间：<?php //echo $v->datetime?></span>
             </p>
             <a target="_blank" class="btn-fabu" href="{{url('lease')}}">免费发布房源</a>
         </div>
@@ -258,11 +258,8 @@
                             <div class="bigpicarea">
                                 <p class="bigbtnPrev"><span id="big_play_prev"></span></p>
                                 <p class="bigbtnNext"><span id="big_play_next"></span></p>
-
-                                
-
                                 <div class="image" id="image_xixi-1">
-                                    <img alt="房源图片" src="uploads/<?php echo $v->photo?>" width="722" height="542" />
+                                    <img alt="房源图片" src="uploads/<?php echo $v->house_img?>" width="722" height="542" />
                                     <div class="word" style="display: none;">
                                         <h3>房源图片</h3>
                                     </div>
@@ -277,7 +274,7 @@
                                     <ul style="width: 1200px; position: relative;">
                                         
                                         <li class="slideshowItem"><a href="javascript:void(0)" id="thumb_xixi-2">
-                                            <img alt="房源图片" src="uploads/<?php echo $v->photo?>" width="94" height="62">
+                                            <img alt="房源图片" src="uploads/<?php echo $v->house_thumb?>" width="94" height="62">
                                         </a>
                                         </li>
                                         
@@ -301,19 +298,19 @@
                     </li>
 
                     <li><span class="info-tit">小<span class="pl2e"></span>区：</span> <a target="_blank" hre f=" ">
-                        <?php echo $v->community?></a>[<a href="""><?php echo $v->area?></a>]
+                        <?php echo $v->house_community ?></a>[<a href=""><?php echo $v->house_area?></a>]
                     </li>
                     <li >
                     <span class="info-tit">交<span class="pl2e"></span>通：</span>公交：498路、206路夜线。。。
                     </li>
                     <li >
-                    <span class="info-tit">业<span class="pl2e"></span>主：</span><?php echo $v->contacts?>
+                    <span class="info-tit">业<span class="pl2e"></span>主：</span><?php // echo $v->contacts ?>
                     </li>
                 </ul>
 
                 <div class="tel-wrap clearfix">
                     <div class="tel red floatl">
-                        <h2><?php echo $v->phone?></h2><span></span>
+                        <h2>  </h2><span></span>
                     </div>
                     <a  name="look" id="lookhouse" class="btn-yuyue" href="javascript:void(0)">预约看房</a>
                 </div>
@@ -321,7 +318,7 @@
                 <ul class="tool clearfix">
                     <li><a class="icon-phone" id="dszfxq_B04_12" name="send" style="cursor: pointer">发送房源至手机</a></li>
                     <li><a href="javascript:void(0)" class="bdsharebuttonbox  bds_more icon-share" data-cmd="more">分享</a></li>
-                    <li><a class="icon-star" name="collect" sourepage="ds" style="cursor: pointer">收藏</a></li>
+                    <li><a class="icon-star" name="collect" sourepage="ds" src="javascript:void(0)" id="<?php echo $v->rent_id ?>" style="cursor: pointer" onclick="collect(this)">收藏</a></li>
                     <li><a class="icon-report" id="agantzfxq_B01_17" name="dsreport" style="cursor: pointer">举报</a></li>
                 </ul>
 
@@ -394,8 +391,8 @@ class="kuandai">宽带</li>                         <li class="dianshi">电视</
 ="fytp-pos"> <div class ="con-box-tit clearfix">                     <ul
 class="floatl"> <li class="on">房源图片</li>                     </ul>
 </div> <div class="alingC fy-img mt20">                     <?php foreach($arr as $key => $val) {?>
-<img class="mt10 b-lazyb-error" data-src="uploads/<?php echo $val->photo?>" class="b-lazy
-b-error" src="uploads/<?php echo $val->photo?>" alt="<?php echo $val->community?>" /><br />
+<img class="mt10 b-lazyb-error" data-src="uploads/<?php // echo $val->photo ?>" class="b-lazy
+b-error" src="uploads/<?php // echo $val->photo?>" alt="<?php //echo $val->community?>" /><br />
 <?php }?> </div>
 </div> <!--房源图end-->
             
@@ -415,16 +412,29 @@ b-error" src="uploads/<?php echo $val->photo?>" alt="<?php echo $val->community?
     </div>
     <div class="map-wrap mt20" id="mapsoso" style="height: 360px; display: none">
     </div>
-    
-
-
-
-
     <div class="clear">
     </div>
 </div>
 <script type="text/javascript" src="http://map.qq.com/api/js?v=2.exp&key=d84d6d83e0e51e481e50454ccbe8986b"></script>
 <script type="text/javascript">
+    //收藏房子
+    function collect(obj){
+        var id=obj.id;
+        $.ajax({
+            type:"get",
+            url:"{{url('services')}}",
+            data:"id="+id,
+            success:function(e){
+                if(e==1){
+                    alert("收藏成功!");
+                }else if(e==3){
+                    alert("亲，你已经收藏过咯！");
+                }else{
+                    alert("收藏失败!");
+                }
+            }
+        })
+    }
     (function ($) {
         var liArr = $("#ul_map li");
         var divArr = $("#zf_Map_anchor  .map-wrap"); // 紧邻ul的两个div

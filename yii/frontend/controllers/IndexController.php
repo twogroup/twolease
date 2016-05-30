@@ -5,7 +5,7 @@ use yii\web\Controller;
 use frontend\models\Index;
 use yii\web\UploadedFile;
 
-class IndexController extends Controller{
+class IndexController extends CommonController{
     public $layout = 'main.php';
     public function actionIndex()
     {

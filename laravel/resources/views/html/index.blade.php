@@ -7,12 +7,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Realist an Real_Estate Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Realist Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+    <title>Realist an Real_Estate Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Realist Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
@@ -27,20 +27,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 {{--<link href='http://fonts.googleapis.com/css?family=Grand+Hotel:400' rel='stylesheet' type='text/css'>--}}
 {{--<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet:100,300,400,500,600,700,800,900' type='text/css'>--}}
 
-<!--a标签传值（传ID至控制器）-->
-<script>
-    function nae(id)
-    {
-    	//alert(id);die;
-        var data={'xqid':id}
-        var url="showsxq";
-        $.get(url,data,function(msg){
-           $a = msg;
-           //alert(msg);die;
-           location.href ='{{url('zhan')}}?id='+$a;
-        })
-    }
-</script>
+    <!--a标签传值（传ID至控制器）-->
+    <script>
+        function nae(id)
+        {
 <!-- 轮播图 -->
 <style type="text/css">
   *{ margin:0; padding:0; }
@@ -135,27 +125,27 @@ $(function(){
 </head>
 <body>
 <div class="header">
-	<div class="col-xs-4">
-	  <div class="logo">
-		<a href="index"><img src="images/logo.png" alt=""/></a>
-	  </div>
-	</div>
-	<div class="col-xs-8 header_right">
-	  <span class="menu"></span>
-			<div class="top-menu">
-				@include('components.head')
-			 </div>
-			<!-- script for menu -->
-				<script>
-				$( "span.menu" ).click(function() {
-				  $( ".top-menu" ).slideToggle( "slow", function() {
-				    // Animation complete.
-				  });
-				});
-			</script>
-			<!-- script for menu -->
-	</div>
-	<div class="clearfix"> </div>
+    <div class="col-xs-4">
+        <div class="logo">
+            <a href="index"><img src="images/logo.png" alt=""/></a>
+        </div>
+    </div>
+    <div class="col-xs-8 header_right">
+        <span class="menu"></span>
+        <div class="top-menu">
+            @include('components.head')
+        </div>
+        <!-- script for menu -->
+        <script>
+            $( "span.menu" ).click(function() {
+                $( ".top-menu" ).slideToggle( "slow", function() {
+                    // Animation complete.
+                });
+            });
+        </script>
+        <!-- script for menu -->
+    </div>
+    <div class="clearfix"> </div>
 </div>
 <div class="slider">
 <div class="lubo">
@@ -190,79 +180,79 @@ $(function(){
 	</div>
 </div>
 <div class="content_top">
-   <div class="container">
-   	  <!--最受欢迎的房源-->
-   	  <h4 class="m_3">最受欢迎的房源</h4>
-   	<div class="grid_1">
-		<div class="col-md-3 box_1">
-			<a href="single.html"><img src="images/pic8.jpg" class="img-responsive" alt=""/></a>
-		    <div class="box_2">
-			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
-			</div>
-		   <div class="box_3">
-			 <h3><a href="single.html">House1</a></h3>
-			 <div class="boxed_mini_details clearfix">
+    <div class="container">
+        <!--最受欢迎的房源-->
+        <h4 class="m_3">最受欢迎的房源</h4>
+        <div class="grid_1">
+            <div class="col-md-3 box_1">
+                <a href="single.html"><img src="images/pic8.jpg" class="img-responsive" alt=""/></a>
+                <div class="box_2">
+                    <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
+                </div>
+                <div class="box_3">
+                    <h3><a href="single.html">House1</a></h3>
+                    <div class="boxed_mini_details clearfix">
 			      <span class="area first"><strong>车库</strong><i class="fa fa-plane icon1"> </i>
 			      2</span>
 			      <span class="status"><strong>洗澡</strong><i class="fa fa-retweet icon1"> </i>
 			      2</span>
 			      <span class="bedrooms last"><strong>床</strong><i class="fa fa-bed"></i>
 			      2</span>
-             </div>
-		   </div>
-		</div>
-		<div class="col-md-3 box_1">
-			<a href="single.html"><img src="images/pic9.jpg" class="img-responsive" alt=""/></a>
-		     <div class="box_2">
-			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
-			</div>
-		   <div class="box_3">
-			 <h3><a href="single.html">House2</a></h3>
-			 <div class="boxed_mini_details clearfix">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 box_1">
+                <a href="single.html"><img src="images/pic9.jpg" class="img-responsive" alt=""/></a>
+                <div class="box_2">
+                    <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
+                </div>
+                <div class="box_3">
+                    <h3><a href="single.html">House2</a></h3>
+                    <div class="boxed_mini_details clearfix">
 			      <span class="area first"><strong>车库</strong><i class="fa fa-plane icon1"> </i>
 			      2</span>
 			      <span class="status"><strong>洗澡</strong><i class="fa fa-retweet icon1"> </i>
 			      2</span>
 			      <span class="bedrooms last"><strong>床</strong><i class="fa fa-building-o icon1"> </i>
 			      2</span>
-             </div>
-		   </div>
-		</div>
-		<div class="col-md-3 box_1">
-			<a href="single.html"><img src="images/pic10.jpg" class="img-responsive" alt=""/></a>
-		     <div class="box_2">
-			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
-			</div>
-		   <div class="box_3">
-			 <h3><a href="single.html">House3</a></h3>
-			 <div class="boxed_mini_details clearfix">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 box_1">
+                <a href="single.html"><img src="images/pic10.jpg" class="img-responsive" alt=""/></a>
+                <div class="box_2">
+                    <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
+                </div>
+                <div class="box_3">
+                    <h3><a href="single.html">House3</a></h3>
+                    <div class="boxed_mini_details clearfix">
 			      <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"> </i>
 			      2</span>
 			      <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
 			      2</span>
 			      <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"> </i>
 			      2</span>
-             </div>
-		   </div>
-		</div>
-		<div class="col-md-3 box_1">
-			<a href="single.html"><img src="images/pic11.jpg" class="img-responsive" alt=""/></a>
-		     <div class="box_2">
-			  <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
-			</div>
-		   <div class="box_3">
-			 <h3><a href="single.html">House4</a></h3>
-			 <div class="boxed_mini_details clearfix">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 box_1">
+                <a href="single.html"><img src="images/pic11.jpg" class="img-responsive" alt=""/></a>
+                <div class="box_2">
+                    <div class="special-wrap"><div class="hot_offer"><span class="m_11">热提供</span></div><div class="forclosure"><span class="m_12">特殊报价</span></div></div>
+                </div>
+                <div class="box_3">
+                    <h3><a href="single.html">House4</a></h3>
+                    <div class="boxed_mini_details clearfix">
 			      <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"> </i>
 			      2</span>
 			      <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
 			      2</span>
 			      <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"> </i>
 			      2</span>
-             </div>
-		   </div>
-		</div>
-		<div class="clearfix"> </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
 	</div>
 	<!--房源信息-->
 	   <div class="content_bottom">
@@ -292,116 +282,24 @@ $(function(){
 		<!--房源信息详情展示file:/D:/WWW/zulin/-->
            </br>
 
-           <div class="col-md-7">
-               <div class="sap_tabs">
-                   <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
-                       <div class="tab_grid">
-                           <ul class="resp-tabs-list">
-                               <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>全部</span></li>
-                               <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>热门房源</span></li>
-                               <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>增值房源</span></li>
-                               <div class="clearfix"></div>
-                           </ul>
-                       </div>
-                       <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
-                           <ul class="tab_img tab_1">
-                               <li>
-                                   <div class="client_box1">
-                                       <img src="images/pic1.jpg" class="img-responsive" alt=""/>
-                                       <div class="box_type">$&nbsp;650</div>
-                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-                                       <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                       </div>
-                                   </div>
-                               </li>
-                               <li>
-                                   <div class="client_box1">
-                                       <img src="images/pic2.jpg" class="img-responsive" alt=""/>
-                                       <div class="box_type">$&nbsp;450</div>
-                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-                                       <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                       </div>
-                                   </div>
-                               </li>
-                               <li class="last">
-                                   <div class="client_box1">
-                                       <img src="images/pic3.jpg" class="img-responsive" alt=""/>
-                                       <div class="box_type">$&nbsp;220</div>
-                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-                                       <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                       </div>
-                                   </div>
-                               </li>
-                               <div class="clearfix"></div>
-                           </ul>
-                           <ul class="tab_img">
-                               <li>
-                                   <div class="client_box1">
-                                       <img src="images/pic4.jpg" class="img-responsive" alt=""/>
-                                       <div class="box_type">$&nbsp;650</div>
-                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-                                       <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                       </div>
-                                   </div>
-                               </li>
-                               <li>
-                                   <div class="client_box1">
-                                       <img src="images/pic5.jpg" class="img-responsive" alt=""/>
-                                       <div class="box_type">$&nbsp;450</div>
-                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-                                       <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                       </div>
-                                   </div>
-                               </li>
-                               <li class="last">
-                                   <div class="client_box1">
-                                       <img src="images/pic6.jpg" class="img-responsive" alt=""/>
-                                       <div class="box_type">$&nbsp;500</div>
-                                       <h3 class="m_1"><a href="single.html">Dolor Sit</a></h3>
-                                       <div class="boxed_mini_details clearfix">
-			                                    <span class="area first"><strong>Garage</strong><i class="fa fa-plane icon1"></i>
-			                                    2</span>
-			                                    <span class="status"><strong>Baths</strong><i class="fa fa-retweet icon1"> </i>
-			                                    2</span>
-			                                    <span class="bedrooms last"><strong>Beds</strong><i class="fa fa-building-o icon1"></i>
-			                                    2</span>
-                                       </div>
-                                   </div>
-                               </li>
-                               <div class="clearfix"></div>
-                           </ul>
-                       </div>
-                       <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-1">
+            <div class="col-md-7">
+                <div class="sap_tabs">
+                    <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                        <div class="tab_grid">
+                            <ul class="resp-tabs-list">
+                                <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>全部</span></li>
+                                <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>热门房源</span></li>
+                                <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>增值房源</span></li>
+                                <div class="clearfix"></div>
+                            </ul>
+                        </div>
+                        <div class="tab-1 resp-tab-content" aria-labelledby="tab_item-0">
+                            <ul class="tab_img tab_1">
+                                @foreach ($posts as $post)
+                                    <li class="">
+                                        <div class="client_box1">
+                                            <a href="javascript:void(0)" onclick="nae({{ $post->ava_id }})">
+                                                <img src="uploads/{{ $post->origintal_img}}" class="img-responsive" alt="" /></a>
 
                            <ul class="tab_img">
                                <li>
@@ -573,13 +471,15 @@ $(function(){
 		</div>
         <div class="clearfix"> </div>
         </div>
+    </div>
+    <!--底部信息 end -->
+    <div class="copy">
+        @include('components.footer')
+    </div>
+    <!--底部信息 start-->
 
-        <!--底部信息 end -->
-        <div class="copy">
-            @include('components.footer')
-	    </div>
-<!--底部信息 start-->
-	</div>
+</div>
 </body>
 
-</html>		
+
+</html>

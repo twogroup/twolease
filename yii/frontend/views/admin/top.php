@@ -24,7 +24,7 @@
 			</a>
 			<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
 				<li>
-					<a href="?r=admin/exits">
+					<a href="?r=login/exits">
 						<i class="icon-off"></i>
 						退出
 					</a>
