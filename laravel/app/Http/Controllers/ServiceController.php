@@ -200,14 +200,58 @@ class ServiceController extends Controller {
         $nums = get_object_vars($data['0']);
         return $nums['ava_id'];
 
+        return $nums['rent_id'];
     }
+    //收藏
+    public function servicess(){
+        $id = Input::get('id');
+        $name=$_COOKIE['name'];
+        //通过ID查询房源详情
+        $arr=DB::table("house")->select()
+            ->where(['rent_id'=>$id])
+            ->get();
+        //查询是否收藏
+        $where = DB::table('collect')->select()
+            ->where(['username'=>$name,'h_id'=>$id])
+            ->get();
 
+        if($where){
+            echo 3;
+        }else{
+            //收藏添加
+            $insert= DB::table('collect')->insert(array(
+                    array('username' => $name,
+                        'h_id' => $id,
+                        'lname' => $arr[0]->lname,
+                        'datetime' => $arr[0]->datetime,
+                        'photo' => $arr[0]->photo,
+                        'phone' => $arr[0]->phone,
+                    )
+                )
+            );
+            if($insert){
+                echo 1;
+            }else{
+                echo 0;
+            }
+        }
+    }
+    //删除收藏
+    public function service_del(){
+        $id = Input::get('id');
+        //删除
+        $del=DB::delete("delete from collect where collect_id='$id'");
+        if($del){
+            echo 1;
+        }else{
+            echo 0;
+        }
+    }
     /**
      * map
      * @return \Illuminate\View\View
      */
     public function map(){
-
         return view('html.map');
     }
 
@@ -218,7 +262,6 @@ class ServiceController extends Controller {
 
         $id = Input::get(); //接ID
         $data = DB::table('availability')->where('ava_id',$id)->get();//查询数据
-
         return view('html/single3')->with('arr',$data);
         
     }

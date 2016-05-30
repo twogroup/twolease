@@ -258,9 +258,6 @@
                             <div class="bigpicarea">
                                 <p class="bigbtnPrev"><span id="big_play_prev"></span></p>
                                 <p class="bigbtnNext"><span id="big_play_next"></span></p>
-
-                                
-
                                 <div class="image" id="image_xixi-1">
                                     <img alt="房源图片" src="uploads/<?php echo $v->house_img?>" width="722" height="542" />
                                     <div class="word" style="display: none;">
@@ -321,7 +318,7 @@
                 <ul class="tool clearfix">
                     <li><a class="icon-phone" id="dszfxq_B04_12" name="send" style="cursor: pointer">发送房源至手机</a></li>
                     <li><a href="javascript:void(0)" class="bdsharebuttonbox  bds_more icon-share" data-cmd="more">分享</a></li>
-                    <li><a class="icon-star" name="collect" sourepage="ds" style="cursor: pointer">收藏</a></li>
+                    <li><a class="icon-star" name="collect" sourepage="ds" src="javascript:void(0)" id="<?php echo $v->rent_id ?>" style="cursor: pointer" onclick="collect(this)">收藏</a></li>
                     <li><a class="icon-report" id="agantzfxq_B01_17" name="dsreport" style="cursor: pointer">举报</a></li>
                 </ul>
 
@@ -415,16 +412,29 @@ b-error" src="uploads/<?php // echo $val->photo?>" alt="<?php //echo $val->commu
     </div>
     <div class="map-wrap mt20" id="mapsoso" style="height: 360px; display: none">
     </div>
-    
-
-
-
-
     <div class="clear">
     </div>
 </div>
 <script type="text/javascript" src="http://map.qq.com/api/js?v=2.exp&key=d84d6d83e0e51e481e50454ccbe8986b"></script>
 <script type="text/javascript">
+    //收藏房子
+    function collect(obj){
+        var id=obj.id;
+        $.ajax({
+            type:"get",
+            url:"{{url('services')}}",
+            data:"id="+id,
+            success:function(e){
+                if(e==1){
+                    alert("收藏成功!");
+                }else if(e==3){
+                    alert("亲，你已经收藏过咯！");
+                }else{
+                    alert("收藏失败!");
+                }
+            }
+        })
+    }
     (function ($) {
         var liArr = $("#ul_map li");
         var divArr = $("#zf_Map_anchor  .map-wrap"); // 紧邻ul的两个div

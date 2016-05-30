@@ -159,13 +159,13 @@ use yii\helpers\Html;
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th>发布人</th>
-														<th>主图</th>
-														<th class="hidden-480">money</th>
+														<th>屋名</th>
+														<th>业主</th>
+														<th class="hidden-480">租金</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
-															业主
+															房型
 														</th>
 														<th class="hidden-480">类型</th>
 
@@ -185,22 +185,15 @@ use yii\helpers\Html;
 														</td>
 
 														<td>
-															<a href="index.php?r=house/details&detailsid=<?php echo $key['rent_id']?>"><?php echo $key['lname']?></a>
+															<a href="index.php?r=house/details&detailsid=<?php echo $key['ava_id']?>"><?php echo $key['house_address']?></a>
 														</td>
-														<td><img src="/twolease/laravel/public/uploads/house/<?php echo $key['photo']?>" width="50px" height="30px"></td>
+														<td><?php echo $key['linkman']?></td>
 														<td class="hidden-480"><?php echo $key['pay']?></td>
-														<td><?php echo $key['contacts']?></td>
+														<td><?php echo $key['house_type']?></td>
 														<td class="hidden-480">
 															<span class="label label-sm label-warning">
-																<?php if($key['lease']==0){?>
-																	<span> 已租</span>
-																<?php }elseif($key['lease']==1){?>
-																	<span>未租</span>
-																<?php }elseif($key['lease']==2){?>
-																	<span>已 售</span>
-																<?php }else{?>
-																<span>未售</span>
-																<?php }?>
+															<?php echo $key['property_class']?>
+																<!---->
 															</span>
 														</td>
 														<td>
@@ -209,11 +202,11 @@ use yii\helpers\Html;
 																	<i class="icon-zoom-in bigger-130">-1</i>
 																</a>-->
 
-																<a class="green" href="index.php?r=house/houseupload&id=<?php echo $key['rent_id']?>">
+																<a class="green" href="index.php?r=house/houseupload&id=<?php echo $key['ava_id']?>">
 																	<i class="icon-pencil bigger-130"></i>
 																</a>
 
-																<a class="red" href="index.php?r=house/housedelete&id=<?php echo $key['rent_id']?>">
+																<a class="red" href="index.php?r=house/housedelete&id=<?php echo $key['ava_id']?>">
 																	<i class="icon-trash bigger-130"></i>
 																</a>
 															</div>
@@ -399,13 +392,13 @@ use yii\helpers\Html;
 
 		<!--[if !IE]> -->
 
-<!--		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-<!--<![endif]-->-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
 
 		<!--[if !IE]> -->
 

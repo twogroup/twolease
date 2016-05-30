@@ -607,42 +607,51 @@ use yii\helpers\Html;
 											<?php ?>
 											<?php foreach($arr as $ktv):?>
 				                           <!-- <div class="form-group">-->
-				                                <label class="col-sm-3 control-label no-padding-right">业主</label>
+				                                <label class="col-sm-3 control-label no-padding-right">屋名</label>
 				                                <div class="col-sm-9">
-				                                    <input type="text" name="rent_people" id="form-field-1" placeholder="<?php echo $ktv['contacts']?>"  class="col-xs-10 col-sm-5" />
-				                                </div>
+				                                    <input type="text" name="house_address" id="form-field-1" placeholder="<?php echo $ktv['house_address']?>"  class="col-xs-10 col-sm-5" />
+				                                <br><br></div>
 				                           <!-- </div>-->
+				                           		<label class="col-sm-3 control-label no-padding-right">业主</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="linkman" id="form-field-1" placeholder="<?php echo $ktv['linkman']?>"  class="col-xs-10 col-sm-5" />
+				                                <br><br></div>
 
 				                                <label class="col-sm-3 control-label no-padding-right">小区名 </label>
 				                                <div class="col-sm-9">
-				                                    <input type="text" name="by_rent_people" id="form-field-2" placeholder="<?php echo $ktv['community']?>" class="col-xs-10 col-sm-5" />
-				                                </div>
+				                                    <input type="text" name="house_title" id="form-field-2" placeholder="<?php echo $ktv['house_title']?>" class="col-xs-10 col-sm-5" />
+				                                <br><br></div>
 
 				                                <label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> 地址 </label>
 				                                <div class="col-sm-9">
-				                                    <input type="text" name="house_type" id="form-field-2" placeholder="<?php echo $ktv['area']?>" class="col-xs-10 col-sm-5" />
-				                                </div>
+				                                    <input type="text" name="house_postion" id="form-field-2" placeholder="<?php echo $ktv['house_postion']?>" class="col-xs-10 col-sm-5" />
+				                                <br><br></div>
 
 				                                <label class="col-sm-3 control-label no-padding-right">期望租金</label>
 				                                <div class="col-sm-9">
-				                                    <input type="text" name="mon_rental" id="form-field-1" placeholder="<?php echo $ktv['pay']?>" class="col-xs-10 col-sm-5" />
+				                                    <input type="text" name="pay" id="form-field-1" placeholder="<?php echo $ktv['pay']?>" class="col-xs-10 col-sm-5" />
 				                                    <span class="help-inline col-xs-12 col-sm-7">
 														<span class="middle">元/月</span>
 													</span>
-				                                </div>
+				                                <br><br></div>
 
 				                                <label class="col-sm-3 control-label no-padding-right" for="form-field-tags">房屋简介</label>
 				                                <div class="col-sm-9">
-				                                    <input type="text" name="property_class" id="form-field-1" placeholder="<?php echo $ktv['content']?>" class="col-xs-10 col-sm-5" />
-				                                </div>
+				                                    <input type="text" name="house_desc" id="form-field-1" placeholder="<?php echo $ktv['house_desc']?>" class="col-xs-10 col-sm-5" />
+				                                <br><br></div>
 
 				                                <label class="col-sm-3 control-label no-padding-right" for="form-field-6">联系电话</label>
 				                                <div class="col-sm-9">
-				                                    <input type="text" name="rent_money" id="form-field-1" placeholder="<?php echo $ktv['phone']?>" class="col-xs-10 col-sm-5" />
-				                                </div>
+				                                    <input type="text" name="phone" id="form-field-1" placeholder="<?php echo $ktv['phone']?>" class="col-xs-10 col-sm-5" />
+				                                <br><br></div>
+
+				                                <label class="col-sm-3 control-label no-padding-right" for="form-field-6">房型</label>
+				                                <div class="col-sm-9">
+				                                    <input type="text" name="house_type" id="form-field-1" placeholder="<?php echo $ktv['house_type']?>" class="col-xs-10 col-sm-5" />
+				                                <br><br></div>
 
 					                            <div class="col-sm-9">
-					                                <input type="hidden" name="id" value="<?php echo $ktv['rent_id']?>"/>
+					                                <input type="hidden" name="id" value="<?php echo $ktv['ava_id']?>"/>
 					                            </div>
 
 				                            <div class="clearfix form-actions">
