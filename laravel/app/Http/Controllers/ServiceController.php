@@ -1,7 +1,7 @@
 <?php
  namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use Requests;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -285,8 +285,8 @@ class ServiceController extends Controller {
         return view('html/addhouse');
     }
     public function addhouse3(){
-        $serval = Request::input(); //验证房源名称唯一！！！
-        //print_r($serval);die;
+        //$serval = Request::input(); //验证房源名称唯一！！！
+        $serval = Input::get();
         $name = $serval['house_address'];
             $addtwo = DB::table('availability')->insert([
                 'house_address' => $serval['house_address'],
@@ -304,7 +304,8 @@ class ServiceController extends Controller {
     }
 
     public function addhouse4(){
-        $serval = Request::input();
+       // $serval = Request::input();
+        $serval = Input::get();
         $name = $serval['name'];
         $addfree = DB::table('availability')
             ->where('house_address', $name)

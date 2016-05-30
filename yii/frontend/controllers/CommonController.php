@@ -1,11 +1,11 @@
 <?php
 
 namespace frontend\controllers;
-header("Content-Type:text/html;charset=utf-8");
 use yii;
 use frontend\models\Admin;
 use frontend\models\Landlord;
 use frontend\models\User;
+use frontend\models\House;
 use yii\web\Session;
 use yii\web\Controller;
 use yii\base\module;
@@ -14,7 +14,7 @@ use checkConfig;
  * Class CommonController
  * @package frontend\controllers
  */
-class CommonController extends \yii\base\Controller{
+class CommonController extends \yii\web\Controller{
     /**
      * 防非法登录
      */
