@@ -305,7 +305,7 @@ $(function(){
 
                                             <div class="box_type">$&nbsp;{{ $post->pay }}</div>
 
-                                            <h3 class="m_1"><a href="javascript:void(0)" onclick="nae({{ $post->ava_id }})">{{ $post->house_title }}</a></h3>
+                                            <h3 class="m_1"><a href="javascript:void(0)" onclick="nae({{ $post->ava_id }})">{{ $post->house_title }}445</a></h3>
                                             <div>
                                                 <h5 class="m_1"><strong><span >{{$post->house_type}} &nbsp;{{$post->house_size}} m²</span></strong> </h5>
                                             </div>

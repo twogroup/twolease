@@ -211,7 +211,7 @@ class ServiceController extends Controller {
         $nums = get_object_vars($data['0']);
         return $nums['ava_id'];
 
-        return $nums['rent_id'];
+       // return $nums['rent_id'];
     }
     //收藏
     public function servicess(){
@@ -270,11 +270,9 @@ class ServiceController extends Controller {
      * @return $this
      */
     function objectToArray(){
-
-        $id = Input::get(); //接ID
+        $id = Input::get('id'); //接ID
         $data = DB::table('availability')->where('ava_id',$id)->get();//查询数据
-        return view('html/single3')->with('arr',$data);
-        
+        return view('html/single3')->with('arr',$data);        
     }
 
     /**

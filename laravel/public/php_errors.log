@@ -10,3 +10,4 @@
 [30-May-2016 04:27:12 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 10
 [30-May-2016 04:27:26 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 10
 [30-May-2016 04:30:07 UTC] PHP Fatal error:  Cannot use Illuminate\Http\Request as Request because the name is already in use in D:\WWW\zulin4\twolease\laravel\app\Http\Controllers\ServiceController.php on line 11
+[30-May-2016 23:38:49 UTC] PHP Parse error:  syntax error, unexpected '；die' (T_STRING), expecting ',' or ';' in D:\WWW\zulin5\twolease\laravel\app\Http\Controllers\ServiceController.php on line 209
